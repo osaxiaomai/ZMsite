@@ -1,0 +1,136 @@
+{
+	"key": "group_theme_settings",
+	"title": "Theme General Settings",
+	"fields": [
+		{
+			"key": "field_opt_tab_company",
+			"label": "Company Info",
+			"name": "",
+			"type": "tab",
+			"instructions": "",
+			"required": 0,
+			"placement": "top",
+			"endpoint": 0
+		},
+		{
+			"key": "field_opt_address",
+			"label": "Company Address",
+			"name": "company_address",
+			"type": "textarea",
+			"instructions": "",
+			"required": 0,
+			"rows": 3
+		},
+		{
+			"key": "field_opt_phone",
+			"label": "Phone Number",
+			"name": "company_phone",
+			"type": "text",
+			"instructions": "",
+			"required": 0,
+			"wrapper": { "width": "33" }
+		},
+		{
+			"key": "field_opt_email",
+			"label": "Email Address",
+			"name": "company_email",
+			"type": "text",
+			"instructions": "",
+			"required": 0,
+			"wrapper": { "width": "33" }
+		},
+		{
+			"key": "field_opt_whatsapp",
+			"label": "WhatsApp Number",
+			"name": "whatsapp_number",
+			"type": "text",
+			"instructions": "With country code, e.g. +86138...",
+			"required": 0,
+			"wrapper": { "width": "33" }
+		},
+		{
+			"key": "field_opt_tab_social",
+			"label": "Social Links",
+			"name": "",
+			"type": "tab",
+			"instructions": "",
+			"required": 0,
+			"placement": "top",
+			"endpoint": 0
+		},
+		{
+			"key": "field_opt_facebook",
+			"label": "Facebook URL",
+			"name": "facebook_url",
+			"type": "url",
+			"instructions": "",
+			"required": 0,
+			"wrapper": { "width": "33" }
+		},
+		{
+			"key": "field_opt_linkedin",
+			"label": "LinkedIn URL",
+			"name": "linkedin_url",
+			"type": "url",
+			"instructions": "",
+			"required": 0,
+			"wrapper": { "width": "33" }
+		},
+		{
+			"key": "field_opt_youtube",
+			"label": "YouTube URL",
+			"name": "youtube_url",
+			"type": "url",
+			"instructions": "",
+			"required": 0,
+			"wrapper": { "width": "33" }
+		},
+		{
+			"key": "field_opt_tab_scripts",
+			"label": "Custom Scripts",
+			"name": "",
+			"type": "tab",
+			"instructions": "",
+			"required": 0,
+			"placement": "top",
+			"endpoint": 0
+		},
+		{
+			"key": "field_opt_header_code",
+			"label": "Header Code",
+			"name": "header_scripts",
+			"type": "textarea",
+			"instructions": "Code added to <head>",
+			"required": 0,
+			"rows": 5
+		},
+		{
+			"key": "field_opt_footer_code",
+			"label": "Footer Code",
+			"name": "footer_scripts",
+			"type": "textarea",
+			"instructions": "Code added before </body>",
+			"required": 0,
+			"rows": 5
+		}
+	],
+	"location": [
+		[
+			{
+				"param": "options_page",
+				"operator": "==",
+				"value": "theme-general-settings"
+			}
+		]
+	],
+	"menu_order": 0,
+	"position": "normal",
+	"style": "default",
+	"label_placement": "top",
+	"instruction_placement": "label",
+	"hide_on_screen": "",
+	"active": true,
+	"description": "",
+	"show_in_rest": 0,
+	"modified": 1715678400
+}

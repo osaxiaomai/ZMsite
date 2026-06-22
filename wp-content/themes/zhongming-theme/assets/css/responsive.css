@@ -1,0 +1,305 @@
+/* ============================================================
+   ZHONGMING LED — RESPONSIVE STYLES
+   Breakpoints: 1024px (tablet), 768px (phablet), 580px (mobile)
+   ============================================================ */
+
+/* ====================
+   1024px — Tablet
+   ==================== */
+@media (max-width: 1024px) {
+    .footer-grid { grid-template-columns: 1fr 1fr; }
+
+    /* Product List Page */
+    .layout-grid { gap: 24px; }
+    .sidebar-filters { width: 220px; }
+    .product-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 20px;
+    }
+
+    /* About & Contact Page */
+    .about-overview-grid,
+    .about-markets-grid,
+    .contact-layout-grid {
+        grid-template-columns: 1fr !important;
+        gap: 40px !important;
+    }
+    .about-glance-grid { grid-template-columns: repeat(2, 1fr) !important; gap: 16px !important; }
+    .about-certs-grid { grid-template-columns: repeat(3, 1fr) !important; }
+
+    /* Solutions Page */
+    .solutions-grid { grid-template-columns: repeat(2, 1fr) !important; }
+    .case-grid { grid-template-columns: repeat(3, 1fr) !important; }
+
+    /* Single Product */
+    .single-product-grid { grid-template-columns: 1fr !important; gap: 32px !important; }
+
+    /* Homepage Company Split */
+    .company-split { grid-template-columns: 1fr !important; gap: 32px !important; }
+}
+
+
+/* ====================
+   768px — Phablet / Mobile
+   ==================== */
+@media (max-width: 768px) {
+    /* Header */
+    .header-container { height: 60px; }
+    .main-nav { display: none; }
+    .footer-grid { grid-template-columns: 1fr; }
+    .cta-container { text-align: center; }
+
+    /* ── Product List ── */
+    .category-hero { padding: 30px 0; }
+    .category-title { font-size: 24px; }
+    .category-desc { font-size: 13px; }
+    .product-archive-layout { padding: 40px 0; }
+    .layout-grid {
+        flex-direction: column !important;
+        gap: 20px !important;
+    }
+    .sidebar-filters {
+        display: none !important;
+        position: static !important;
+        width: 100% !important;
+        max-height: none !important;
+        box-shadow: none !important;
+        border: none !important;
+        padding: 0 !important;
+        margin: 0 0 24px 0 !important;
+        transform: none !important;
+        transition: none !important;
+        overflow-y: visible !important;
+    }
+    .sidebar-filters.open { display: block !important; }
+    .sidebar-filters::before { display: none !important; }
+    .grid-header {
+        margin-bottom: 20px;
+        padding-bottom: 12px;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 16px;
+    }
+    .grid-summary { width: 100%; }
+    .grid-sorting {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        gap: 12px;
+    }
+    .mobile-filter-toggle { display: inline-flex !important; }
+    .sort-select { flex-grow: 0; }
+    .product-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 16px !important;
+    }
+    .product-pagination { margin-top: 32px; }
+    .product-pagination ul.page-numbers li a,
+    .product-pagination ul.page-numbers li span {
+        padding: 8px 12px;
+        font-size: 12px;
+    }
+
+    /* ── About Page ── */
+    .about-certs-grid { grid-template-columns: repeat(2, 1fr) !important; }
+    .about-qa-grid { grid-template-columns: 1fr !important; gap: 16px !important; }
+    .about-glance-grid { grid-template-columns: repeat(2, 1fr) !important; }
+
+    /* ── Solutions Page ── */
+    .solutions-grid { grid-template-columns: 1fr !important; }
+    .case-grid { grid-template-columns: repeat(2, 1fr) !important; }
+
+    /* Solutions why-choose section grid */
+    .solutions-why .advantages-grid,
+    .solutions-why > .container > div > div[style*="grid-template-columns: repeat(3"] {
+        grid-template-columns: 1fr !important;
+    }
+
+    /* ── Single Product Page ── */
+    .single-product-grid {
+        grid-template-columns: 1fr !important;
+        gap: 24px !important;
+    }
+    .gallery-thumbnails-strip {
+        justify-content: flex-start;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        flex-wrap: nowrap !important;
+        scrollbar-width: none;
+        padding-bottom: 4px;
+    }
+    .gallery-thumbnails-strip::-webkit-scrollbar { display: none; }
+    .gallery-thumb-item {
+        width: 60px !important;
+        height: 46px !important;
+        flex-shrink: 0 !important;
+    }
+
+    /* Tab navigation horizontal scroll */
+    .tabs-nav-bar {
+        overflow-x: auto !important;
+        -webkit-overflow-scrolling: touch !important;
+        scrollbar-width: none !important;
+        white-space: nowrap !important;
+        flex-wrap: nowrap !important;
+        padding-bottom: 2px !important;
+    }
+    .tabs-nav-bar::-webkit-scrollbar { display: none; }
+    .tab-nav-btn {
+        flex-shrink: 0 !important;
+        padding: 12px 16px !important;
+        font-size: 13px !important;
+        white-space: nowrap !important;
+    }
+
+    /* Features grid in product single */
+    .features-grid {
+        grid-template-columns: 1fr !important;
+    }
+
+    /* Specs table on mobile */
+    .specs-data-table td,
+    .specs-data-table th {
+        padding: 10px 12px !important;
+        font-size: 12px !important;
+    }
+    .specs-data-table td:first-child {
+        width: 40% !important;
+    }
+
+    /* Series models grid */
+    .series-models-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 12px !important;
+    }
+
+    /* ── Homepage Sections ── */
+    .wf-section { padding: 48px 0 !important; }
+    .section-title { font-size: 24px !important; }
+    .section-sub { font-size: 14px !important; }
+    .section-header { margin-bottom: 32px !important; }
+
+    /* Stats cards */
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 12px !important;
+    }
+    .stat-card { padding: 20px 12px !important; }
+    .stat-num {
+        font-size: 24px !important;
+        word-break: break-word !important;
+        overflow-wrap: break-word !important;
+        line-height: 1.2 !important;
+    }
+    .stat-label { font-size: 10px !important; }
+
+    /* Company advantages list: stack vertically on mobile */
+    .company-advantages-list {
+        grid-template-columns: 1fr !important;
+    }
+
+    /* Advantages grid */
+    .adv-grid { grid-template-columns: 1fr !important; gap: 24px !important; }
+
+    /* App cards */
+    .apps-grid { grid-template-columns: repeat(2, 1fr) !important; }
+
+    /* Cases */
+    .cases-grid { grid-template-columns: repeat(2, 1fr) !important; gap: 12px !important; }
+
+    /* Company overview */
+    .company-split { grid-template-columns: 1fr !important; gap: 32px !important; }
+    .company-info-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 16px !important;
+    }
+
+    /* ── Contact Page ── */
+    .contact-layout-grid { grid-template-columns: 1fr !important; gap: 32px !important; }
+    .inquiry-form-grid { grid-template-columns: 1fr !important; gap: 12px !important; }
+
+    /* ── Global Buttons on Mobile ── */
+    /* Ensure buttons are always legible — never black text on dark bg */
+    .btn-outline {
+        color: #0057b8 !important;
+        border-color: #0057b8 !important;
+    }
+    .btn-outline:hover {
+        background-color: #0057b8 !important;
+        color: #fff !important;
+    }
+
+    /* CTA section on solutions/about */
+    section[style*="background-color: var(--color-text)"] .btn-outline,
+    section[style*="background-color: #1a1a18"] .btn-outline {
+        color: #fff !important;
+        border-color: rgba(255,255,255,0.6) !important;
+    }
+}
+
+
+/* ====================
+   580px — Small Mobile
+   ==================== */
+@media (max-width: 580px) {
+    /* Product grid stays 2 col as requested */
+    .product-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 12px !important;
+    }
+    .product-info { padding: 12px !important; }
+    .product-info h3 {
+        font-size: 12px !important;
+        margin-bottom: 6px !important;
+    }
+    .product-specs { margin-bottom: 12px !important; font-size: 11px !important; }
+    .product-btns {
+        grid-template-columns: 1fr !important;
+        gap: 6px !important;
+    }
+    .product-btns .btn {
+        padding: 8px 10px !important;
+        font-size: 11px !important;
+        width: 100% !important;
+        justify-content: center !important;
+    }
+
+    /* Sort/filter controls */
+    .grid-sorting { flex-direction: column; align-items: stretch; gap: 10px; }
+    .sort-select { width: 100%; background-position: right 16px center; }
+    .mobile-filter-toggle { width: 100%; justify-content: center; }
+
+    /* About page inline stats */
+    .about-inline-stats { grid-template-columns: repeat(3, 1fr) !important; gap: 8px !important; }
+    .about-inline-stats > div { padding: 12px 8px !important; }
+    .about-inline-stats > div > div:first-child { font-size: 16px !important; }
+
+    /* Solutions case grid */
+    .case-grid { grid-template-columns: repeat(2, 1fr) !important; gap: 8px !important; }
+
+    /* Solutions app cards */
+    .solutions-grid { gap: 16px !important; }
+
+    /* Hero pills hidden on very small screens */
+    .hero-pills { display: none; }
+
+    /* Section header sizes */
+    .section-title { font-size: 22px !important; }
+    .section-num-badge { width: 24px !important; height: 24px !important; font-size: 11px !important; }
+
+    /* Stats */
+    .stats-grid { grid-template-columns: 1fr !important; }
+    .stat-num { font-size: 32px !important; }
+    .about-glance-grid { grid-template-columns: repeat(2, 1fr) !important; }
+    .about-certs-grid { grid-template-columns: repeat(2, 1fr) !important; }
+
+    /* Single product */
+    .series-models-grid { grid-template-columns: 1fr !important; }
+    .features-grid { grid-template-columns: 1fr !important; }
+    .specs-table-container { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+
+    /* Footer */
+    .footer-grid { grid-template-columns: 1fr !important; gap: 32px !important; }
+    .footer-col { min-width: 0; }
+}

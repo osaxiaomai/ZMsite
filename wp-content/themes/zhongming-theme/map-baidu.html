@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+<title>百度地图 - 中茗光电</title>
+<style type="text/css">
+    html, body { margin: 0; padding: 0; width: 100%; height: 100%; overflow: hidden; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; }
+    #dituContent { width: 100%; height: 100%; }
+    /* Hide Baidu Map logo copyright overlays */
+    .BMap_cpyCtrl { display: none !important; }
+    .anchorBL { display: none !important; }
+    /* Customize InfoWindow text style */
+    .iw-content { font-size: 12px; line-height: 1.6; color: #333; }
+    .iw-title { font-size: 13px; font-weight: 700; color: #0057b8; margin-bottom: 4px; }
+</style>
+<!-- Hide Baidu deprecation warning overlay -->
+<script type="text/javascript">
+    (function() {
+        function hideBaiduWarning() {
+            var elements = document.getElementsByTagName('*');
+            for (var i = 0; i < elements.length; i++) {
+                var el = elements[i];
+                if (el.id === 'dituContent' || el.tagName.toLowerCase() === 'html' || el.tagName.toLowerCase() === 'body') continue;
+                if (el.innerText && (el.innerText.indexOf('您所使用的地图JS API版本过低') !== -1 || el.innerText.indexOf('JS API版本过低') !== -1)) {
+                    // Check if there is a deeper child containing the text
+                    var hasChildWithText = false;
+                    var children = el.getElementsByTagName('*');
+                    for (var j = 0; j < children.length; j++) {
+                        var child = children[j];
+                        if (child.innerText && (child.innerText.indexOf('您所使用的地图JS API版本过低') !== -1 || child.innerText.indexOf('JS API版本过低') !== -1)) {
+                            hasChildWithText = true;
+                            break;
+                        }
+                    }
+                    if (!hasChildWithText) {
+                        el.style.setProperty('display', 'none', 'important');
+                    }
+                }
+            }
+        }
+        // Observe elements added to DOM
+        var observer = new MutationObserver(hideBaiduWarning);
+        observer.observe(document.documentElement, { childList: true, subtree: true });
+        // Regular poll fallback just in case
+        setInterval(hideBaiduWarning, 100);
+    })();
+</script>
+<!-- Load Baidu Map API v1.1 over HTTPS -->
+<script type="text/javascript" src="https://api.map.baidu.com/api?key=&v=1.1&services=true"></script>
+</head>
+<body>
+  <div id="dituContent"></div>
+  <script type="text/javascript">
+    // Initialize Map
+    var map = new BMap.Map("dituContent");
+    // Coordinates for 华丰圳宝工业园 (113.918925, 22.685324)
+    var point = new BMap.Point(113.918925, 22.685324);
+    map.centerAndZoom(point, 16);
+    
+    // Add small navigation controls (pan/zoom)
+    map.addControl(new BMap.NavigationControl({
+        anchor: BMAP_ANCHOR_TOP_LEFT, 
+        type: BMAP_NAVIGATION_CONTROL_SMALL
+    }));
+    
+    // Add Map Type control (Map/Satellite)
+    map.addControl(new BMap.MapTypeControl({
+        anchor: BMAP_ANCHOR_TOP_RIGHT
+    }));
+    
+    // Add marker
+    var marker = new BMap.Marker(point);
+    map.addOverlay(marker);
+    
+    // Create InfoWindow content
+    var contentHtml = "<div class='iw-content'>" +
+                      "<div class='iw-title'>深圳市中茗光电科技有限公司</div>" +
+                      "地址：中国深圳市宝安区石岩街道北环路137号华丰圳宝工业园<br/>" +
+                      "联系电话：+86-13380304454" +
+                      "</div>";
+                      
+    var infoWindow = new BMap.InfoWindow(contentHtml, {
+        width: 280,
+        height: 70,
+        enableMessage: false
+    });
+    
+    // Open info window by default
+    marker.openInfoWindow(infoWindow);
+    
+    // Open info window on marker click
+    marker.addEventListener("click", function() {
+        this.openInfoWindow(infoWindow);
+    });
+  </script>
+</body>
+</html>

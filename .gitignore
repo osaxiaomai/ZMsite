@@ -1,0 +1,23 @@
+# Ignore everything by default in the root
+*
+
+# Allow directories but ignore their contents by default
+!*/
+
+# Whitelist files/directories we want to commit
+!/docker-compose.yml
+!/README.md
+!/.gitignore
+!/db_init/
+!/db_init/zhongming-local.sql
+!/wp-content/
+!/wp-content/themes/
+!/wp-content/themes/zhongming-theme/
+!/wp-content/themes/zhongming-theme/**
+
+# Explicitly ignore other stuff inside wp-content (just in case)
+wp-content/uploads/
+wp-content/plugins/
+wp-content/upgrade/
+wp-content/blogs.dir/
+wp-content/cache/
