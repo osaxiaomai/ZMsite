@@ -6,7 +6,7 @@ define('WP_USE_THEMES', false);
 require_once(dirname(__DIR__) . '/wp-load.php');
 
 $plugins_to_activate = array(
-    'advanced-custom-fields-pro/acf.php',
+    'advanced-custom-fields/acf.php',
     'polylang/polylang.php',
     'contact-form-7/wp-contact-form-7.php'
 );

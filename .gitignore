@@ -14,6 +14,7 @@
 !/wp-content/
 !/wp-content/activate-plugins.php
 !/wp-content/db-search-replace.php
+!/wp-content/diagnose.php
 !/wp-content/themes/
 !/wp-content/themes/zhongming-theme/
 !/wp-content/themes/zhongming-theme/**

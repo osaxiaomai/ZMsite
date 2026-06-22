@@ -15,12 +15,15 @@ echo "=== 4. Running serialization-safe DB search-and-replace ==="
 # Safe search-and-replace for domain placeholders (including serialized arrays)
 docker exec -t zm-wordpress php /var/www/html/wp-content/db-search-replace.php
 
-echo "=== 5. Activating plugins (ACF Pro, Polylang, Contact Form 7) ==="
+echo "=== 5. Activating plugins (ACF, Polylang, Contact Form 7) ==="
 # Execute the php helper script inside the wordpress container
 docker exec -t zm-wordpress php /var/www/html/wp-content/activate-plugins.php
 
 echo "=== 6. Re-generating rewrite rules ==="
 # Touch the config to ensure rewrite rules are refreshed
 docker exec -t zm-wordpress touch /var/www/html/wp-content/themes/zhongming-theme/functions.php
+
+echo "=== 7. Running Server Diagnostics ==="
+docker exec -t zm-wordpress php /var/www/html/wp-content/diagnose.php
 
 echo "=== Fix Completed! Please check http://43.133.36.40:8001 ==="
