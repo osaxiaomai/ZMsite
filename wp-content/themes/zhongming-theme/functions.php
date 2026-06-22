@@ -7,6 +7,44 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
+// ACF fallback helpers to prevent fatal errors when ACF Pro is inactive
+if ( ! function_exists( 'get_field' ) ) {
+    function get_field( $selector, $post_id = false, $format_value = true ) {
+        if ( ! $post_id ) {
+            $post_id = get_the_ID();
+        }
+        if ( is_object( $post_id ) && isset( $post_id->ID ) ) {
+            $post_id = $post_id->ID;
+        }
+        if ( is_numeric( $post_id ) ) {
+            return get_post_meta( (int)$post_id, $selector, true );
+        }
+        if ( $post_id === 'option' || $post_id === 'options' ) {
+            return get_option( 'options_' . $selector );
+        }
+        return false;
+    }
+}
+if ( ! function_exists( 'the_field' ) ) {
+    function the_field( $selector, $post_id = false, $format_value = true ) {
+        echo get_field( $selector, $post_id, $format_value );
+    }
+}
+if ( ! function_exists( 'get_fields' ) ) {
+    function get_fields( $post_id = false, $format_value = true ) {
+        if ( ! $post_id ) {
+            $post_id = get_the_ID();
+        }
+        if ( is_object( $post_id ) && isset( $post_id->ID ) ) {
+            $post_id = $post_id->ID;
+        }
+        if ( is_numeric( $post_id ) ) {
+            return get_post_custom( (int)$post_id );
+        }
+        return false;
+    }
+}
+
 // 1. Theme Setup
 function zhongming_setup() {
     add_theme_support( 'automatic-feed-links' );

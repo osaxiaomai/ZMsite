@@ -5,16 +5,15 @@ echo "=== 1. Stopping running containers & clearing existing DB volume ==="
 # Stop containers and remove volume to force database re-import
 docker-compose down -v
 
-echo "=== 2. Replacing domain placeholders in SQL file ==="
-# Replace placeholders with http://43.133.36.40:8001
-sed -i 's|https://\[PRODUCTION_DOMAIN\]|http://43.133.36.40:8001|g' db_init/zhongming-local.sql
-sed -i 's|http://zhongming.local|http://43.133.36.40:8001|g' db_init/zhongming-local.sql
-
-echo "=== 3. Starting containers in background ==="
+echo "=== 2. Starting containers in background ==="
 docker-compose up -d
 
-echo "=== 4. Waiting for MySQL database to initialize (20 seconds) ==="
-sleep 20
+echo "=== 3. Waiting for MySQL database to initialize (25 seconds) ==="
+sleep 25
+
+echo "=== 4. Running serialization-safe DB search-and-replace ==="
+# Safe search-and-replace for domain placeholders (including serialized arrays)
+docker exec -t zm-wordpress php /var/www/html/wp-content/db-search-replace.php
 
 echo "=== 5. Activating plugins (ACF Pro, Polylang, Contact Form 7) ==="
 # Execute the php helper script inside the wordpress container
