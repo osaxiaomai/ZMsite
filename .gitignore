@@ -6,11 +6,13 @@
 
 # Whitelist files/directories we want to commit
 !/docker-compose.yml
+!/deploy-fix.sh
 !/README.md
 !/.gitignore
 !/db_init/
 !/db_init/zhongming-local.sql
 !/wp-content/
+!/wp-content/activate-plugins.php
 !/wp-content/themes/
 !/wp-content/themes/zhongming-theme/
 !/wp-content/themes/zhongming-theme/**
