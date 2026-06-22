@@ -11,6 +11,9 @@ docker-compose up -d
 echo "=== 3. Waiting for MySQL database to initialize (25 seconds) ==="
 sleep 25
 
+echo "=== 3.5. Disabling WP Cron loopback requests to prevent loading hangs ==="
+docker exec -t zm-wordpress sed -i "s/<?php/<?php\ndefine('DISABLE_WP_CRON', true);/" /var/www/html/wp-config.php
+
 echo "=== 4. Running serialization-safe DB search-and-replace ==="
 # Safe search-and-replace for domain placeholders (including serialized arrays)
 docker exec -t zm-wordpress php /var/www/html/wp-content/db-search-replace.php

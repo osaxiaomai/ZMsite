@@ -1116,8 +1116,8 @@ add_filter( 'wp_check_filetype_and_ext', 'zhongming_fix_webp_filetype', 10, 4 );
  * 6.6 Preconnect to Google Fonts for performance
  */
 function zhongming_preconnect_google_fonts() {
-    echo '<link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>' . "\n";
-    echo '<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>' . "\n";
+    echo '<link rel="preconnect" href="https://fonts.loli.net" crossorigin>' . "\n";
+    echo '<link rel="preconnect" href="https://gstatic.loli.net" crossorigin>' . "\n";
 }
 add_action( 'wp_head', 'zhongming_preconnect_google_fonts', 1 );
 

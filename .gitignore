@@ -7,6 +7,7 @@
 # Whitelist files/directories we want to commit
 !/docker-compose.yml
 !/deploy-fix.sh
+!/compress_images.py
 !/README.md
 !/.gitignore
 !/db_init/
