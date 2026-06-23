@@ -33,7 +33,7 @@ get_header(); ?>
                         <div class="hero-pills">
                             <span class="pill">✓ ≥3840Hz 高刷新率</span>
                             <span class="pill">✓ 压铸铝轻便耐用箱体</span>
-                            <span class="pill">✓ IP65/IP50 防护等级</span>
+                            <span class="pill">✓ IP65/IP35 防护等级</span>
                             <span class="pill">✓ 快速锁无缝拼接</span>
                         </div>
                     </div>

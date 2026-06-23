@@ -37,7 +37,7 @@ get_header(); ?>
                         <div class="hero-pills">
                             <span class="pill">✓ ≥3840Hz Refresh Rate</span>
                             <span class="pill">✓ Die-cast Lightweight Cabinet</span>
-                            <span class="pill">✓ IP65/IP50 Rating</span>
+                            <span class="pill">✓ IP65/IP35 Rating</span>
                             <span class="pill">✓ Quick Lock Fast Splicing</span>
                         </div>
                     </div>
