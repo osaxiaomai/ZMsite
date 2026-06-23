@@ -30,7 +30,7 @@ get_header(); ?>
                         </p>
                         
                         <div class="hero-btns">
-                            <a href="<?php echo zm_category_link('indoor-rental'); ?>" class="btn btn-primary">Explore Rental Series →</a>
+                            <a href="<?php echo zm_product_archive_link(); ?>?badge=rental" class="btn btn-primary">Explore Rental Series →</a>
                             <a href="<?php echo site_url('/contact'); ?>" class="btn btn-outline" style="color:#fff;">Request a Quote</a>
                         </div>
                         

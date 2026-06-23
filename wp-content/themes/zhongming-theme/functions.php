@@ -270,6 +270,21 @@ function zhongming_modify_product_archive_query( $query ) {
             $query->set( 'meta_query', $meta_query );
         }
 
+        // 2.5 Badge Filter (?badge=rental)
+        if ( ! empty( $_GET['badge'] ) ) {
+            $badge = sanitize_text_field( $_GET['badge'] );
+            $meta_query = $query->get( 'meta_query' );
+            if ( ! is_array( $meta_query ) ) {
+                $meta_query = array( 'relation' => 'AND' );
+            }
+            $meta_query[] = array(
+                'key'     => 'badge_type',
+                'value'   => $badge,
+                'compare' => '=',
+            );
+            $query->set( 'meta_query', $meta_query );
+        }
+
         // 3. Sorting (?orderby=...)
         if ( ! empty( $_GET['orderby'] ) ) {
             $orderby = sanitize_text_field( $_GET['orderby'] );

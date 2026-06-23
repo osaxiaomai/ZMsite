@@ -26,7 +26,7 @@ get_header(); ?>
                         </p>
                         
                         <div class="hero-btns">
-                            <a href="<?php echo zm_category_link('indoor-rental'); ?>" class="btn btn-primary">探索租赁系列 →</a>
+                            <a href="<?php echo zm_product_archive_link(); ?>?badge=rental" class="btn btn-primary">探索租赁系列 →</a>
                             <a href="<?php echo $contact_link; ?>" class="btn btn-outline" style="color:#fff;">在线获取报价</a>
                         </div>
                         
