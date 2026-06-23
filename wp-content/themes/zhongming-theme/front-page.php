@@ -15,7 +15,7 @@ get_header(); ?>
                 <img loading="lazy" src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/banner_rental.png'); ?>" alt="Zhongming Stage Rental LED Display P3.91">
             </div>
             <div class="hero-container">
-                <div class="hero-content hero-slide-right">
+                <div class="hero-content">
                     <div class="hero-content-inner">
                         <div class="hero-eyebrow">STAGE RENTAL LED DISPLAY</div>
                         
@@ -32,71 +32,6 @@ get_header(); ?>
                         <div class="hero-btns">
                             <a href="<?php echo site_url('/products/?category=rental-screen'); ?>" class="btn btn-primary">Explore Rental Series →</a>
                             <a href="<?php echo site_url('/contact'); ?>" class="btn btn-outline" style="color: #fff;">Request a Quote</a>
-                        </div>
-                        
-                        <!-- Technical Features Grid (Mockup Icons) - Vertically Stacked -->
-                        <div class="tech-features-grid">
-                            <div class="tech-feature-item">
-                                <div class="tech-icon-box highlight">Hz</div>
-                                <div class="tech-feature-text">
-                                    <span class="val">≥3840Hz</span>
-                                    <span class="lbl">Refresh Rate</span>
-                                </div>
-                            </div>
-                            
-                            <div class="tech-feature-item">
-                                <div class="tech-icon-box">
-                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: rgba(255,255,255,0.85);"><path d="M20.24 12.24a6 6 0 0 0-8.49-8.49L5 10.5V19h8.5z"></path><line x1="16" y1="8" x2="2" y2="22"></line><line x1="17.5" y1="15" x2="9" y2="15"></line></svg>
-                                </div>
-                                <div class="tech-feature-text">
-                                    <span class="val">Die-cast</span>
-                                    <span class="lbl">Light & Durable</span>
-                                </div>
-                            </div>
-                            
-                            <div class="tech-feature-item">
-                                <div class="tech-icon-box">
-                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: rgba(255,255,255,0.85);"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
-                                </div>
-                                <div class="tech-feature-text">
-                                    <span class="val">IP65 / IP50</span>
-                                    <span class="lbl">Weather Resist</span>
-                                </div>
-                            </div>
-                            
-                            <div class="tech-feature-item">
-                                <div class="tech-icon-box">
-                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: rgba(255,255,255,0.85);"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>
-                                </div>
-                                <div class="tech-feature-text">
-                                    <span class="val">Quick Lock</span>
-                                    <span class="lbl">Fast Splicing</span>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <!-- Parameter Table Strip -->
-                        <div class="param-table-strip">
-                            <div class="param-table-col">
-                                <span class="param-lbl">Pixel Pitch</span>
-                                <span class="param-val">P3.91</span>
-                            </div>
-                            <div class="param-table-col">
-                                <span class="param-lbl">Brightness</span>
-                                <span class="param-val">≥800 / ≥4000 nit</span>
-                            </div>
-                            <div class="param-table-col">
-                                <span class="param-lbl">Cabinet Size</span>
-                                <span class="param-val">500×500/1000 mm</span>
-                            </div>
-                            <div class="param-table-col">
-                                <span class="param-lbl">Weight</span>
-                                <span class="param-val">7.0 / 12.25 kg</span>
-                            </div>
-                            <div class="param-table-col">
-                                <span class="param-lbl">IP Rating</span>
-                                <span class="param-val">IP50 / IP65</span>
-                            </div>
                         </div>
                     </div>
                 </div>

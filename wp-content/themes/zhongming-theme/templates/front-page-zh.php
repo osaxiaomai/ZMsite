@@ -11,7 +11,7 @@ get_header(); ?>
                 <img loading="lazy" src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/banner_rental.png'); ?>" alt="Zhongming 舞台租赁 LED 显示屏 P3.91">
             </div>
             <div class="hero-container">
-                <div class="hero-content hero-slide-right">
+                <div class="hero-content">
                     <div class="hero-content-inner">
                         <div class="hero-eyebrow">STAGE RENTAL LED DISPLAY</div>
                         
