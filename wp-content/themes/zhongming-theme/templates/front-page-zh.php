@@ -17,8 +17,8 @@ get_header(); ?>
                         
                         <h1 class="hero-h1">
                             舞台租赁屏<br>
-                            <span class="highlight">结构轻薄 · 无缝拼接</span><br>
-                            画面细腻 · 低亮高灰
+                            <span class="highlight" style="white-space: nowrap;">极致轻薄 · 无缝拼接</span><br>
+                            <span style="white-space: nowrap;">画面生动 · 极佳灰阶</span>
                         </h1>
                         
                         <p class="hero-sub">

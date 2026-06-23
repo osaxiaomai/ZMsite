@@ -21,8 +21,8 @@ get_header(); ?>
                         
                         <h1 class="hero-h1">
                             Stage Rental Display<br>
-                            <span class="highlight">Slim Structure · Seamless Splicing</span><br>
-                            Delicate Image · Low-Light High-Grey
+                            <span class="highlight" style="white-space: nowrap;">Ultra-Slim · Seamless</span><br>
+                            <span style="white-space: nowrap;">Vivid · High Grayscale</span>
                         </h1>
                         
                         <p class="hero-sub">
