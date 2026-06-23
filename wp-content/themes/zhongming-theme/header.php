@@ -33,9 +33,9 @@ $news_link = function_exists('pll_get_post') ? get_permalink( pll_get_post( 748 
     <meta charset="<?php bloginfo( 'charset' ); ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="<?php echo esc_url( get_template_directory_uri() . '/assets/images/favicon.png' ); ?>" type="image/png">
-    <link rel="preconnect" href="https://fonts.loli.net">
-    <link rel="preconnect" href="https://gstatic.loli.net" crossorigin>
-    <link href="https://fonts.loli.net/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>

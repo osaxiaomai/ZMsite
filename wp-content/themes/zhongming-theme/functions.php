@@ -7,44 +7,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-// ACF fallback helpers to prevent fatal errors when ACF Pro is inactive
-if ( ! function_exists( 'get_field' ) ) {
-    function get_field( $selector, $post_id = false, $format_value = true ) {
-        if ( ! $post_id ) {
-            $post_id = get_the_ID();
-        }
-        if ( is_object( $post_id ) && isset( $post_id->ID ) ) {
-            $post_id = $post_id->ID;
-        }
-        if ( is_numeric( $post_id ) ) {
-            return get_post_meta( (int)$post_id, $selector, true );
-        }
-        if ( $post_id === 'option' || $post_id === 'options' ) {
-            return get_option( 'options_' . $selector );
-        }
-        return false;
-    }
-}
-if ( ! function_exists( 'the_field' ) ) {
-    function the_field( $selector, $post_id = false, $format_value = true ) {
-        echo get_field( $selector, $post_id, $format_value );
-    }
-}
-if ( ! function_exists( 'get_fields' ) ) {
-    function get_fields( $post_id = false, $format_value = true ) {
-        if ( ! $post_id ) {
-            $post_id = get_the_ID();
-        }
-        if ( is_object( $post_id ) && isset( $post_id->ID ) ) {
-            $post_id = $post_id->ID;
-        }
-        if ( is_numeric( $post_id ) ) {
-            return get_post_custom( (int)$post_id );
-        }
-        return false;
-    }
-}
-
 // 1. Theme Setup
 function zhongming_setup() {
     add_theme_support( 'automatic-feed-links' );
@@ -66,12 +28,12 @@ add_action( 'after_setup_theme', 'zhongming_setup' );
 
 // 2. Enqueue Assets
 function zhongming_scripts() {
-    wp_enqueue_style( 'zhongming-main-css', get_template_directory_uri() . '/assets/css/main.css', array(), '1.4.0' );
-    wp_enqueue_style( 'zhongming-style', get_stylesheet_uri(), array(), '1.4.0' );
-    wp_enqueue_style( 'zhongming-components', get_template_directory_uri() . '/assets/css/components.css', array(), '1.4.0' );
-    wp_enqueue_style( 'zhongming-responsive', get_template_directory_uri() . '/assets/css/responsive.css', array(), '1.4.0' );
-    wp_enqueue_script( 'zhongming-main', get_template_directory_uri() . '/assets/js/main.js', array(), '1.4.0', true );
-    wp_enqueue_script( 'zhongming-mega-menu', get_template_directory_uri() . '/assets/js/mega-menu.js', array(), '1.4.0', true );
+    wp_enqueue_style( 'zhongming-main-css', get_template_directory_uri() . '/assets/css/main.css', array(), '1.5.0' );
+    wp_enqueue_style( 'zhongming-style', get_stylesheet_uri(), array(), '1.5.0' );
+    wp_enqueue_style( 'zhongming-components', get_template_directory_uri() . '/assets/css/components.css', array(), '1.5.0' );
+    wp_enqueue_style( 'zhongming-responsive', get_template_directory_uri() . '/assets/css/responsive.css', array(), '1.5.0' );
+    wp_enqueue_script( 'zhongming-main', get_template_directory_uri() . '/assets/js/main.js', array(), '1.5.0', true );
+    wp_enqueue_script( 'zhongming-mega-menu', get_template_directory_uri() . '/assets/js/mega-menu.js', array(), '1.5.0', true );
 }
 add_action( 'wp_enqueue_scripts', 'zhongming_scripts' );
 
@@ -455,13 +417,13 @@ function zhongming_custom_product_column( $column, $post_id ) {
                         $thumb_url = wp_get_attachment_image_url( $img_id, array( 60, 60 ) );
                         if ( $thumb_url ) {
                             echo '<a href="' . esc_url( $img_url ) . '" target="_blank" title="点击查看原图" style="display: inline-block; vertical-align: middle;">';
-                            echo '<img src="' . esc_url( $thumb_url ) . '" style="width: 50px; height: 50px; object-fit: cover; border: 1px solid #ddd; padding: 1px; border-radius: 3px; display: block;" />';
+                            echo '<img loading="lazy" src="' . esc_url( $thumb_url ) . '" style="width: 50px; height: 50px; object-fit: cover; border: 1px solid #ddd; padding: 1px; border-radius: 3px; display: block;" />';
                             echo '</a>';
                             $count++;
                         }
                     } else if ( is_string( $item ) && filter_var($item, FILTER_VALIDATE_URL) ) {
                         echo '<a href="' . esc_url( $item ) . '" target="_blank" style="display: inline-block; vertical-align: middle;">';
-                        echo '<img src="' . esc_url( $item ) . '" style="width: 50px; height: 50px; object-fit: cover; border: 1px solid #ddd; padding: 1px; border-radius: 3px; display: block;" />';
+                        echo '<img loading="lazy" src="' . esc_url( $item ) . '" style="width: 50px; height: 50px; object-fit: cover; border: 1px solid #ddd; padding: 1px; border-radius: 3px; display: block;" />';
                         echo '</a>';
                         $count++;
                     }
@@ -1188,3 +1150,14 @@ function zhongming_translate_menu_items( $items, $args ) {
 add_filter( 'wp_nav_menu_objects', 'zhongming_translate_menu_items', 10, 2 );
 
 
+
+// === 性能优化：启用 WordPress 原生懒加载 ===
+add_filter('wp_lazy_loading_enabled', '__return_true');
+
+// 对 iframe 也添加懒加载
+add_filter('wp_iframe_tag_add_loading_attr', '__return_true');
+
+// 添加图片尺寸提示，减少 CLS
+add_action('after_setup_theme', function() {
+    add_theme_support('html5', array('script', 'style'));
+});
