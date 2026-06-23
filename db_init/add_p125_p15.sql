@@ -1,4 +1,6 @@
 -- SQL script to add missing L-Poster P1.25 and P1.5 products without wiping the database
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET NAMES utf8mb4 */;
 
 -- 1. Insert into wp_posts
 DELETE FROM `wp_posts` WHERE `ID` = 883;

@@ -25,7 +25,9 @@ def main():
     
     try:
         with open(output_file, 'w', encoding='utf-8') as f:
-            f.write("-- SQL script to add missing L-Poster P1.25 and P1.5 products without wiping the database\n\n")
+            f.write("-- SQL script to add missing L-Poster P1.25 and P1.5 products without wiping the database\n")
+            f.write("/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;\n")
+            f.write("/*!40101 SET NAMES utf8mb4 */;\n\n")
             
             with conn.cursor() as cur:
                 # 1. Dump wp_posts rows
