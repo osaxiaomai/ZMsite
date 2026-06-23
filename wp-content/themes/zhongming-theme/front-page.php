@@ -12,7 +12,7 @@ get_header(); ?>
         <!-- Slide 1: Stage Rental Screen P3.91 (Main Featured Product) -->
         <div class="hero-slide active">
             <div class="hero-visual">
-                <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/banner_rental.png'); ?>" alt="Zhongming Stage Rental LED Display P3.91">
+                <img loading="lazy" src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/banner_rental.png'); ?>" alt="Zhongming Stage Rental LED Display P3.91">
             </div>
             <div class="hero-container">
                 <div class="hero-content" style="width: 50%; margin-left: 50%; left: 0;">
@@ -106,7 +106,7 @@ get_header(); ?>
         <!-- Slide 2: Global LED Leader -->
         <div class="hero-slide">
             <div class="hero-visual">
-                <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/banner_home1.png'); ?>" alt="Zhongming LED Display Background">
+                <img loading="lazy" src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/banner_home1.png'); ?>" alt="Zhongming LED Display Background">
             </div>
             <div class="hero-container">
                 <div class="hero-content">
@@ -138,7 +138,7 @@ get_header(); ?>
         <!-- Slide 3: Standard Indoor Display (pdf_banner2) -->
         <div class="hero-slide">
             <div class="hero-visual">
-                <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/pdf_banner2.png'); ?>" alt="Zhongming Standard Indoor LED Display">
+                <img loading="lazy" src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/pdf_banner2.png'); ?>" alt="Zhongming Standard Indoor LED Display">
             </div>
             <div class="hero-container">
                 <div class="hero-content">
@@ -170,7 +170,7 @@ get_header(); ?>
         <!-- Slide 4: Flexible LED Soft Module (pdf_banner3) -->
         <div class="hero-slide">
             <div class="hero-visual">
-                <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/pdf_banner3.png'); ?>" alt="Zhongming Flexible LED Display">
+                <img loading="lazy" src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/pdf_banner3.png'); ?>" alt="Zhongming Flexible LED Display">
             </div>
             <div class="hero-container">
                 <div class="hero-content">
@@ -202,7 +202,7 @@ get_header(); ?>
         <!-- Slide 5: 16:9 Premium Indoor Display (pdf_banner4) -->
         <div class="hero-slide">
             <div class="hero-visual">
-                <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/pdf_banner4.png'); ?>" alt="Zhongming 16:9 Golden Proportion LED Display">
+                <img loading="lazy" src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/pdf_banner4.png'); ?>" alt="Zhongming 16:9 Golden Proportion LED Display">
             </div>
             <div class="hero-container">
                 <div class="hero-content">
@@ -398,7 +398,7 @@ document.addEventListener('DOMContentLoaded', function() {
                             }
                             
                             if ($fallback_img) : ?>
-                                <img src="<?php echo esc_url($fallback_img); ?>" alt="<?php the_title_attribute(); ?>" style="width:100%; height:100%; object-fit:cover;">
+                                <img loading="lazy" src="<?php echo esc_url($fallback_img); ?>" alt="<?php the_title_attribute(); ?>" style="width:100%; height:100%; object-fit:cover;">
                             <?php else : ?>
                                 <div style="width:100%;height:100%;background:#f0f0f0;display:flex;align-items:center;justify-content:center;color:#ccc;font-size:36px;">🖼</div>
                             <?php endif; ?>
@@ -448,13 +448,13 @@ document.addEventListener('DOMContentLoaded', function() {
                     <div class="company-slider">
                         <div class="slider-wrapper">
                             <div class="slider-slide">
-                                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/page2_img5.jpeg" alt="Zhongming R&D Office">
+                                <img loading="lazy" src="<?php echo get_template_directory_uri(); ?>/assets/images/page2_img5.jpeg" alt="Zhongming R&D Office">
                             </div>
                             <div class="slider-slide">
-                                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/page2_img10.jpeg" alt="Zhongming Production Line">
+                                <img loading="lazy" src="<?php echo get_template_directory_uri(); ?>/assets/images/page2_img10.jpeg" alt="Zhongming Production Line">
                             </div>
                             <div class="slider-slide">
-                                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/page2_img11.jpeg" alt="Zhongming LED Testing">
+                                <img loading="lazy" src="<?php echo get_template_directory_uri(); ?>/assets/images/page2_img11.jpeg" alt="Zhongming LED Testing">
                             </div>
                         </div>
                         <!-- Navigation dots -->
@@ -619,7 +619,7 @@ document.addEventListener('DOMContentLoaded', function() {
             ];
             foreach ($cases as $case) : ?>
                 <div class="case-item" style="position: relative; aspect-ratio: 4/3; overflow: hidden; border-radius: 8px; group">
-                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/<?php echo $case['img']; ?>" 
+                    <img loading="lazy" src="<?php echo get_template_directory_uri(); ?>/assets/images/<?php echo $case['img']; ?>" 
                          alt="<?php echo esc_attr($case['title']); ?>" 
                          style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s;">
                     <div style="position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, transparent 100%); display: flex; align-items: flex-end; padding: 20px; opacity: 1;">
@@ -684,7 +684,7 @@ document.addEventListener('DOMContentLoaded', function() {
             ];
             foreach ($scenarios as $s) : ?>
                 <div class="app-card">
-                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/<?php echo $s['img']; ?>" alt="">
+                    <img loading="lazy" src="<?php echo get_template_directory_uri(); ?>/assets/images/<?php echo $s['img']; ?>" alt="">
                     <div class="app-content">
                         <div class="app-label"><?php echo $s['name']; ?></div>
                     </div>
@@ -722,7 +722,7 @@ document.addEventListener('DOMContentLoaded', function() {
             ];
             foreach ($gallery_cases as $c) : ?>
                 <div class="gallery-item" data-category="<?php echo $c['cat']; ?>" style="position:relative; aspect-ratio:1/1; overflow:hidden; border-radius:4px;">
-                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/<?php echo $c['img']; ?>" 
+                    <img loading="lazy" src="<?php echo get_template_directory_uri(); ?>/assets/images/<?php echo $c['img']; ?>" 
                          alt="<?php echo esc_attr($c['title']); ?>"
                          style="width:100%; height:100%; object-fit:cover; transition:transform 0.4s;">
                     <div class="gallery-overlay" style="position:absolute; inset:0; background:rgba(26,26,24,0.8); opacity:0; display:flex; align-items:center; justify-content:center; transition:opacity 0.3s; padding:20px; text-align:center;">
@@ -804,35 +804,35 @@ document.addEventListener('DOMContentLoaded', function() {
                 <!-- Cert 1 -->
                 <div class="cert-item-card" onclick="openCertModal('<?php echo esc_url(get_template_directory_uri() . '/assets/images/real_cert_ce.jpg'); ?>', 'CE Certificate')">
                     <div class="cert-img-box">
-                        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/real_cert_ce.jpg'); ?>" alt="CE Certificate">
+                        <img loading="lazy" src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/real_cert_ce.jpg'); ?>" alt="CE Certificate">
                     </div>
                     <div class="cert-card-label">CE Certificate</div>
                 </div>
                 <!-- Cert 2 -->
                 <div class="cert-item-card" onclick="openCertModal('<?php echo esc_url(get_template_directory_uri() . '/assets/images/real_cert_rohs.jpg'); ?>', 'RoHS Directive')">
                     <div class="cert-img-box">
-                        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/real_cert_rohs.jpg'); ?>" alt="RoHS Certificate">
+                        <img loading="lazy" src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/real_cert_rohs.jpg'); ?>" alt="RoHS Certificate">
                     </div>
                     <div class="cert-card-label">RoHS Compliant</div>
                 </div>
                 <!-- Cert 3 -->
                 <div class="cert-item-card" onclick="openCertModal('<?php echo esc_url(get_template_directory_uri() . '/assets/images/fcc_cert.png'); ?>', 'FCC Declaration')">
                     <div class="cert-img-box">
-                        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/fcc_cert.png'); ?>" alt="FCC Certificate">
+                        <img loading="lazy" src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/fcc_cert.png'); ?>" alt="FCC Certificate">
                     </div>
                     <div class="cert-card-label">FCC Declaration</div>
                 </div>
                 <!-- Cert 4 -->
                 <div class="cert-item-card" onclick="openCertModal('<?php echo esc_url(get_template_directory_uri() . '/assets/images/real_cert_ce2.jpg'); ?>', 'CE Certificate')">
                     <div class="cert-img-box">
-                        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/real_cert_ce2.jpg'); ?>" alt="CE Certificate">
+                        <img loading="lazy" src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/real_cert_ce2.jpg'); ?>" alt="CE Certificate">
                     </div>
                     <div class="cert-card-label">CE Certificate</div>
                 </div>
                 <!-- Cert 5 -->
                 <div class="cert-item-card" onclick="openCertModal('<?php echo esc_url(get_template_directory_uri() . '/assets/images/iso_cert.png'); ?>', 'ISO 9001:2015')">
                     <div class="cert-img-box">
-                        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/iso_cert.png'); ?>" alt="ISO 9001 Certificate">
+                        <img loading="lazy" src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/iso_cert.png'); ?>" alt="ISO 9001 Certificate">
                     </div>
                     <div class="cert-card-label">ISO 9001:2015</div>
                 </div>
@@ -841,35 +841,35 @@ document.addEventListener('DOMContentLoaded', function() {
                 <!-- Cert 1 -->
                 <div class="cert-item-card" onclick="openCertModal('<?php echo esc_url(get_template_directory_uri() . '/assets/images/real_cert_ce.jpg'); ?>', 'CE Certificate')">
                     <div class="cert-img-box">
-                        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/real_cert_ce.jpg'); ?>" alt="CE Certificate">
+                        <img loading="lazy" src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/real_cert_ce.jpg'); ?>" alt="CE Certificate">
                     </div>
                     <div class="cert-card-label">CE Certificate</div>
                 </div>
                 <!-- Cert 2 -->
                 <div class="cert-item-card" onclick="openCertModal('<?php echo esc_url(get_template_directory_uri() . '/assets/images/real_cert_rohs.jpg'); ?>', 'RoHS Directive')">
                     <div class="cert-img-box">
-                        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/real_cert_rohs.jpg'); ?>" alt="RoHS Certificate">
+                        <img loading="lazy" src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/real_cert_rohs.jpg'); ?>" alt="RoHS Certificate">
                     </div>
                     <div class="cert-card-label">RoHS Compliant</div>
                 </div>
                 <!-- Cert 3 -->
                 <div class="cert-item-card" onclick="openCertModal('<?php echo esc_url(get_template_directory_uri() . '/assets/images/fcc_cert.png'); ?>', 'FCC Declaration')">
                     <div class="cert-img-box">
-                        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/fcc_cert.png'); ?>" alt="FCC Certificate">
+                        <img loading="lazy" src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/fcc_cert.png'); ?>" alt="FCC Certificate">
                     </div>
                     <div class="cert-card-label">FCC Declaration</div>
                 </div>
                 <!-- Cert 4 -->
                 <div class="cert-item-card" onclick="openCertModal('<?php echo esc_url(get_template_directory_uri() . '/assets/images/real_cert_ce2.jpg'); ?>', 'CE Certificate')">
                     <div class="cert-img-box">
-                        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/real_cert_ce2.jpg'); ?>" alt="CE Certificate">
+                        <img loading="lazy" src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/real_cert_ce2.jpg'); ?>" alt="CE Certificate">
                     </div>
                     <div class="cert-card-label">CE Certificate</div>
                 </div>
                 <!-- Cert 5 -->
                 <div class="cert-item-card" onclick="openCertModal('<?php echo esc_url(get_template_directory_uri() . '/assets/images/iso_cert.png'); ?>', 'ISO 9001:2015')">
                     <div class="cert-img-box">
-                        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/iso_cert.png'); ?>" alt="ISO 9001 Certificate">
+                        <img loading="lazy" src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/iso_cert.png'); ?>" alt="ISO 9001 Certificate">
                     </div>
                     <div class="cert-card-label">ISO 9001:2015</div>
                 </div>
@@ -885,7 +885,7 @@ document.addEventListener('DOMContentLoaded', function() {
         <button onclick="closeCertModal()" style="position: absolute; top: 15px; right: 15px; width: 30px; height: 30px; border-radius: 50%; border: none; background: rgba(0,0,0,0.5); color: #fff; font-size: 16px; font-weight: bold; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: background 0.2s; z-index: 10;">&times;</button>
         <!-- Content image container -->
         <div style="padding: 20px; display: flex; justify-content: center; background: #f8fafc; border-bottom: 1px solid #f1f5f9;">
-            <img id="certModalImage" src="" alt="Certificate" style="max-height: 70vh; max-width: 100%; object-fit: contain; border-radius: 4px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);">
+            <img loading="lazy" id="certModalImage" src="" alt="Certificate" style="max-height: 70vh; max-width: 100%; object-fit: contain; border-radius: 4px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);">
         </div>
         <div id="certModalTitle" style="padding: 15px 20px; font-size: 14px; font-weight: bold; color: var(--color-text); text-align: center;">Certificate</div>
     </div>

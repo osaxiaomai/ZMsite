@@ -70,21 +70,21 @@ $contact_link = function_exists('zhongming_get_contact_url') ? zhongming_get_con
             <div class="about-images-column" style="display: flex; flex-direction: column; gap: 12px;">
                 <!-- Main factory visual block -->
                 <div class="factory-image-container" style="width: 100%; height: 360px; border-radius: 6px; overflow: hidden; border: 1px solid var(--color-border); background-color: var(--color-bg-2);">
-                    <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/about-factory.jpg'); ?>" alt="Zhongming Factory Building" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+                    <img loading="lazy" src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/about-factory.jpg'); ?>" alt="Zhongming Factory Building" style="width: 100%; height: 100%; object-fit: cover; display: block;">
                 </div>
 
                 <!-- Triple secondary thumbnails -->
                 <div class="about-secondary-images" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px;">
                     <div class="about-thumb" onclick="switchAboutImage(this)" style="height: 90px; border-radius: 4px; overflow: hidden; border: 2px solid var(--color-border); background-color: var(--color-bg-2); position: relative; cursor: pointer; transition: all 0.2s ease-in-out;">
-                        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/page2_img10.jpeg'); ?>" alt="生产线" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+                        <img loading="lazy" src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/page2_img10.jpeg'); ?>" alt="生产线" style="width: 100%; height: 100%; object-fit: cover; display: block;">
                         <span style="position: absolute; bottom: 0; left: 0; right: 0; background: rgba(0,0,0,0.6); color: #fff; font-size: 9px; text-align: center; padding: 2px 0;">生产线</span>
                     </div>
                     <div class="about-thumb" onclick="switchAboutImage(this)" style="height: 90px; border-radius: 4px; overflow: hidden; border: 2px solid var(--color-border); background-color: var(--color-bg-2); position: relative; cursor: pointer; transition: all 0.2s ease-in-out;">
-                        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/page2_img11.jpeg'); ?>" alt="质检测试" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+                        <img loading="lazy" src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/page2_img11.jpeg'); ?>" alt="质检测试" style="width: 100%; height: 100%; object-fit: cover; display: block;">
                         <span style="position: absolute; bottom: 0; left: 0; right: 0; background: rgba(0,0,0,0.6); color: #fff; font-size: 9px; text-align: center; padding: 2px 0;">质检测试</span>
                     </div>
                     <div class="about-thumb" onclick="switchAboutImage(this)" style="height: 90px; border-radius: 4px; overflow: hidden; border: 2px solid var(--color-border); background-color: var(--color-bg-2); position: relative; cursor: pointer; transition: all 0.2s ease-in-out;">
-                        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/page2_img5.jpeg'); ?>" alt="团队与研发" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+                        <img loading="lazy" src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/page2_img5.jpeg'); ?>" alt="团队与研发" style="width: 100%; height: 100%; object-fit: cover; display: block;">
                         <span style="position: absolute; bottom: 0; left: 0; right: 0; background: rgba(0,0,0,0.6); color: #fff; font-size: 9px; text-align: center; padding: 2px 0;">展厅 / 研发</span>
                     </div>
                 </div>

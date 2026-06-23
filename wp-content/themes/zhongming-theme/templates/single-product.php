@@ -161,7 +161,7 @@ if ( ! empty( $terms ) && ! is_wp_error( $terms ) ) {
             <div class="product-gallery-column" style="display: flex; flex-direction: column; gap: 16px;">
                 <div class="main-gallery-frame" style="width: 100%; aspect-ratio: 4/3; border: 1px solid var(--color-border); border-radius: 8px; overflow: hidden; background-color: var(--color-bg-2); position: relative; display: flex; align-items: center; justify-content: center;">
                     <?php if ( ! empty( $gallery_imgs ) ) : ?>
-                        <img id="main-product-gallery-image" src="<?php echo esc_url( $gallery_imgs[0] ); ?>" alt="<?php the_title_attribute(); ?>" style="max-width: 100%; max-height: 100%; width: auto; height: auto; object-fit: contain; transition: opacity 0.3s ease;">
+                        <img loading="lazy" id="main-product-gallery-image" src="<?php echo esc_url( $gallery_imgs[0] ); ?>" alt="<?php the_title_attribute(); ?>" style="max-width: 100%; max-height: 100%; width: auto; height: auto; object-fit: contain; transition: opacity 0.3s ease;">
                     <?php else : ?>
                         <div class="product-image-fallback" style="display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px; color: var(--color-text-3);">
                             <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" style="opacity: 0.5;"><rect x="2" y="2" width="20" height="20" rx="2.18" ry="2.18"></rect><line x1="7" y1="2" x2="7" y2="22"></line><line x1="17" y1="2" x2="17" y2="22"></line><line x1="2" y1="12" x2="22" y2="12"></line><line x1="2" y1="7" x2="22" y2="7"></line><line x1="2" y1="17" x2="22" y2="17"></line></svg>
@@ -185,7 +185,7 @@ if ( ! empty( $terms ) && ! is_wp_error( $terms ) ) {
                             $active_class = $thumb_idx === 0 ? ' active' : '';
                             ?>
                             <div class="gallery-thumb-item<?php echo $active_class; ?>" data-src="<?php echo esc_url( $img_url ); ?>" style="width: 72px; height: 54px; border: 1px solid var(--color-border); border-radius: 4px; overflow: hidden; cursor: pointer; transition: all 0.2s ease-in-out; background-color: var(--color-bg-2); display: flex; align-items: center; justify-content: center;">
-                                <img src="<?php echo esc_url( $img_url ); ?>" alt="Thumbnail <?php echo $thumb_idx + 1; ?>" style="max-width: 100%; max-height: 100%; width: auto; height: auto; object-fit: contain; display: block;">
+                                <img loading="lazy" src="<?php echo esc_url( $img_url ); ?>" alt="Thumbnail <?php echo $thumb_idx + 1; ?>" style="max-width: 100%; max-height: 100%; width: auto; height: auto; object-fit: contain; display: block;">
                             </div>
                             <?php 
                             $thumb_idx++;

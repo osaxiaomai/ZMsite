@@ -59,7 +59,7 @@ $contact_link = function_exists('zhongming_get_contact_url') ? zhongming_get_con
                                 <?php the_post_thumbnail( 'medium_large', array( 'style' => 'width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.3s ease;' ) ); ?>
                             <?php else : ?>
                                 <!-- Fallback default B2B photo -->
-                                <img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/app-indoor.jpg' ); ?>" alt="<?php the_title_attribute(); ?>" style="width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.3s ease;">
+                                <img loading="lazy" src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/app-indoor.jpg' ); ?>" alt="<?php the_title_attribute(); ?>" style="width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.3s ease;">
                             <?php endif; ?>
                             <span class="news-cat-badge" style="position: absolute; top: 12px; left: 12px; background-color: var(--color-accent-blue, #0057b8); color: #ffffff; font-size: 10px; font-weight: 700; text-transform: uppercase; padding: 4px 8px; border-radius: 3px; letter-spacing: 0.5px;">
                                 <?php echo esc_html( $cat_name ); ?>

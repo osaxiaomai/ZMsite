@@ -45,7 +45,7 @@ get_header(); ?>
             <!-- Scenario 1: Indoor Commercial -->
             <div class="solution-card" style="border: 1px solid var(--color-border); border-radius: 8px; overflow: hidden; transition: box-shadow 0.2s ease-in-out;">
                 <div style="height: 180px; overflow: hidden; background-color: var(--color-bg-2);">
-                    <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/app-indoor.jpg'); ?>" alt="Indoor Commercial LED Display" style="width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.3s ease;">
+                    <img loading="lazy" src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/app-indoor.jpg'); ?>" alt="Indoor Commercial LED Display" style="width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.3s ease;">
                 </div>
                 <div style="padding: 20px;">
                     <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 10px;">
@@ -66,7 +66,7 @@ get_header(); ?>
             <!-- Scenario 2: Outdoor Advertising -->
             <div class="solution-card" style="border: 1px solid var(--color-border); border-radius: 8px; overflow: hidden; transition: box-shadow 0.2s ease-in-out;">
                 <div style="height: 180px; overflow: hidden; background-color: var(--color-bg-2);">
-                    <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/app-outdoor.jpg'); ?>" alt="Outdoor LED Billboard" style="width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.3s ease;">
+                    <img loading="lazy" src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/app-outdoor.jpg'); ?>" alt="Outdoor LED Billboard" style="width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.3s ease;">
                 </div>
                 <div style="padding: 20px;">
                     <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 10px;">
@@ -87,7 +87,7 @@ get_header(); ?>
             <!-- Scenario 3: XR / Immersive -->
             <div class="solution-card" style="border: 1px solid var(--color-border); border-radius: 8px; overflow: hidden; transition: box-shadow 0.2s ease-in-out;">
                 <div style="height: 180px; overflow: hidden; background-color: var(--color-bg-2);">
-                    <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/app-immersive.jpg'); ?>" alt="XR Immersive Studio" style="width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.3s ease;">
+                    <img loading="lazy" src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/app-immersive.jpg'); ?>" alt="XR Immersive Studio" style="width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.3s ease;">
                 </div>
                 <div style="padding: 20px;">
                     <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 10px;">
@@ -107,7 +107,7 @@ get_header(); ?>
             <!-- Scenario 4: Stage & Events -->
             <div class="solution-card" style="border: 1px solid var(--color-border); border-radius: 8px; overflow: hidden; transition: box-shadow 0.2s ease-in-out;">
                 <div style="height: 180px; overflow: hidden; background-color: var(--color-bg-2);">
-                    <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/case-1.jpg'); ?>" alt="Stage Event LED Screen" style="width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.3s ease;">
+                    <img loading="lazy" src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/case-1.jpg'); ?>" alt="Stage Event LED Screen" style="width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.3s ease;">
                 </div>
                 <div style="padding: 20px;">
                     <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 10px;">
@@ -128,7 +128,7 @@ get_header(); ?>
             <!-- Scenario 5: Retail & Glass -->
             <div class="solution-card" style="border: 1px solid var(--color-border); border-radius: 8px; overflow: hidden; transition: box-shadow 0.2s ease-in-out;">
                 <div style="height: 180px; overflow: hidden; background-color: var(--color-bg-2);">
-                    <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/case-3.jpg'); ?>" alt="Retail Transparent LED Display" style="width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.3s ease;">
+                    <img loading="lazy" src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/case-3.jpg'); ?>" alt="Retail Transparent LED Display" style="width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.3s ease;">
                 </div>
                 <div style="padding: 20px;">
                     <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 10px;">
@@ -148,7 +148,7 @@ get_header(); ?>
             <!-- Scenario 6: Interactive Floor -->
             <div class="solution-card" style="border: 1px solid var(--color-border); border-radius: 8px; overflow: hidden; transition: box-shadow 0.2s ease-in-out;">
                 <div style="height: 180px; overflow: hidden; background-color: var(--color-bg-2);">
-                    <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/case-5.jpg'); ?>" alt="Interactive Floor LED" style="width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.3s ease;">
+                    <img loading="lazy" src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/case-5.jpg'); ?>" alt="Interactive Floor LED" style="width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.3s ease;">
                 </div>
                 <div style="padding: 20px;">
                     <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 10px;">
@@ -195,7 +195,7 @@ get_header(); ?>
             ];
             foreach ($case_images as $case) : ?>
                 <div style="position: relative; border-radius: 6px; overflow: hidden; aspect-ratio: 4/3; background-color: var(--color-bg-3);">
-                    <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/' . $case['src']); ?>"
+                    <img loading="lazy" src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/' . $case['src']); ?>"
                          alt="<?php echo esc_attr($case['label']); ?>"
                          style="width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.35s ease;">
                     <div class="case-overlay" style="position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(transparent, rgba(0,0,0,0.7)); padding: 16px 10px 8px; pointer-events: none;">
