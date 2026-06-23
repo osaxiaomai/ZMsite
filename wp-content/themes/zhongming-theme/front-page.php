@@ -26,7 +26,7 @@ get_header(); ?>
                         </h1>
                         
                         <p class="hero-sub">
-                            Saves time and labor, easy to install. High brightness, high grayscale, high refresh rate, high-definition and delicate. Meets the requirements of hanging and stacking installation, and satisfies both indoor and outdoor requirements. The PCB adopts a high-strength anti-collision pad design, which can withstand an impact of 8kg without fear of dead or dropped lights. The cabinet is thin and light, making disassembly, assembly, and transportation easy, reducing product thickness and saving screen space. Precise, fast, and flexible positioning installation can effectively respond to different application fields.
+                            Premium stage rental LED display engineered for high-end events. Features an ultra-slim cabinet with quick-lock mechanisms for seamless assembly. Delivers stunning visuals with high brightness, high grayscale, and a high refresh rate. Built with anti-collision PCB pads for durability. Perfect for both indoor and outdoor concerts, exhibitions, and corporate events.
                         </p>
                         
                         <div class="hero-btns">
@@ -34,69 +34,11 @@ get_header(); ?>
                             <a href="<?php echo site_url('/contact'); ?>" class="btn btn-outline" style="color:#fff;">Request a Quote</a>
                         </div>
                         
-                        <!-- Technical Features Grid (Mockup Icons) - Vertically Stacked -->
-                        <div class="tech-features-grid hero-tech-grid">
-                            <div class="tech-feature-item">
-                                <div class="tech-icon-box tech-icon-primary">Hz</div>
-                                <div class="tech-feature-text">
-                                    <span class="tech-value">≥3840Hz</span>
-                                    <span class="tech-label">Refresh Rate</span>
-                                </div>
-                            </div>
-                            
-                            <div class="tech-feature-item">
-                                <div class="tech-icon-box">
-                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.24 12.24a6 6 0 0 0-8.49-8.49L5 10.5V19h8.5z"></path><line x1="16" y1="8" x2="2" y2="22"></line><line x1="17.5" y1="15" x2="9" y2="15"></line></svg>
-                                </div>
-                                <div class="tech-feature-text">
-                                    <span class="tech-value">Die-cast</span>
-                                    <span class="tech-label">Light & Durable</span>
-                                </div>
-                            </div>
-                            
-                            <div class="tech-feature-item">
-                                <div class="tech-icon-box">
-                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
-                                </div>
-                                <div class="tech-feature-text">
-                                    <span class="tech-value">IP65 / IP50</span>
-                                    <span class="tech-label">Weather Resist</span>
-                                </div>
-                            </div>
-                            
-                            <div class="tech-feature-item">
-                                <div class="tech-icon-box">
-                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>
-                                </div>
-                                <div class="tech-feature-text">
-                                    <span class="tech-value">Quick Lock</span>
-                                    <span class="tech-label">Fast Splicing</span>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <!-- Parameter Table Strip -->
-                        <div class="param-table-strip hero-param-strip">
-                            <div class="param-cell param-border">
-                                <span class="param-label">Pixel Pitch</span>
-                                <span class="param-value">P3.91</span>
-                            </div>
-                            <div class="param-cell param-border">
-                                <span class="param-label">Brightness</span>
-                                <span class="param-value">≥800 / ≥4000 nit</span>
-                            </div>
-                            <div class="param-cell param-border">
-                                <span class="param-label">Cabinet Size</span>
-                                <span class="param-value">500×500/1000 mm</span>
-                            </div>
-                            <div class="param-cell param-border">
-                                <span class="param-label">Weight</span>
-                                <span class="param-value">7.0 / 12.25 kg</span>
-                            </div>
-                            <div class="param-cell">
-                                <span class="param-label">IP Rating</span>
-                                <span class="param-value">IP50 / IP65</span>
-                            </div>
+                        <div class="hero-pills">
+                            <span class="pill">✓ ≥3840Hz Refresh Rate</span>
+                            <span class="pill">✓ Die-cast Lightweight Cabinet</span>
+                            <span class="pill">✓ IP65/IP50 Rating</span>
+                            <span class="pill">✓ Quick Lock Fast Splicing</span>
                         </div>
                     </div>
                 </div>

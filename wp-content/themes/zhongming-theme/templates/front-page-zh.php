@@ -22,12 +22,19 @@ get_header(); ?>
                         </h1>
                         
                         <p class="hero-sub">
-                            省时省力，安装便捷。高亮高灰，高刷新，高清细腻；满足吊装、置装要求，满足户内、户外要求；PCB采用高强度防撞焊盘设计，可承受8kg撞击力度，无惧死灯掉灯；箱体轻薄，方便装拆和运输，产品厚度减少，大大节省了屏体所占用的面积；精准、快捷、灵活的定位式安装能有效应对不同的应用领域。
+                            专为高端舞台打造的租赁显示屏。箱体轻薄，支持快速无缝拼装。具备高亮高灰与超高刷新率，画面细腻生动。PCB 采用防撞焊盘设计，无惧死灯；支持吊装、置装等多种灵活安装方式，是户内外演出、展会、大型活动的不二之选。
                         </p>
                         
                         <div class="hero-btns">
                             <a href="<?php echo zm_product_archive_link(); ?>?category=rental-screen" class="btn btn-primary">探索租赁系列 →</a>
                             <a href="<?php echo $contact_link; ?>" class="btn btn-outline" style="color:#fff;">在线获取报价</a>
+                        </div>
+                        
+                        <div class="hero-pills">
+                            <span class="pill">✓ ≥3840Hz 高刷新率</span>
+                            <span class="pill">✓ 压铸铝轻便耐用箱体</span>
+                            <span class="pill">✓ IP65/IP50 防护等级</span>
+                            <span class="pill">✓ 快速锁无缝拼接</span>
                         </div>
                     </div>
                 </div>
