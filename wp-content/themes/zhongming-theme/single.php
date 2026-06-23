@@ -333,7 +333,7 @@ $contact_link = function_exists('zhongming_get_contact_url') ? zhongming_get_con
                                             <?php if ( has_post_thumbnail() ) : ?>
                                                 <?php the_post_thumbnail('thumbnail'); ?>
                                             <?php else : ?>
-                                                <img loading="lazy" src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/app-indoor.jpg' ); ?>" alt="<?php the_title_attribute(); ?>">
+                                                <img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/app-indoor.jpg' ); ?>" alt="<?php the_title_attribute(); ?>">
                                             <?php endif; ?>
                                         </div>
                                         <div class="recent-post-info">

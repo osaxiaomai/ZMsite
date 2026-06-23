@@ -407,6 +407,12 @@ a { color: inherit; text-decoration: none; transition: var(--transition); }
   align-items: flex-start; /* Clean technical left alignment */
   text-align: left;
 }
+/* Variant: wider right-aligned content for rental banner slide */
+.hero-content--right {
+  width: 50%;
+  margin-left: 50%;
+  left: 0;
+}
 .hero-content-inner {
   width: 100%;
   display: flex;
@@ -555,135 +561,6 @@ a { color: inherit; text-decoration: none; transition: var(--transition); }
   right: 40px;
 }
 
-/* --- Slide 1 Custom Layout Elements --- */
-.hero-content.hero-slide-right {
-  width: 50%;
-  margin-left: 50%;
-  left: 0;
-}
-.hero-content.hero-slide-right .hero-content-inner {
-  gap: 16px;
-}
-.hero-content.hero-slide-right .hero-eyebrow {
-  color: #0084ff;
-  font-family: 'Inter', sans-serif;
-  font-weight: 700;
-  font-size: 13px;
-  letter-spacing: 2.5px;
-  text-transform: uppercase;
-  margin-bottom: 4px;
-}
-.hero-content.hero-slide-right .hero-h1 {
-  font-family: 'Outfit', sans-serif;
-  font-size: 60px;
-  font-weight: 800;
-  color: #fff;
-  margin: 0;
-  line-height: 1.05;
-  letter-spacing: -1.5px;
-}
-.hero-content.hero-slide-right .hero-sub {
-  font-family: 'Inter', sans-serif;
-  font-size: 14px;
-  line-height: 1.6;
-  color: rgba(255,255,255,0.75);
-  max-width: 600px;
-  margin: 0 0 15px;
-}
-.hero-content.hero-slide-right .hero-btns {
-  margin-bottom: 25px;
-  display: flex;
-  gap: 16px;
-}
-.tech-features-grid {
-  display: flex;
-  gap: 48px;
-  width: 100%;
-  max-width: 760px;
-  margin-bottom: 30px;
-}
-.tech-feature-item {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 10px;
-  color: #fff;
-}
-.tech-icon-box {
-  width: 46px;
-  height: 46px;
-  border: 1.5px solid rgba(255,255,255,0.3);
-  border-radius: 6px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #fff;
-  flex-shrink: 0;
-  background: rgba(255,255,255,0.05);
-}
-.tech-icon-box.highlight {
-  border-color: #0084ff;
-  color: #0084ff;
-  background: rgba(0,132,255,0.15);
-}
-.tech-feature-text {
-  display: flex;
-  flex-direction: column;
-  text-align: left;
-  font-family: 'Inter', sans-serif;
-}
-.tech-feature-text span.val {
-  font-size: 13px;
-  font-weight: 700;
-  color: #fff;
-  line-height: 1.3;
-}
-.tech-feature-text span.lbl {
-  font-size: 10px;
-  color: rgba(255,255,255,0.55);
-  line-height: 1.2;
-  margin-top: 1px;
-}
-.param-table-strip {
-  background: rgba(0, 0, 0, 0.45);
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border-radius: 8px;
-  padding: 14px 16px;
-  width: 100%;
-  max-width: 760px;
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  text-align: center;
-  gap: 5px;
-  box-shadow: 0 8px 32px rgba(0,0,0,0.3);
-}
-.param-table-col {
-  display: flex;
-  flex-direction: column;
-  border-right: 1px solid rgba(255,255,255,0.15);
-  padding: 0 5px;
-}
-.param-table-col:last-child {
-  border-right: none;
-}
-.param-table-col .param-lbl {
-  font-family: 'Inter', sans-serif;
-  font-size: 10px;
-  color: #0084ff;
-  font-weight: 700;
-  text-transform: uppercase;
-  margin-bottom: 2px;
-  letter-spacing: 0.5px;
-}
-.param-table-col .param-val {
-  font-family: 'Outfit', sans-serif;
-  font-size: 13px;
-  font-weight: 800;
-  color: #fff;
-}
-
 /* --- Responsive Hero --- */
 @media (max-width: 992px) {
   .hero-h1 { font-size: 44px; }
@@ -749,56 +626,126 @@ a { color: inherit; text-decoration: none; transition: var(--transition); }
     flex-direction: column;
     justify-content: center;
   }
-  .hero-content { 
-    width: 100%;
-    margin-left: 0;
-    left: 0; /* Reset PC right shift on mobile to keep it perfectly centered */
-    align-items: center; 
-    text-align: center;
-    height: auto;
-  }
-  .hero-content-inner { 
-    text-align: center; 
-    max-width: 100%;
-    align-items: center;
-    gap: 12px;
-  }
-  .header-right .btn-primary {
-    display: none !important;
-  }
-  .hero-sub {
-    margin: 0 auto;
-    font-size: 13px;
-    max-width: 100%;
-    text-align: center;
-    line-height: 1.5;
-    display: -webkit-box;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-  }
-  .hero-btns { justify-content: center; width: 100%; flex-direction: row; gap: 12px; margin-top: 5px; }
-  .hero-btns .btn { width: auto; flex: 1; padding: 10px 16px; font-size: 13px; }
-  .hero-pills { display: none; } /* Hide pills on mobile to maximize vertical space for main text */
-  .hero-h1 { font-size: 20px !important; text-align: center; line-height: 1.2; }
-  .pill { padding: 8px 14px; font-size: 12px; }
-  .hero-arrow { display: none; }
-  
-  /* Reset Slide 1 Desktop classes on Mobile */
-  .hero-content.hero-slide-right {
+  .hero-content,
+  .hero-content--right { 
     width: 100% !important;
     margin-left: 0 !important;
     left: 0 !important;
+    align-items: center !important; 
+    text-align: center !important;
+    height: auto !important;
   }
-  .hero-content.hero-slide-right .hero-content-inner {
+  .hero-content-inner { 
+    text-align: center !important; 
+    max-width: 100% !important;
+    align-items: center !important;
     gap: 12px !important;
   }
-  .tech-features-grid {
-    display: none !important;
-  }
-  .param-table-strip {
-    display: none !important;
-  }
+  .hero-sub { margin: 0 auto !important; font-size: 13px !important; max-width: 100% !important; text-align: center !important; line-height: 1.5 !important; }
+  .hero-btns { justify-content: center !important; width: 100% !important; flex-direction: row !important; gap: 12px !important; margin-top: 5px !important; margin-bottom: 0 !important; }
+  .hero-btns .btn { width: auto !important; flex: 1 !important; padding: 10px 16px !important; font-size: 13px !important; }
+  .hero-pills { display: none !important; }
+  .hero-h1 { font-size: 26px !important; text-align: center !important; line-height: 1.2 !important; letter-spacing: -0.5px !important; }
+  .hero-eyebrow { font-size: 11px !important; letter-spacing: 1.5px !important; }
+  .pill { padding: 8px 14px; font-size: 12px; }
+  .hero-arrow { display: none; }
+  .hero-tech-grid { display: none !important; }
+  .hero-param-strip { display: none !important; }
+}
+
+/* --- Hero Slide 1: Tech Features Grid & Param Strip --- */
+.hero-tech-grid {
+  display: flex;
+  gap: 48px;
+  width: 100%;
+  max-width: 760px;
+  margin-bottom: 30px;
+}
+.hero-tech-grid .tech-feature-item {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+  color: #fff;
+}
+.hero-tech-grid .tech-icon-box {
+  width: 46px;
+  height: 46px;
+  border: 1.5px solid rgba(255,255,255,0.3);
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  flex-shrink: 0;
+  background: rgba(255,255,255,0.05);
+  font-family: 'Outfit', sans-serif;
+  font-weight: 800;
+  font-size: 14px;
+}
+.hero-tech-grid .tech-icon-box.tech-icon-primary {
+  border-color: #0084ff;
+  color: #0084ff;
+  background: rgba(0,132,255,0.15);
+}
+.hero-tech-grid .tech-icon-box svg {
+  color: rgba(255,255,255,0.85);
+}
+.hero-tech-grid .tech-feature-text {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  font-family: 'Inter', sans-serif;
+}
+.hero-tech-grid .tech-value {
+  font-size: 13px;
+  font-weight: 700;
+  color: #fff;
+  line-height: 1.3;
+}
+.hero-tech-grid .tech-label {
+  font-size: 10px;
+  color: rgba(255,255,255,0.55);
+  line-height: 1.2;
+  margin-top: 1px;
+}
+
+.hero-param-strip {
+  background: rgba(0, 0, 0, 0.45);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  border-radius: 8px;
+  padding: 14px 16px;
+  width: 100%;
+  max-width: 760px;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  text-align: center;
+  gap: 5px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+}
+.hero-param-strip .param-cell {
+  display: flex;
+  flex-direction: column;
+  padding: 0 5px;
+}
+.hero-param-strip .param-cell.param-border {
+  border-right: 1px solid rgba(255,255,255,0.15);
+}
+.hero-param-strip .param-label {
+  font-family: 'Inter', sans-serif;
+  font-size: 10px;
+  color: #0084ff;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 2px;
+  letter-spacing: 0.5px;
+}
+.hero-param-strip .param-value {
+  font-family: 'Outfit', sans-serif;
+  font-size: 13px;
+  font-weight: 800;
+  color: #fff;
 }
 .pill { 
   padding: 10px 22px; 

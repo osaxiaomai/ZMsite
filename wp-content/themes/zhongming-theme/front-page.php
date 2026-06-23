@@ -12,10 +12,10 @@ get_header(); ?>
         <!-- Slide 1: Stage Rental Screen P3.91 (Main Featured Product) -->
         <div class="hero-slide active">
             <div class="hero-visual">
-                <img loading="lazy" src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/banner_rental.png'); ?>" alt="Zhongming Stage Rental LED Display P3.91">
+                <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/banner_rental.png'); ?>" alt="Zhongming Stage Rental LED Display P3.91">
             </div>
             <div class="hero-container">
-                <div class="hero-content">
+                <div class="hero-content hero-content--right">
                     <div class="hero-content-inner">
                         <div class="hero-eyebrow">STAGE RENTAL LED DISPLAY</div>
                         
@@ -26,12 +26,109 @@ get_header(); ?>
                         </h1>
                         
                         <p class="hero-sub">
-                            High-performance stage rental display with ultra-high refresh rate, seamless splicing, and durable design. Engineered for fast setup, easy transport, and exceptional visual clarity in indoor & outdoor events.
+                            Saves time and labor, easy to install. High brightness, high grayscale, high refresh rate, high-definition and delicate. Meets the requirements of hanging and stacking installation, and satisfies both indoor and outdoor requirements. The PCB adopts a high-strength anti-collision pad design, which can withstand an impact of 8kg without fear of dead or dropped lights. The cabinet is thin and light, making disassembly, assembly, and transportation easy, reducing product thickness and saving screen space. Precise, fast, and flexible positioning installation can effectively respond to different application fields.
                         </p>
                         
                         <div class="hero-btns">
                             <a href="<?php echo site_url('/products/?category=rental-screen'); ?>" class="btn btn-primary">Explore Rental Series →</a>
-                            <a href="<?php echo site_url('/contact'); ?>" class="btn btn-outline" style="color: #fff;">Request a Quote</a>
+                            <a href="<?php echo site_url('/contact'); ?>" class="btn btn-outline" style="color:#fff;">Request a Quote</a>
+                        </div>
+                        
+                        <!-- Technical Features Grid (Mockup Icons) - Vertically Stacked -->
+                        <div class="tech-features-grid hero-tech-grid">
+                            <div class="tech-feature-item">
+                                <div class="tech-icon-box tech-icon-primary">Hz</div>
+                                <div class="tech-feature-text">
+                                    <span class="tech-value">≥3840Hz</span>
+                                    <span class="tech-label">Refresh Rate</span>
+                                </div>
+                            </div>
+                            
+                            <div class="tech-feature-item">
+                                <div class="tech-icon-box">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.24 12.24a6 6 0 0 0-8.49-8.49L5 10.5V19h8.5z"></path><line x1="16" y1="8" x2="2" y2="22"></line><line x1="17.5" y1="15" x2="9" y2="15"></line></svg>
+                                </div>
+                                <div class="tech-feature-text">
+                                    <span class="tech-value">Die-cast</span>
+                                    <span class="tech-label">Light & Durable</span>
+                                </div>
+                            </div>
+                            
+                            <div class="tech-feature-item">
+                                <div class="tech-icon-box">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+                                </div>
+                                <div class="tech-feature-text">
+                                    <span class="tech-value">IP65 / IP50</span>
+                                    <span class="tech-label">Weather Resist</span>
+                                </div>
+                            </div>
+                            
+                            <div class="tech-feature-item">
+                                <div class="tech-icon-box">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>
+                                </div>
+                                <div class="tech-feature-text">
+                                    <span class="tech-value">Quick Lock</span>
+                                    <span class="tech-label">Fast Splicing</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Parameter Table Strip -->
+                        <div class="param-table-strip hero-param-strip">
+                            <div class="param-cell param-border">
+                                <span class="param-label">Pixel Pitch</span>
+                                <span class="param-value">P3.91</span>
+                            </div>
+                            <div class="param-cell param-border">
+                                <span class="param-label">Brightness</span>
+                                <span class="param-value">≥800 / ≥4000 nit</span>
+                            </div>
+                            <div class="param-cell param-border">
+                                <span class="param-label">Cabinet Size</span>
+                                <span class="param-value">500×500/1000 mm</span>
+                            </div>
+                            <div class="param-cell param-border">
+                                <span class="param-label">Weight</span>
+                                <span class="param-value">7.0 / 12.25 kg</span>
+                            </div>
+                            <div class="param-cell">
+                                <span class="param-label">IP Rating</span>
+                                <span class="param-value">IP50 / IP65</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 2: Digital Signage / Poster (banner2) -->
+        <div class="hero-slide">
+            <div class="hero-visual">
+                <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/banner2.png'); ?>" alt="Zhongming Smart Digital Signage LED Poster">
+            </div>
+            <div class="hero-container">
+                <div class="hero-content">
+                    <div class="hero-content-inner">
+                        <div class="hero-eyebrow">Smart Digital Signage</div>
+                        <h1 class="hero-h1">
+                            Smart Poster Display<br>
+                            <span class="highlight">Ultra-HD · Cloud Managed</span><br>
+                            Attract Every Gaze
+                        </h1>
+                        <p class="hero-sub">Featuring an ultra-thin integrated design, it supports wireless screen casting and remote cloud management. With high-brightness HD display and an anti-glare panel, colors are true to life. Supports split-screen playback of videos, images, and text. Perfect for shopping malls, retail stores, hotels, and banks—the ideal digital signboard to elevate brand image.</p>
+                        
+                        <div class="hero-btns">
+                            <a href="<?php echo site_url('/products'); ?>" class="btn btn-primary">Explore Digital Signage →</a>
+                            <a href="<?php echo site_url('/contact'); ?>" class="btn btn-outline" style="color:#fff;">Get a Quote</a>
+                        </div>
+                        
+                        <div class="hero-pills">
+                            <span class="pill">✓ Cloud Cluster Management</span>
+                            <span class="pill">✓ Ultra-Thin Minimalist Design</span>
+                            <span class="pill">✓ Plug & Play Wireless Cast</span>
+                            <span class="pill">✓ Smart Split-Screen Display</span>
                         </div>
                     </div>
                 </div>
@@ -41,7 +138,7 @@ get_header(); ?>
         <!-- Slide 2: Global LED Leader -->
         <div class="hero-slide">
             <div class="hero-visual">
-                <img loading="lazy" src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/banner_home1.png'); ?>" alt="Zhongming LED Display Background">
+                <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/banner_home1.png'); ?>" alt="Zhongming LED Display Background">
             </div>
             <div class="hero-container">
                 <div class="hero-content">
@@ -73,7 +170,7 @@ get_header(); ?>
         <!-- Slide 3: Standard Indoor Display (pdf_banner2) -->
         <div class="hero-slide">
             <div class="hero-visual">
-                <img loading="lazy" src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/pdf_banner2.png'); ?>" alt="Zhongming Standard Indoor LED Display">
+                <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/pdf_banner2.png'); ?>" alt="Zhongming Standard Indoor LED Display">
             </div>
             <div class="hero-container">
                 <div class="hero-content">
@@ -105,7 +202,7 @@ get_header(); ?>
         <!-- Slide 4: Flexible LED Soft Module (pdf_banner3) -->
         <div class="hero-slide">
             <div class="hero-visual">
-                <img loading="lazy" src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/pdf_banner3.png'); ?>" alt="Zhongming Flexible LED Display">
+                <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/pdf_banner3.png'); ?>" alt="Zhongming Flexible LED Display">
             </div>
             <div class="hero-container">
                 <div class="hero-content">
@@ -137,7 +234,7 @@ get_header(); ?>
         <!-- Slide 5: 16:9 Premium Indoor Display (pdf_banner4) -->
         <div class="hero-slide">
             <div class="hero-visual">
-                <img loading="lazy" src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/pdf_banner4.png'); ?>" alt="Zhongming 16:9 Golden Proportion LED Display">
+                <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/pdf_banner4.png'); ?>" alt="Zhongming 16:9 Golden Proportion LED Display">
             </div>
             <div class="hero-container">
                 <div class="hero-content">
@@ -165,7 +262,6 @@ get_header(); ?>
                 </div>
             </div>
         </div>
-    </div>
 
     <!-- Slide Indicators / Navigation -->
     <div class="hero-dots">
@@ -174,6 +270,7 @@ get_header(); ?>
         <span class="hero-dot" data-slide="2"></span>
         <span class="hero-dot" data-slide="3"></span>
         <span class="hero-dot" data-slide="4"></span>
+        <span class="hero-dot" data-slide="5"></span>
     </div>
     <button class="hero-arrow prev" aria-label="Previous Slide">‹</button>
     <button class="hero-arrow next" aria-label="Next Slide">›</button>
@@ -333,7 +430,7 @@ document.addEventListener('DOMContentLoaded', function() {
                             }
                             
                             if ($fallback_img) : ?>
-                                <img loading="lazy" src="<?php echo esc_url($fallback_img); ?>" alt="<?php the_title_attribute(); ?>" style="width:100%; height:100%; object-fit:cover;">
+                                <img src="<?php echo esc_url($fallback_img); ?>" alt="<?php the_title_attribute(); ?>" style="width:100%; height:100%; object-fit:cover;">
                             <?php else : ?>
                                 <div style="width:100%;height:100%;background:#f0f0f0;display:flex;align-items:center;justify-content:center;color:#ccc;font-size:36px;">🖼</div>
                             <?php endif; ?>
@@ -383,13 +480,13 @@ document.addEventListener('DOMContentLoaded', function() {
                     <div class="company-slider">
                         <div class="slider-wrapper">
                             <div class="slider-slide">
-                                <img loading="lazy" src="<?php echo get_template_directory_uri(); ?>/assets/images/page2_img5.jpeg" alt="Zhongming R&D Office">
+                                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/page2_img5.jpeg" alt="Zhongming R&D Office">
                             </div>
                             <div class="slider-slide">
-                                <img loading="lazy" src="<?php echo get_template_directory_uri(); ?>/assets/images/page2_img10.jpeg" alt="Zhongming Production Line">
+                                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/page2_img10.jpeg" alt="Zhongming Production Line">
                             </div>
                             <div class="slider-slide">
-                                <img loading="lazy" src="<?php echo get_template_directory_uri(); ?>/assets/images/page2_img11.jpeg" alt="Zhongming LED Testing">
+                                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/page2_img11.jpeg" alt="Zhongming LED Testing">
                             </div>
                         </div>
                         <!-- Navigation dots -->
@@ -554,7 +651,7 @@ document.addEventListener('DOMContentLoaded', function() {
             ];
             foreach ($cases as $case) : ?>
                 <div class="case-item" style="position: relative; aspect-ratio: 4/3; overflow: hidden; border-radius: 8px; group">
-                    <img loading="lazy" src="<?php echo get_template_directory_uri(); ?>/assets/images/<?php echo $case['img']; ?>" 
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/<?php echo $case['img']; ?>" 
                          alt="<?php echo esc_attr($case['title']); ?>" 
                          style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s;">
                     <div style="position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, transparent 100%); display: flex; align-items: flex-end; padding: 20px; opacity: 1;">
@@ -619,7 +716,7 @@ document.addEventListener('DOMContentLoaded', function() {
             ];
             foreach ($scenarios as $s) : ?>
                 <div class="app-card">
-                    <img loading="lazy" src="<?php echo get_template_directory_uri(); ?>/assets/images/<?php echo $s['img']; ?>" alt="">
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/<?php echo $s['img']; ?>" alt="">
                     <div class="app-content">
                         <div class="app-label"><?php echo $s['name']; ?></div>
                     </div>
@@ -657,7 +754,7 @@ document.addEventListener('DOMContentLoaded', function() {
             ];
             foreach ($gallery_cases as $c) : ?>
                 <div class="gallery-item" data-category="<?php echo $c['cat']; ?>" style="position:relative; aspect-ratio:1/1; overflow:hidden; border-radius:4px;">
-                    <img loading="lazy" src="<?php echo get_template_directory_uri(); ?>/assets/images/<?php echo $c['img']; ?>" 
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/<?php echo $c['img']; ?>" 
                          alt="<?php echo esc_attr($c['title']); ?>"
                          style="width:100%; height:100%; object-fit:cover; transition:transform 0.4s;">
                     <div class="gallery-overlay" style="position:absolute; inset:0; background:rgba(26,26,24,0.8); opacity:0; display:flex; align-items:center; justify-content:center; transition:opacity 0.3s; padding:20px; text-align:center;">
@@ -739,35 +836,35 @@ document.addEventListener('DOMContentLoaded', function() {
                 <!-- Cert 1 -->
                 <div class="cert-item-card" onclick="openCertModal('<?php echo esc_url(get_template_directory_uri() . '/assets/images/real_cert_ce.jpg'); ?>', 'CE Certificate')">
                     <div class="cert-img-box">
-                        <img loading="lazy" src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/real_cert_ce.jpg'); ?>" alt="CE Certificate">
+                        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/real_cert_ce.jpg'); ?>" alt="CE Certificate">
                     </div>
                     <div class="cert-card-label">CE Certificate</div>
                 </div>
                 <!-- Cert 2 -->
                 <div class="cert-item-card" onclick="openCertModal('<?php echo esc_url(get_template_directory_uri() . '/assets/images/real_cert_rohs.jpg'); ?>', 'RoHS Directive')">
                     <div class="cert-img-box">
-                        <img loading="lazy" src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/real_cert_rohs.jpg'); ?>" alt="RoHS Certificate">
+                        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/real_cert_rohs.jpg'); ?>" alt="RoHS Certificate">
                     </div>
                     <div class="cert-card-label">RoHS Compliant</div>
                 </div>
                 <!-- Cert 3 -->
                 <div class="cert-item-card" onclick="openCertModal('<?php echo esc_url(get_template_directory_uri() . '/assets/images/fcc_cert.png'); ?>', 'FCC Declaration')">
                     <div class="cert-img-box">
-                        <img loading="lazy" src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/fcc_cert.png'); ?>" alt="FCC Certificate">
+                        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/fcc_cert.png'); ?>" alt="FCC Certificate">
                     </div>
                     <div class="cert-card-label">FCC Declaration</div>
                 </div>
                 <!-- Cert 4 -->
                 <div class="cert-item-card" onclick="openCertModal('<?php echo esc_url(get_template_directory_uri() . '/assets/images/real_cert_ce2.jpg'); ?>', 'CE Certificate')">
                     <div class="cert-img-box">
-                        <img loading="lazy" src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/real_cert_ce2.jpg'); ?>" alt="CE Certificate">
+                        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/real_cert_ce2.jpg'); ?>" alt="CE Certificate">
                     </div>
                     <div class="cert-card-label">CE Certificate</div>
                 </div>
                 <!-- Cert 5 -->
                 <div class="cert-item-card" onclick="openCertModal('<?php echo esc_url(get_template_directory_uri() . '/assets/images/iso_cert.png'); ?>', 'ISO 9001:2015')">
                     <div class="cert-img-box">
-                        <img loading="lazy" src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/iso_cert.png'); ?>" alt="ISO 9001 Certificate">
+                        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/iso_cert.png'); ?>" alt="ISO 9001 Certificate">
                     </div>
                     <div class="cert-card-label">ISO 9001:2015</div>
                 </div>
@@ -776,35 +873,35 @@ document.addEventListener('DOMContentLoaded', function() {
                 <!-- Cert 1 -->
                 <div class="cert-item-card" onclick="openCertModal('<?php echo esc_url(get_template_directory_uri() . '/assets/images/real_cert_ce.jpg'); ?>', 'CE Certificate')">
                     <div class="cert-img-box">
-                        <img loading="lazy" src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/real_cert_ce.jpg'); ?>" alt="CE Certificate">
+                        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/real_cert_ce.jpg'); ?>" alt="CE Certificate">
                     </div>
                     <div class="cert-card-label">CE Certificate</div>
                 </div>
                 <!-- Cert 2 -->
                 <div class="cert-item-card" onclick="openCertModal('<?php echo esc_url(get_template_directory_uri() . '/assets/images/real_cert_rohs.jpg'); ?>', 'RoHS Directive')">
                     <div class="cert-img-box">
-                        <img loading="lazy" src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/real_cert_rohs.jpg'); ?>" alt="RoHS Certificate">
+                        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/real_cert_rohs.jpg'); ?>" alt="RoHS Certificate">
                     </div>
                     <div class="cert-card-label">RoHS Compliant</div>
                 </div>
                 <!-- Cert 3 -->
                 <div class="cert-item-card" onclick="openCertModal('<?php echo esc_url(get_template_directory_uri() . '/assets/images/fcc_cert.png'); ?>', 'FCC Declaration')">
                     <div class="cert-img-box">
-                        <img loading="lazy" src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/fcc_cert.png'); ?>" alt="FCC Certificate">
+                        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/fcc_cert.png'); ?>" alt="FCC Certificate">
                     </div>
                     <div class="cert-card-label">FCC Declaration</div>
                 </div>
                 <!-- Cert 4 -->
                 <div class="cert-item-card" onclick="openCertModal('<?php echo esc_url(get_template_directory_uri() . '/assets/images/real_cert_ce2.jpg'); ?>', 'CE Certificate')">
                     <div class="cert-img-box">
-                        <img loading="lazy" src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/real_cert_ce2.jpg'); ?>" alt="CE Certificate">
+                        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/real_cert_ce2.jpg'); ?>" alt="CE Certificate">
                     </div>
                     <div class="cert-card-label">CE Certificate</div>
                 </div>
                 <!-- Cert 5 -->
                 <div class="cert-item-card" onclick="openCertModal('<?php echo esc_url(get_template_directory_uri() . '/assets/images/iso_cert.png'); ?>', 'ISO 9001:2015')">
                     <div class="cert-img-box">
-                        <img loading="lazy" src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/iso_cert.png'); ?>" alt="ISO 9001 Certificate">
+                        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/iso_cert.png'); ?>" alt="ISO 9001 Certificate">
                     </div>
                     <div class="cert-card-label">ISO 9001:2015</div>
                 </div>
@@ -820,7 +917,7 @@ document.addEventListener('DOMContentLoaded', function() {
         <button onclick="closeCertModal()" style="position: absolute; top: 15px; right: 15px; width: 30px; height: 30px; border-radius: 50%; border: none; background: rgba(0,0,0,0.5); color: #fff; font-size: 16px; font-weight: bold; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: background 0.2s; z-index: 10;">&times;</button>
         <!-- Content image container -->
         <div style="padding: 20px; display: flex; justify-content: center; background: #f8fafc; border-bottom: 1px solid #f1f5f9;">
-            <img loading="lazy" id="certModalImage" src="" alt="Certificate" style="max-height: 70vh; max-width: 100%; object-fit: contain; border-radius: 4px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);">
+            <img id="certModalImage" src="" alt="Certificate" style="max-height: 70vh; max-width: 100%; object-fit: contain; border-radius: 4px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);">
         </div>
         <div id="certModalTitle" style="padding: 15px 20px; font-size: 14px; font-weight: bold; color: var(--color-text); text-align: center;">Certificate</div>
     </div>

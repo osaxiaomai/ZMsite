@@ -36,6 +36,10 @@
 
     /* Homepage Company Split */
     .company-split { grid-template-columns: 1fr !important; gap: 32px !important; }
+
+    /* Fix header button overlapping / wrapping on mobile */
+    .header-right .btn-primary { display: none !important; }
+    .mobile-header-triggers { display: flex !important; }
 }
 
 
