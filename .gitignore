@@ -12,6 +12,7 @@
 !/.gitignore
 !/db_init/
 !/db_init/zhongming-local.sql
+!/db_init/add_p125_p15.sql
 !/wp-content/
 !/wp-content/activate-plugins.php
 !/wp-content/db-search-replace.php
@@ -19,6 +20,7 @@
 !/wp-content/themes/
 !/wp-content/themes/zhongming-theme/
 !/wp-content/themes/zhongming-theme/**
+!/scratch/extract_p125_p15_sql.py
 
 # Explicitly ignore other stuff inside wp-content (just in case)
 wp-content/uploads/
