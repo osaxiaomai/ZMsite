@@ -11,23 +11,23 @@ get_header(); ?>
                 <img loading="lazy" src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/banner_rental.png'); ?>" alt="Zhongming 舞台租赁 LED 显示屏 P3.91">
             </div>
             <div class="hero-container">
-                <div class="hero-content" style="width: 50%; margin-left: 50%; left: 0;">
-                    <div class="hero-content-inner" style="gap: 16px;">
-                        <div class="hero-eyebrow" style="color: #0084ff; font-family: 'Inter', sans-serif; font-weight: 700; font-size: 13px; letter-spacing: 2.5px; text-transform: uppercase; margin-bottom: 4px;">STAGE RENTAL LED DISPLAY</div>
+                <div class="hero-content hero-slide-right">
+                    <div class="hero-content-inner">
+                        <div class="hero-eyebrow">STAGE RENTAL LED DISPLAY</div>
                         
-                        <h1 class="hero-h1" style="font-family: 'Outfit', sans-serif; font-size: 60px; font-weight: 800; color: #fff; margin: 0; line-height: 1.05; letter-spacing: -1.5px;">
+                        <h1 class="hero-h1">
                             舞台租赁屏<br>
-                            <span style="color: #0084ff;">结构轻薄 · 无缝拼接</span><br>
+                            <span class="highlight">结构轻薄 · 无缝拼接</span><br>
                             画面细腻 · 低亮高灰
                         </h1>
                         
-                        <p class="hero-sub" style="font-family: 'Inter', sans-serif; font-size: 14px; line-height: 1.6; color: rgba(255,255,255,0.75); max-width: 600px; margin: 0 0 15px;">
-                            省时省力，安装便捷。高亮高灰，高刷新，高清细腻；满足吊装、置装要求，满足户内、户外要求；PCB采用高强度防撞焊盘设计，可承受8kg撞击力度，无惧死灯掉灯；箱体轻薄，方便装拆和运输，产品厚度减少，大大节省了屏体所占用的面积；精准、快捷、灵活的定位式安装能有效应对不同的应用领域。
+                        <p class="hero-sub">
+                            高刷轻薄舞台租赁屏，支持无缝快速拼接与便捷运输。专为各种户内及户外演艺活动量身定制，呈现细腻画质与出色的抗撞击防护。
                         </p>
                         
-                        <div class="hero-btns" style="margin-bottom: 25px; display: flex; gap: 16px;">
-                            <a href="<?php echo zm_product_archive_link(); ?>?category=rental-screen" class="btn btn-primary" style="font-family: 'Inter', sans-serif; background: #0084ff; border-color: #0084ff; padding: 14px 28px; font-size: 14px; font-weight: 700;">探索租赁系列 →</a>
-                            <a href="<?php echo $contact_link; ?>" class="btn btn-outline" style="font-family: 'Inter', sans-serif; color: #fff; border: 1.5px solid rgba(255,255,255,0.4); padding: 14px 28px; font-size: 14px; font-weight: 700; background: transparent;">在线获取报价</a>
+                        <div class="hero-btns">
+                            <a href="<?php echo zm_product_archive_link(); ?>?category=rental-screen" class="btn btn-primary">探索租赁系列 →</a>
+                            <a href="<?php echo $contact_link; ?>" class="btn btn-outline" style="color: #fff;">在线获取报价</a>
                         </div>
                     </div>
                 </div>

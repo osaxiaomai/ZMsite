@@ -15,87 +15,87 @@ get_header(); ?>
                 <img loading="lazy" src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/banner_rental.png'); ?>" alt="Zhongming Stage Rental LED Display P3.91">
             </div>
             <div class="hero-container">
-                <div class="hero-content" style="width: 50%; margin-left: 50%; left: 0;">
-                    <div class="hero-content-inner" style="gap: 16px;">
-                        <div class="hero-eyebrow" style="color: #0084ff; font-family: 'Inter', sans-serif; font-weight: 700; font-size: 13px; letter-spacing: 2.5px; text-transform: uppercase; margin-bottom: 4px;">STAGE RENTAL LED DISPLAY</div>
+                <div class="hero-content hero-slide-right">
+                    <div class="hero-content-inner">
+                        <div class="hero-eyebrow">STAGE RENTAL LED DISPLAY</div>
                         
-                        <h1 class="hero-h1" style="font-family: 'Outfit', sans-serif; font-size: 60px; font-weight: 800; color: #fff; margin: 0; line-height: 1.05; letter-spacing: -1.5px;">
+                        <h1 class="hero-h1">
                             Stage Rental Display<br>
-                            <span style="color: #0084ff;">Slim Structure · Seamless Splicing</span><br>
+                            <span class="highlight">Slim Structure · Seamless Splicing</span><br>
                             Delicate Image · Low-Light High-Grey
                         </h1>
                         
-                        <p class="hero-sub" style="font-family: 'Inter', sans-serif; font-size: 14px; line-height: 1.6; color: rgba(255,255,255,0.75); max-width: 600px; margin: 0 0 15px;">
-                            Saves time and labor, easy to install. High brightness, high grayscale, high refresh rate, high-definition and delicate. Meets the requirements of hanging and stacking installation, and satisfies both indoor and outdoor requirements. The PCB adopts a high-strength anti-collision pad design, which can withstand an impact of 8kg without fear of dead or dropped lights. The cabinet is thin and light, making disassembly, assembly, and transportation easy, reducing product thickness and saving screen space. Precise, fast, and flexible positioning installation can effectively respond to different application fields.
+                        <p class="hero-sub">
+                            High-performance stage rental display with ultra-high refresh rate, seamless splicing, and durable design. Engineered for fast setup, easy transport, and exceptional visual clarity in indoor & outdoor events.
                         </p>
                         
-                        <div class="hero-btns" style="margin-bottom: 25px; display: flex; gap: 16px;">
-                            <a href="<?php echo site_url('/products/?category=rental-screen'); ?>" class="btn btn-primary" style="font-family: 'Inter', sans-serif; background: #0084ff; border-color: #0084ff; padding: 14px 28px; font-size: 14px; font-weight: 700;">Explore Rental Series →</a>
-                            <a href="<?php echo site_url('/contact'); ?>" class="btn btn-outline" style="font-family: 'Inter', sans-serif; color: #fff; border: 1.5px solid rgba(255,255,255,0.4); padding: 14px 28px; font-size: 14px; font-weight: 700; background: transparent;">Request a Quote</a>
+                        <div class="hero-btns">
+                            <a href="<?php echo site_url('/products/?category=rental-screen'); ?>" class="btn btn-primary">Explore Rental Series →</a>
+                            <a href="<?php echo site_url('/contact'); ?>" class="btn btn-outline" style="color: #fff;">Request a Quote</a>
                         </div>
                         
                         <!-- Technical Features Grid (Mockup Icons) - Vertically Stacked -->
-                        <div class="tech-features-grid" style="display: flex; gap: 48px; width: 100%; max-width: 760px; margin-bottom: 30px;">
-                            <div class="tech-feature-item" style="display: flex; flex-direction: column; align-items: flex-start; gap: 10px; color: #fff;">
-                                <div class="tech-icon-box" style="width: 46px; height: 46px; border: 1.5px solid #0084ff; border-radius: 6px; display: flex; align-items: center; justify-content: center; color: #0084ff; font-family: 'Outfit', sans-serif; font-weight: 800; font-size: 14px; flex-shrink: 0; background: rgba(0,132,255,0.15);">Hz</div>
-                                <div class="tech-feature-text" style="display: flex; flex-direction: column; text-align: left; font-family: 'Inter', sans-serif;">
-                                    <span style="font-size: 13px; font-weight: 700; color: #fff; line-height: 1.3;">≥3840Hz</span>
-                                    <span style="font-size: 10px; color: rgba(255,255,255,0.55); line-height: 1.2; margin-top: 1px;">Refresh Rate</span>
+                        <div class="tech-features-grid">
+                            <div class="tech-feature-item">
+                                <div class="tech-icon-box highlight">Hz</div>
+                                <div class="tech-feature-text">
+                                    <span class="val">≥3840Hz</span>
+                                    <span class="lbl">Refresh Rate</span>
                                 </div>
                             </div>
                             
-                            <div class="tech-feature-item" style="display: flex; flex-direction: column; align-items: flex-start; gap: 10px; color: #fff;">
-                                <div class="tech-icon-box" style="width: 46px; height: 46px; border: 1.5px solid rgba(255,255,255,0.3); border-radius: 6px; display: flex; align-items: center; justify-content: center; color: #fff; flex-shrink: 0; background: rgba(255,255,255,0.05);">
+                            <div class="tech-feature-item">
+                                <div class="tech-icon-box">
                                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: rgba(255,255,255,0.85);"><path d="M20.24 12.24a6 6 0 0 0-8.49-8.49L5 10.5V19h8.5z"></path><line x1="16" y1="8" x2="2" y2="22"></line><line x1="17.5" y1="15" x2="9" y2="15"></line></svg>
                                 </div>
-                                <div class="tech-feature-text" style="display: flex; flex-direction: column; text-align: left; font-family: 'Inter', sans-serif;">
-                                    <span style="font-size: 13px; font-weight: 700; color: #fff; line-height: 1.3;">Die-cast</span>
-                                    <span style="font-size: 10px; color: rgba(255,255,255,0.55); line-height: 1.2; margin-top: 1px;">Light & Durable</span>
+                                <div class="tech-feature-text">
+                                    <span class="val">Die-cast</span>
+                                    <span class="lbl">Light & Durable</span>
                                 </div>
                             </div>
                             
-                            <div class="tech-feature-item" style="display: flex; flex-direction: column; align-items: flex-start; gap: 10px; color: #fff;">
-                                <div class="tech-icon-box" style="width: 46px; height: 46px; border: 1.5px solid rgba(255,255,255,0.3); border-radius: 6px; display: flex; align-items: center; justify-content: center; color: #fff; flex-shrink: 0; background: rgba(255,255,255,0.05);">
+                            <div class="tech-feature-item">
+                                <div class="tech-icon-box">
                                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: rgba(255,255,255,0.85);"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
                                 </div>
-                                <div class="tech-feature-text" style="display: flex; flex-direction: column; text-align: left; font-family: 'Inter', sans-serif;">
-                                    <span style="font-size: 13px; font-weight: 700; color: #fff; line-height: 1.3;">IP65 / IP50</span>
-                                    <span style="font-size: 10px; color: rgba(255,255,255,0.55); line-height: 1.2; margin-top: 1px;">Weather Resist</span>
+                                <div class="tech-feature-text">
+                                    <span class="val">IP65 / IP50</span>
+                                    <span class="lbl">Weather Resist</span>
                                 </div>
                             </div>
                             
-                            <div class="tech-feature-item" style="display: flex; flex-direction: column; align-items: flex-start; gap: 10px; color: #fff;">
-                                <div class="tech-icon-box" style="width: 46px; height: 46px; border: 1.5px solid rgba(255,255,255,0.3); border-radius: 6px; display: flex; align-items: center; justify-content: center; color: #fff; flex-shrink: 0; background: rgba(255,255,255,0.05);">
+                            <div class="tech-feature-item">
+                                <div class="tech-icon-box">
                                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: rgba(255,255,255,0.85);"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>
                                 </div>
-                                <div class="tech-feature-text" style="display: flex; flex-direction: column; text-align: left; font-family: 'Inter', sans-serif;">
-                                    <span style="font-size: 13px; font-weight: 700; color: #fff; line-height: 1.3;">Quick Lock</span>
-                                    <span style="font-size: 10px; color: rgba(255,255,255,0.55); line-height: 1.2; margin-top: 1px;">Fast Splicing</span>
+                                <div class="tech-feature-text">
+                                    <span class="val">Quick Lock</span>
+                                    <span class="lbl">Fast Splicing</span>
                                 </div>
                             </div>
                         </div>
                         
                         <!-- Parameter Table Strip -->
-                        <div class="param-table-strip" style="background: rgba(0, 0, 0, 0.45); border: 1px solid rgba(255, 255, 255, 0.15); backdrop-filter: blur(10px); border-radius: 8px; padding: 14px 16px; width: 100%; max-width: 760px; display: grid; grid-template-columns: repeat(5, 1fr); text-align: center; gap: 5px; box-shadow: 0 8px 32px rgba(0,0,0,0.3);">
-                            <div style="display: flex; flex-direction: column; border-right: 1px solid rgba(255,255,255,0.15); padding: 0 5px;">
-                                <span style="font-family: 'Inter', sans-serif; font-size: 10px; color: #0084ff; font-weight: 700; text-transform: uppercase; margin-bottom: 2px; letter-spacing: 0.5px;">Pixel Pitch</span>
-                                <span style="font-family: 'Outfit', sans-serif; font-size: 13px; font-weight: 800; color: #fff;">P3.91</span>
+                        <div class="param-table-strip">
+                            <div class="param-table-col">
+                                <span class="param-lbl">Pixel Pitch</span>
+                                <span class="param-val">P3.91</span>
                             </div>
-                            <div style="display: flex; flex-direction: column; border-right: 1px solid rgba(255,255,255,0.15); padding: 0 5px;">
-                                <span style="font-family: 'Inter', sans-serif; font-size: 10px; color: #0084ff; font-weight: 700; text-transform: uppercase; margin-bottom: 2px; letter-spacing: 0.5px;">Brightness</span>
-                                <span style="font-family: 'Outfit', sans-serif; font-size: 13px; font-weight: 800; color: #fff;">≥800 / ≥4000 nit</span>
+                            <div class="param-table-col">
+                                <span class="param-lbl">Brightness</span>
+                                <span class="param-val">≥800 / ≥4000 nit</span>
                             </div>
-                            <div style="display: flex; flex-direction: column; border-right: 1px solid rgba(255,255,255,0.15); padding: 0 5px;">
-                                <span style="font-family: 'Inter', sans-serif; font-size: 10px; color: #0084ff; font-weight: 700; text-transform: uppercase; margin-bottom: 2px; letter-spacing: 0.5px;">Cabinet Size</span>
-                                <span style="font-family: 'Outfit', sans-serif; font-size: 13px; font-weight: 800; color: #fff;">500×500/1000 mm</span>
+                            <div class="param-table-col">
+                                <span class="param-lbl">Cabinet Size</span>
+                                <span class="param-val">500×500/1000 mm</span>
                             </div>
-                            <div style="display: flex; flex-direction: column; border-right: 1px solid rgba(255,255,255,0.15); padding: 0 5px;">
-                                <span style="font-family: 'Inter', sans-serif; font-size: 10px; color: #0084ff; font-weight: 700; text-transform: uppercase; margin-bottom: 2px; letter-spacing: 0.5px;">Weight</span>
-                                <span style="font-family: 'Outfit', sans-serif; font-size: 13px; font-weight: 800; color: #fff;">7.0 / 12.25 kg</span>
+                            <div class="param-table-col">
+                                <span class="param-lbl">Weight</span>
+                                <span class="param-val">7.0 / 12.25 kg</span>
                             </div>
-                            <div style="display: flex; flex-direction: column; padding: 0 5px;">
-                                <span style="font-family: 'Inter', sans-serif; font-size: 10px; color: #0084ff; font-weight: 700; text-transform: uppercase; margin-bottom: 2px; letter-spacing: 0.5px;">IP Rating</span>
-                                <span style="font-family: 'Outfit', sans-serif; font-size: 13px; font-weight: 800; color: #fff;">IP50 / IP65</span>
+                            <div class="param-table-col">
+                                <span class="param-lbl">IP Rating</span>
+                                <span class="param-val">IP50 / IP65</span>
                             </div>
                         </div>
                     </div>
