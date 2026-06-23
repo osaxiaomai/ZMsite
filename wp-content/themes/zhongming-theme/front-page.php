@@ -30,7 +30,7 @@ get_header(); ?>
                         </p>
                         
                         <div class="hero-btns">
-                            <a href="<?php echo site_url('/products/?category=rental-screen'); ?>" class="btn btn-primary">Explore Rental Series →</a>
+                            <a href="<?php echo zm_category_link('indoor-rental'); ?>" class="btn btn-primary">Explore Rental Series →</a>
                             <a href="<?php echo site_url('/contact'); ?>" class="btn btn-outline" style="color:#fff;">Request a Quote</a>
                         </div>
                         
@@ -62,7 +62,7 @@ get_header(); ?>
                         <p class="hero-sub">Featuring an ultra-thin integrated design, it supports wireless screen casting and remote cloud management. With high-brightness HD display and an anti-glare panel, colors are true to life. Supports split-screen playback of videos, images, and text. Perfect for shopping malls, retail stores, hotels, and banks—the ideal digital signboard to elevate brand image.</p>
                         
                         <div class="hero-btns">
-                            <a href="<?php echo site_url('/products'); ?>" class="btn btn-primary">Explore Digital Signage →</a>
+                            <a href="<?php echo zm_category_link('poster-screen'); ?>" class="btn btn-primary">Explore Digital Signage →</a>
                             <a href="<?php echo site_url('/contact'); ?>" class="btn btn-outline" style="color:#fff;">Get a Quote</a>
                         </div>
                         
@@ -126,7 +126,7 @@ get_header(); ?>
                         <p class="hero-sub">Features low-light high-grey technology with 3840Hz–7680Hz ultra-high refresh rate. Extremely light, high-precision seamless aluminum cabinets tailored for control rooms, TV studios, and meeting halls.</p>
                         
                         <div class="hero-btns">
-                            <a href="<?php echo site_url('/products'); ?>" class="btn btn-primary">Explore Indoor Series →</a>
+                            <a href="<?php echo zm_category_link('standard-indoor'); ?>" class="btn btn-primary">Explore Indoor Series →</a>
                             <a href="<?php echo site_url('/contact'); ?>" class="btn btn-outline" style="color:#fff;">Get a Quote</a>
                         </div>
                         
@@ -158,7 +158,7 @@ get_header(); ?>
                         <p class="hero-sub">Perfect combination of rubber base and soft face mask, supporting free twisting, bending, and rolling. Achieves a minimum column diameter of 406.6mm (composed of 4x 320x160mm modules). Equipped with magnetic front access and anti-ghosting circuitry for clean, lag-free visuals, easily supporting modular mounting into columns, curves, ribbon shapes, or hanging installations.</p>
                         
                         <div class="hero-btns">
-                            <a href="<?php echo site_url('/products'); ?>" class="btn btn-primary">Explore Flexible Series →</a>
+                            <a href="<?php echo zm_category_link('flexible-led'); ?>" class="btn btn-primary">Explore Flexible Series →</a>
                             <a href="<?php echo site_url('/contact'); ?>" class="btn btn-outline" style="color:#fff;">Request Solution</a>
                         </div>
                         
@@ -190,7 +190,7 @@ get_header(); ?>
                         <p class="hero-sub">Perfect point-to-point scaling for standard 16:9 displays. Engineered with LED HDR optimization for stunning contrast, dual-channel power/signal backups, and pixel-perfect UHD resolution.</p>
                         
                         <div class="hero-btns">
-                            <a href="<?php echo site_url('/products'); ?>" class="btn btn-primary">Explore 16:9 Series →</a>
+                            <a href="<?php echo zm_category_link('169-indoor'); ?>" class="btn btn-primary">Explore 16:9 Series →</a>
                             <a href="<?php echo site_url('/contact'); ?>" class="btn btn-outline" style="color:#fff;">Get a Quote</a>
                         </div>
                         

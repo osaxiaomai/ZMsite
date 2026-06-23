@@ -26,7 +26,7 @@ get_header(); ?>
                         </p>
                         
                         <div class="hero-btns">
-                            <a href="<?php echo zm_product_archive_link(); ?>?category=rental-screen" class="btn btn-primary">探索租赁系列 →</a>
+                            <a href="<?php echo zm_category_link('indoor-rental'); ?>" class="btn btn-primary">探索租赁系列 →</a>
                             <a href="<?php echo $contact_link; ?>" class="btn btn-outline" style="color:#fff;">在线获取报价</a>
                         </div>
                         
@@ -58,7 +58,7 @@ get_header(); ?>
                         <p class="hero-sub">采用一体化超薄设计，支持无线投屏与远程云端管理。高清高亮度显示效果，色彩真实生动；支持视频、图片、文字等多种素材混合分屏播放。适用于商场、零售门店、酒店大堂等高端商业场所，是提升品牌形象的完美数字看板。</p>
                         
                         <div class="hero-btns">
-                            <a href="<?php echo zm_product_archive_link(); ?>" class="btn btn-primary">探索商显系列 →</a>
+                            <a href="<?php echo zm_category_link('poster-screen'); ?>" class="btn btn-primary">探索商显系列 →</a>
                             <a href="<?php echo $contact_link; ?>" class="btn btn-outline" style="color:#fff;">在线获取报价</a>
                         </div>
                         
@@ -121,7 +121,7 @@ get_header(); ?>
                         <p class="hero-sub">采用低亮高灰技术，拥有 3840Hz–7680Hz 的超高刷新率。超轻、高精度的无缝拼接铝质箱体，专为控制室、电视台演播厅及大型会议厅打造。</p>
                         
                         <div class="hero-btns">
-                            <a href="<?php echo zm_product_archive_link(); ?>" class="btn btn-primary">探索室内标准系列 →</a>
+                            <a href="<?php echo zm_category_link('standard-indoor'); ?>" class="btn btn-primary">探索室内标准系列 →</a>
                             <a href="<?php echo $contact_link; ?>" class="btn btn-outline" style="color:#fff;">在线获取报价</a>
                         </div>
                         
@@ -153,7 +153,7 @@ get_header(); ?>
                         <p class="hero-sub">橡胶底壳与面罩完美结合，支持任意弯曲、卷绕。最小拼接直径仅 406.6mm (由四张 320x160 模组组成)。采用强磁吸前维护及专用消影电路设计，画面高清细腻无拖尾，支持模块化贴装，轻松无缝组装出圆柱、弧形、吊装等艺术造型。</p>
                         
                         <div class="hero-btns">
-                            <a href="<?php echo zm_product_archive_link(); ?>" class="btn btn-primary">探索柔性创意系列 →</a>
+                            <a href="<?php echo zm_category_link('flexible-led'); ?>" class="btn btn-primary">探索柔性创意系列 →</a>
                             <a href="<?php echo $contact_link; ?>" class="btn btn-outline" style="color:#fff;">获取专属方案</a>
                         </div>
                         
@@ -185,7 +185,7 @@ get_header(); ?>
                         <p class="hero-sub">完美实现点对点拼装，符合标准 16:9 黄金比例。配备 LED HDR 图像优化系统，具有惊人的对比度，并支持双系统双电源信号备份，画面纤毫毕现。</p>
                         
                         <div class="hero-btns">
-                            <a href="<?php echo zm_product_archive_link(); ?>" class="btn btn-primary">探索 16:9 黄金屏 →</a>
+                            <a href="<?php echo zm_category_link('169-indoor'); ?>" class="btn btn-primary">探索 16:9 黄金屏 →</a>
                             <a href="<?php echo $contact_link; ?>" class="btn btn-outline" style="color:#fff;">在线获取报价</a>
                         </div>
                         
