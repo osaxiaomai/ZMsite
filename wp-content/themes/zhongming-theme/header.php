@@ -178,6 +178,7 @@ $news_link = function_exists('pll_get_post') ? get_permalink( pll_get_post( 748 
                             <li><a href="<?php echo zm_category_link('cob-series'); ?>"><?php _e('COB Series', 'zhongming'); ?></a></li>
                             <li><a href="<?php echo zm_category_link('169-indoor'); ?>"><?php _e('16:9 Indoor', 'zhongming'); ?></a></li>
                             <li><a href="<?php echo zm_category_link('indoor-rental'); ?>"><?php _e('Indoor Rental', 'zhongming'); ?></a></li>
+                            <li><a href="<?php echo zm_category_link('poster-screen'); ?>"><?php _e('Poster / Ad Screen', 'zhongming'); ?></a></li>
                         </ul>
                     </div>
                     <!-- Group 2: Outdoor -->

@@ -293,11 +293,18 @@ function zhongming_modify_product_archive_query( $query ) {
                     $query->set( 'order', 'DESC' );
                     break;
                 case 'date_desc':
-                default:
                     $query->set( 'orderby', 'date' );
                     $query->set( 'order', 'DESC' );
                     break;
+                default:
+                    $query->set( 'orderby', 'menu_order' );
+                    $query->set( 'order', 'ASC' );
+                    break;
             }
+        } else {
+            // Default sorting when no orderby param is provided
+            $query->set( 'orderby', 'menu_order' );
+            $query->set( 'order', 'ASC' );
         }
     }
 }

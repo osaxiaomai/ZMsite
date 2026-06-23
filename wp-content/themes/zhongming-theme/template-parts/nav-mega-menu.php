@@ -9,7 +9,7 @@
         <div class="mega-col">
             <h4><?php zm_te('Indoor LED', '室内 LED'); ?></h4>
             <a href="<?php echo zm_category_link('standard-indoor'); ?>" class="mega-item">
-                <div class="mega-icon"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/nav/indoor.jpg" alt=""></div>
+                <div class="mega-icon"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/nav/indoor_v2.jpg" alt=""></div>
                 <div class="mega-content">
                     <span><?php zm_te('Standard Indoor', '室内标准屏'); ?></span>
                     <small>P1.2 – P2.5 · SMD / Aluminum</small>
@@ -19,7 +19,7 @@
                 <div class="mega-icon"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/nav/cob.jpg" alt=""></div>
                 <div class="mega-content">
                     <span><?php zm_te('COB Series', 'COB 小间距系列'); ?></span>
-                    <small><?php zm_te('P0.7 – P1.5 · Flip chip', 'P0.7 – P1.5 · 倒装芯片'); ?></small>
+                    <small><?php zm_te('P0.7 – P1.53 · Flip chip', 'P0.7 – P1.53 · 倒装芯片'); ?></small>
                 </div>
             </a>
             <a href="<?php echo zm_category_link('169-indoor'); ?>" class="mega-item">
@@ -34,6 +34,13 @@
                 <div class="mega-content">
                     <span><?php zm_te('Indoor Rental', '室内租赁屏'); ?></span>
                     <small><?php zm_te('P2.6 – P4.8 · High refresh', 'P2.6 – P4.8 · 高刷新率'); ?></small>
+                </div>
+            </a>
+            <a href="<?php echo zm_category_link('poster-screen'); ?>" class="mega-item">
+                <div class="mega-icon"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/nav/poster_v2.jpg" alt=""></div>
+                <div class="mega-content">
+                    <span><?php zm_te('Poster Screen', '智能数字广告屏'); ?></span>
+                    <small><?php zm_te('Digital Signage · Plug & Play', '数字标牌 · 即插即用'); ?></small>
                 </div>
             </a>
         </div>
@@ -89,21 +96,21 @@
                 </div>
             </a>
             <a href="<?php echo zm_category_link('flexible-led'); ?>" class="mega-item">
-                <div class="mega-icon"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/nav/flexible.jpg" alt=""></div>
+                <div class="mega-icon"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/nav/flexible_v2.jpg" alt=""></div>
                 <div class="mega-content">
                     <span><?php zm_te('Flexible LED', '柔性软模组'); ?></span>
                     <small><?php zm_te('Curve / column / arch', '弧形 / 圆柱 / 拱形拼接'); ?></small>
                 </div>
             </a>
             <a href="<?php echo zm_category_link('customized-xr'); ?>" class="mega-item">
-                <div class="mega-icon"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/nav/custom.jpg" alt=""></div>
+                <div class="mega-icon"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/nav/custom_v2.jpg" alt=""></div>
                 <div class="mega-content">
                     <span><?php zm_te('Customized / XR', '定制化 / XR虚拟拍摄'); ?></span>
                     <small><?php zm_te('Sphere · Cylinder · 5-face', '球形屏 · 圆柱屏 · 5面体'); ?></small>
                 </div>
             </a>
             <a href="<?php echo zm_category_link('photoelectric-glass'); ?>" class="mega-item">
-                <div class="mega-icon"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/nav/glass.jpg" alt=""></div>
+                <div class="mega-icon"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/nav/glass_v2.jpg" alt=""></div>
                 <div class="mega-content">
                     <span><?php zm_te('Photoelectric Glass', '光电玻璃屏'); ?></span>
                     <small><?php zm_te('Transparent glass LED', '透明玻璃 LED'); ?></small>
