@@ -14050,3 +14050,11 @@ CREATE TABLE `wp_wfwaffailures` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
 
 /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+
+-- Apply Poster Screen ordering
+UPDATE wp_posts SET menu_order = 10 WHERE post_name LIKE '%poster-screen-p125%';
+UPDATE wp_posts SET menu_order = 20 WHERE post_name LIKE '%poster-screen-p153%';
+UPDATE wp_posts SET menu_order = 30 WHERE post_name LIKE '%poster-screen%' AND post_name NOT LIKE '%p125%' AND post_name NOT LIKE '%p15%' AND post_name NOT LIKE '%p20%' AND post_name NOT LIKE '%p25%' AND post_name NOT LIKE '%p30%';
+UPDATE wp_posts SET menu_order = 40 WHERE post_name LIKE '%poster-screen-p20%';
+UPDATE wp_posts SET menu_order = 50 WHERE post_name LIKE '%poster-screen-p25%';
+UPDATE wp_posts SET menu_order = 60 WHERE post_name LIKE '%poster-screen-p30%';
