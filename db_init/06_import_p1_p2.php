@@ -59,39 +59,41 @@ echo "P1 ID: $p1_id, P2 ID: $p2_id\n";
 
 $product_ids = [416, 417, 418, 419, 420, 421, 422, 774, 775, 776, 777, 778, 779, 780];
 
-foreach ($product_ids as $pid) {
+foreach ($product_ids as $index => $pid) {
     // Check if post exists
     if (!get_post($pid)) continue;
 
-    // Set featured image to P1
-    update_post_meta($pid, '_thumbnail_id', $p1_id);
+    // Alternate P1 and P2 based on index parity
+    $main_id = ($index % 2 === 0) ? $p1_id : $p2_id;
+    $gallery_add_id = ($index % 2 === 0) ? $p2_id : $p1_id;
+
+    // Set featured image
+    update_post_meta($pid, '_thumbnail_id', $main_id);
     
-    // Prepend P2 to gallery
+    // Prepend the other image to gallery
     $gallery = get_post_meta($pid, '_product_image_gallery', true);
     if ($gallery) {
         $gallery_arr = explode(',', $gallery);
-        if (!in_array($p2_id, $gallery_arr)) {
-            array_unshift($gallery_arr, $p2_id);
-        }
+        // Remove both if they exist to prevent duplicates
+        $gallery_arr = array_diff($gallery_arr, [$p1_id, $p2_id]);
+        array_unshift($gallery_arr, $gallery_add_id);
         $new_gallery = implode(',', $gallery_arr);
     } else {
-        $new_gallery = $p2_id;
+        $new_gallery = $gallery_add_id;
     }
     update_post_meta($pid, '_product_image_gallery', $new_gallery);
     
     // Also update ACF product_gallery if it exists
     $acf_gallery = get_post_meta($pid, 'product_gallery', true);
     if ($acf_gallery && is_array($acf_gallery)) {
-        if (!in_array($p2_id, $acf_gallery)) {
-            array_unshift($acf_gallery, $p2_id);
-            update_post_meta($pid, 'product_gallery', $acf_gallery);
-        }
+        $acf_gallery = array_diff($acf_gallery, [$p1_id, $p2_id]);
+        array_unshift($acf_gallery, $gallery_add_id);
+        update_post_meta($pid, 'product_gallery', $acf_gallery);
     } elseif (is_string($acf_gallery)) {
-        // sometimes ACF returns it unserialized but stored as serialized
-        // ACF uses 'update_field' usually, but update_post_meta works if we save an array
         $acf_arr = @unserialize($acf_gallery);
-        if (is_array($acf_arr) && !in_array($p2_id, $acf_arr)) {
-            array_unshift($acf_arr, $p2_id);
+        if (is_array($acf_arr)) {
+            $acf_arr = array_diff($acf_arr, [$p1_id, $p2_id]);
+            array_unshift($acf_arr, $gallery_add_id);
             update_post_meta($pid, 'product_gallery', $acf_arr);
         }
     }
