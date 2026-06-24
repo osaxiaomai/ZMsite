@@ -19,12 +19,12 @@ if (!file_exists($month_dir)) {
 }
 
 // Ensure the files are available (OpenClaw will put them in /data/zmsite/)
-$f1_source = dirname(ABSPATH) . '/Film_1.jpg';
+$f1_source = dirname(ABSPATH) . '/Film_1_Clean.jpg';
 $f2_source = dirname(ABSPATH) . '/Film_2.jpg';
-$f1_dest = $month_dir . '/Film_1.jpg';
+$f1_dest = $month_dir . '/Film_1_Clean.jpg';
 $f2_dest = $month_dir . '/Film_2.jpg';
 
-if (file_exists($f1_source) && !file_exists($f1_dest)) {
+if (file_exists($f1_source)) {
     copy($f1_source, $f1_dest);
 }
 if (file_exists($f2_source) && !file_exists($f2_dest)) {
@@ -55,7 +55,7 @@ function insert_attachment($filename) {
 $f1_id = insert_attachment($f1_dest);
 $f2_id = insert_attachment($f2_dest);
 
-echo "Film_1 ID: $f1_id\n";
+echo "Film_1_Clean ID: $f1_id\n";
 echo "Film_2 ID: $f2_id\n";
 
 $film_products = [437, 438, 439, 440, 441, 442, 443, 444, 795, 796, 797, 798, 799, 800, 801, 802];
@@ -63,6 +63,7 @@ $film_products = [437, 438, 439, 440, 441, 442, 443, 444, 795, 796, 797, 798, 79
 // Identify the wrong image to remove and the right image to keep
 $wrong_img_id = $wpdb->get_var("SELECT ID FROM {$wpdb->posts} WHERE post_title = '07_film_screen_product_02-1' AND post_type = 'attachment'");
 $right_img_id = $wpdb->get_var("SELECT ID FROM {$wpdb->posts} WHERE post_title = '07_film_screen_product_01-1' AND post_type = 'attachment'");
+$old_film_1_id = $wpdb->get_var("SELECT ID FROM {$wpdb->posts} WHERE post_title = 'Film_1' AND post_type = 'attachment'");
 
 foreach ($film_products as $index => $pid) {
     if (!get_post($pid)) continue;
@@ -78,6 +79,9 @@ foreach ($film_products as $index => $pid) {
         
         if ($wrong_img_id) {
             $gallery_arr = array_diff($gallery_arr, [$wrong_img_id]);
+        }
+        if ($old_film_1_id) {
+            $gallery_arr = array_diff($gallery_arr, [$old_film_1_id]);
         }
         $gallery_arr = array_diff($gallery_arr, [$f1_id, $f2_id]);
         
@@ -96,6 +100,7 @@ foreach ($film_products as $index => $pid) {
     $acf_gallery = get_post_meta($pid, 'product_gallery', true);
     if ($acf_gallery && is_array($acf_gallery)) {
         if ($wrong_img_id) $acf_gallery = array_diff($acf_gallery, [$wrong_img_id]);
+        if ($old_film_1_id) $acf_gallery = array_diff($acf_gallery, [$old_film_1_id]);
         $acf_gallery = array_diff($acf_gallery, [$f1_id, $f2_id]);
         if ($right_img_id && !in_array($right_img_id, $acf_gallery)) {
             $acf_gallery[] = $right_img_id;
@@ -106,6 +111,7 @@ foreach ($film_products as $index => $pid) {
         $acf_arr = @unserialize($acf_gallery);
         if (is_array($acf_arr)) {
             if ($wrong_img_id) $acf_arr = array_diff($acf_arr, [$wrong_img_id]);
+            if ($old_film_1_id) $acf_arr = array_diff($acf_arr, [$old_film_1_id]);
             $acf_arr = array_diff($acf_arr, [$f1_id, $f2_id]);
             if ($right_img_id && !in_array($right_img_id, $acf_arr)) {
                 $acf_arr[] = $right_img_id;
