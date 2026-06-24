@@ -372,7 +372,7 @@ document.addEventListener('DOMContentLoaded', function() {
                             }
                             
                             if ($fallback_img) : ?>
-                                <img src="<?php echo esc_url($fallback_img); ?>" alt="<?php the_title_attribute(); ?>" style="width:100%; height:100%; object-fit:contain;">
+                                <img src="<?php echo esc_url($fallback_img); ?>" alt="<?php the_title_attribute(); ?>" style="width:100%; height:100%; object-fit:cover;">
                             <?php else : ?>
                                 <div style="width:100%;height:100%;background:#f0f0f0;display:flex;align-items:center;justify-content:center;color:#ccc;font-size:36px;">🖼</div>
                             <?php endif; ?>

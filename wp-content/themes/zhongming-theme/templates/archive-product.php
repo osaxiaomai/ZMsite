@@ -376,7 +376,7 @@ $current_sort = ! empty( $_GET['orderby'] ) ? sanitize_text_field( $_GET['orderb
                                 <div class="product-card-img">
                                     <a href="<?php the_permalink(); ?>">
                                         <?php if ( has_post_thumbnail() ) : ?>
-                                            <?php the_post_thumbnail( 'medium', array( 'class' => 'product-img', 'style' => 'width: 100%; height: 100%; object-fit: contain;' ) ); ?>
+                                            <?php the_post_thumbnail( 'medium', array( 'class' => 'product-img' ) ); ?>
                                         <?php else : ?>
                                             <!-- SVG premium placeholder box with gray background -->
                                             <div class="product-image-fallback">

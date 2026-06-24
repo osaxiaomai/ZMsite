@@ -28,10 +28,10 @@ add_action( 'after_setup_theme', 'zhongming_setup' );
 
 // 2. Enqueue Assets
 function zhongming_scripts() {
-    wp_enqueue_style( 'zhongming-main-css', get_template_directory_uri() . '/assets/css/main.css', array(), '1.6.0' );
-    wp_enqueue_style( 'zhongming-style', get_stylesheet_uri(), array(), '1.6.0' );
-    wp_enqueue_style( 'zhongming-components', get_template_directory_uri() . '/assets/css/components.css', array(), '1.6.0' );
-    wp_enqueue_style( 'zhongming-responsive', get_template_directory_uri() . '/assets/css/responsive.css', array(), '1.6.0' );
+    wp_enqueue_style( 'zhongming-main-css', get_template_directory_uri() . '/assets/css/main.css', array(), '1.6.1' );
+    wp_enqueue_style( 'zhongming-style', get_stylesheet_uri(), array(), '1.6.1' );
+    wp_enqueue_style( 'zhongming-components', get_template_directory_uri() . '/assets/css/components.css', array(), '1.6.1' );
+    wp_enqueue_style( 'zhongming-responsive', get_template_directory_uri() . '/assets/css/responsive.css', array(), '1.6.1' );
     wp_enqueue_script( 'zhongming-main', get_template_directory_uri() . '/assets/js/main.js', array(), '1.5.1', true );
     wp_enqueue_script( 'zhongming-mega-menu', get_template_directory_uri() . '/assets/js/mega-menu.js', array(), '1.5.1', true );
 }
