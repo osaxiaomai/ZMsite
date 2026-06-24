@@ -1,3 +1,5 @@
+SET NAMES utf8mb4;
+
 -- Fix P3.91 Rental Screen Titles and IP Rating
 
 -- Update Titles
