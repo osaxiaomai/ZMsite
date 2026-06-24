@@ -99,7 +99,7 @@ get_header(); ?>
                         </div>
                         
                         <div class="hero-pills">
-                            <span class="pill">✓ CE / RoHS Certified</span>
+                            <span class="pill">✓ One-stop System Solutions</span>
                             <span class="pill">✓ 100,000h Lifespan</span>
                             <span class="pill">✓ OEM / ODM Available</span>
                             <span class="pill">✓ 30+ Countries</span>

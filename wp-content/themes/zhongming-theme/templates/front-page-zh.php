@@ -94,7 +94,7 @@ get_header(); ?>
                         </div>
                         
                         <div class="hero-pills">
-                            <span class="pill">✓ CE / RoHS 国际认证</span>
+                            <span class="pill">✓ 一站式系统解决方案</span>
                             <span class="pill">✓ 100,000小时超长寿命</span>
                             <span class="pill">✓ 支持 OEM / ODM 定制</span>
                             <span class="pill">✓ 销往全球 30+ 国家</span>
