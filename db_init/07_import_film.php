@@ -60,8 +60,9 @@ echo "Film_2 ID: $f2_id\n";
 
 $film_products = [437, 438, 439, 440, 441, 442, 443, 444, 795, 796, 797, 798, 799, 800, 801, 802];
 
-// Get the old thumbnail ID (assuming product 437 still has it before we run this)
-$old_id = get_post_meta(437, '_thumbnail_id', true);
+// Identify the wrong image to remove and the right image to keep
+$wrong_img_id = $wpdb->get_var("SELECT ID FROM {$wpdb->posts} WHERE post_title = '07_film_screen_product_02-1' AND post_type = 'attachment'");
+$right_img_id = $wpdb->get_var("SELECT ID FROM {$wpdb->posts} WHERE post_title = '07_film_screen_product_01-1' AND post_type = 'attachment'");
 
 foreach ($film_products as $index => $pid) {
     if (!get_post($pid)) continue;
@@ -74,30 +75,41 @@ foreach ($film_products as $index => $pid) {
     $gallery = get_post_meta($pid, '_product_image_gallery', true);
     if ($gallery) {
         $gallery_arr = explode(',', $gallery);
-        // Remove old black pedestal image if it exists
-        if ($old_id) {
-            $gallery_arr = array_diff($gallery_arr, [$old_id]);
+        
+        if ($wrong_img_id) {
+            $gallery_arr = array_diff($gallery_arr, [$wrong_img_id]);
         }
         $gallery_arr = array_diff($gallery_arr, [$f1_id, $f2_id]);
+        
+        if ($right_img_id && !in_array($right_img_id, $gallery_arr)) {
+            $gallery_arr[] = $right_img_id;
+        }
+        
         array_unshift($gallery_arr, $gallery_add_id);
         $new_gallery = implode(',', $gallery_arr);
     } else {
-        $new_gallery = $gallery_add_id;
+        $new_gallery = $gallery_add_id . ($right_img_id ? ',' . $right_img_id : '');
     }
     update_post_meta($pid, '_product_image_gallery', $new_gallery);
     
     // Also update ACF product_gallery if it exists
     $acf_gallery = get_post_meta($pid, 'product_gallery', true);
     if ($acf_gallery && is_array($acf_gallery)) {
-        if ($old_id) $acf_gallery = array_diff($acf_gallery, [$old_id]);
+        if ($wrong_img_id) $acf_gallery = array_diff($acf_gallery, [$wrong_img_id]);
         $acf_gallery = array_diff($acf_gallery, [$f1_id, $f2_id]);
+        if ($right_img_id && !in_array($right_img_id, $acf_gallery)) {
+            $acf_gallery[] = $right_img_id;
+        }
         array_unshift($acf_gallery, $gallery_add_id);
         update_post_meta($pid, 'product_gallery', $acf_gallery);
     } elseif (is_string($acf_gallery)) {
         $acf_arr = @unserialize($acf_gallery);
         if (is_array($acf_arr)) {
-            if ($old_id) $acf_arr = array_diff($acf_arr, [$old_id]);
+            if ($wrong_img_id) $acf_arr = array_diff($acf_arr, [$wrong_img_id]);
             $acf_arr = array_diff($acf_arr, [$f1_id, $f2_id]);
+            if ($right_img_id && !in_array($right_img_id, $acf_arr)) {
+                $acf_arr[] = $right_img_id;
+            }
             array_unshift($acf_arr, $gallery_add_id);
             update_post_meta($pid, 'product_gallery', $acf_arr);
         }
