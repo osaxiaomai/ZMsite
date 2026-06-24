@@ -1620,7 +1620,7 @@
       "cabinet_resolution": "128*128 / 128*256",
       "cabinet_weight_kg": "7.0 kg / 12.25 kg",
       "maintenance_type": "Front & Rear access",
-      "ip_rating": "IP50",
+      "ip_rating": "IP35",
       "brightness_nit": "≥≥800 nit",
       "horizontal_view_angle": "120°",
       "vertical_view_angle": "120°",
@@ -1792,7 +1792,7 @@
       "cabinet_resolution": "128*128 / 128*256",
       "cabinet_weight_kg": "7.0 kg / 12.25 kg",
       "maintenance_type": "Front & Rear access",
-      "ip_rating": "IP65",
+      "ip_rating": "IP35",
       "brightness_nit": "≥≥4000 nit",
       "horizontal_view_angle": "120°",
       "vertical_view_angle": "120°",
@@ -5367,7 +5367,7 @@
   },
   {
     "ID": 783,
-    "post_title": "P3.91租赁屏",
+    "post_title": "舞台租赁 LED 显示屏 室内 P3.91 — 快速搭建，活动高稳定性",
     "post_name": "rental-indoor-p3-91-zh",
     "permalink": "http://zhongming.local/products/rental-indoor-p3-91-zh/",
     "categories": [
@@ -5388,7 +5388,7 @@
       "cabinet_resolution": "128*128 / 128*256",
       "cabinet_weight_kg": "7 / 12.25 kg",
       "maintenance_type": "前/后维护",
-      "ip_rating": "IP50",
+      "ip_rating": "IP35",
       "brightness_nit": "≥≥800",
       "horizontal_view_angle": "120°",
       "vertical_view_angle": "120°",
@@ -5539,7 +5539,7 @@
   },
   {
     "ID": 786,
-    "post_title": "舞台租赁 LED 显示屏 P3.91 — 全天候户外高亮活动租赁大屏",
+    "post_title": "舞台租赁 LED 显示屏 户外 P3.91 — 全天候户外高亮活动租赁大屏",
     "post_name": "rental-outdoor-p3-91-zh",
     "permalink": "http://zhongming.local/products/rental-outdoor-p3-91-zh/",
     "categories": [
@@ -5560,7 +5560,7 @@
       "cabinet_resolution": "128*128 / 128*256",
       "cabinet_weight_kg": "7 / 12.25 kg",
       "maintenance_type": "前/后维护",
-      "ip_rating": "IP65",
+      "ip_rating": "IP35",
       "brightness_nit": "≥≥4000",
       "horizontal_view_angle": "120°",
       "vertical_view_angle": "120°",
