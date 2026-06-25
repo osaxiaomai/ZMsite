@@ -114,7 +114,7 @@ $current_sort = ! empty( $_GET['orderby'] ) ? sanitize_text_field( $_GET['orderb
                                 $child_categories = get_terms( array(
                                     'taxonomy'   => 'product_category',
                                     'parent'     => $parent->term_id,
-                                    'hide_empty' => false,
+                                    'hide_empty' => true,
                                 ) );
 
                                 // Detect if child is active to keep parent expanded
@@ -167,7 +167,7 @@ $current_sort = ! empty( $_GET['orderby'] ) ? sanitize_text_field( $_GET['orderb
                                                 $grandchild_categories = get_terms( array(
                                                     'taxonomy'   => 'product_category',
                                                     'parent'     => $child->term_id,
-                                                    'hide_empty' => false,
+                                                    'hide_empty' => true,
                                                 ) );
                                                 
                                                 $has_active_grandchild = false;
