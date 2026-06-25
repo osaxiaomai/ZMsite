@@ -92,38 +92,28 @@ foreach ($products as $pid => $cat_id) {
     if (!get_post($pid)) continue;
     
     // Assign category
-    // We add the new category, but keep the parent category to be safe, or just overwrite?
-    // WooCommerce products usually have both parent and child.
+    // We add the new category, but keep the parent category to be safe
     $parent_cat = ($cat_id == $indoor_en_id || $cat_id == $outdoor_en_id) ? $parent_en : $parent_zh;
     wp_set_object_terms($pid, [(int)$parent_cat, (int)$cat_id], 'product_cat', false);
     
-    // Add images to gallery
-    $gallery = get_post_meta($pid, '_product_image_gallery', true);
-    $gallery_arr = $gallery ? explode(',', $gallery) : [];
+    // Set thumbnail to Trans_1
+    set_post_thumbnail($pid, $image_ids[0]);
     
-    foreach ($image_ids as $img_id) {
-        if (!in_array($img_id, $gallery_arr)) {
-            $gallery_arr[] = $img_id;
-        }
-    }
-    update_post_meta($pid, '_product_image_gallery', implode(',', $gallery_arr));
+    // Set gallery to Trans_2, Trans_3, Trans_4 (completely replacing any flowers or poster screens)
+    $gallery_str = $image_ids[1] . ',' . $image_ids[2] . ',' . $image_ids[3];
+    update_post_meta($pid, '_product_image_gallery', $gallery_str);
     
-    // Update ACF gallery if exists
-    $acf_gallery = get_post_meta($pid, 'product_gallery', true);
-    if ($acf_gallery && is_array($acf_gallery)) {
-        foreach ($image_ids as $img_id) {
-            if (!in_array($img_id, $acf_gallery)) $acf_gallery[] = $img_id;
-        }
-        update_post_meta($pid, 'product_gallery', $acf_gallery);
-    } elseif (is_string($acf_gallery)) {
-        $acf_arr = @unserialize($acf_gallery);
-        if (is_array($acf_arr)) {
-            foreach ($image_ids as $img_id) {
-                if (!in_array($img_id, $acf_arr)) $acf_arr[] = $img_id;
-            }
-            update_post_meta($pid, 'product_gallery', $acf_arr);
-        }
-    }
+    // Remove ACF gallery to avoid conflicts
+    delete_post_meta($pid, 'product_gallery');
 }
 
-echo "Successfully categorized transparent screen products and appended 4 images.\n";
+// 4. Recount terms so the new categories show up in the frontend sidebar widget!
+_wc_term_recount(
+    get_terms( 'product_cat', array( 'hide_empty' => false, 'fields' => 'ids' ) ),
+    get_taxonomy( 'product_cat' ),
+    true,
+    false
+);
+delete_transient( 'wc_term_counts' );
+
+echo "Successfully categorized transparent screen products, replaced images, and recounted terms.\n";
