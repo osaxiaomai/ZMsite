@@ -161,14 +161,60 @@ $current_sort = ! empty( $_GET['orderby'] ) ? sanitize_text_field( $_GET['orderb
 
                                     <?php if ( ! empty( $child_categories ) && ! is_wp_error( $child_categories ) ) : ?>
                                         <ul class="subcategories">
-                                            <?php foreach ( $child_categories as $child ) : 
+                                            <?php foreach ( $child_categories as $child ) : ?>
+                                                <?php 
+                                                // Get grandchildren (Level 3)
+                                                $grandchild_categories = get_terms( array(
+                                                    'taxonomy'   => 'product_category',
+                                                    'parent'     => $child->term_id,
+                                                    'hide_empty' => false,
+                                                ) );
+                                                
+                                                $has_active_grandchild = false;
+                                                if ( ! empty( $grandchild_categories ) && ! is_wp_error( $grandchild_categories ) ) {
+                                                    foreach ( $grandchild_categories as $grandchild ) {
+                                                        if ( $active_taxonomy === 'product_category' && $active_term_id === $grandchild->term_id ) {
+                                                            $has_active_grandchild = true;
+                                                            break;
+                                                        }
+                                                    }
+                                                }
+                                                
                                                 $is_child_active = ( $active_taxonomy === 'product_category' && $active_term_id === $child->term_id );
-                                                $child_class = $is_child_active ? ' class="active"' : '';
+                                                $child_classes = array();
+                                                if ( $is_child_active ) $child_classes[] = 'active';
+                                                if ( $has_active_grandchild ) $child_classes[] = 'expanded child-active';
+                                                
+                                                $child_class_str = ! empty( $child_classes ) ? ' class="' . esc_attr( implode( ' ', $child_classes ) ) . '"' : '';
                                                 ?>
-                                                <li<?php echo $child_class; ?>>
-                                                    <a href="<?php echo esc_url( get_term_link( $child ) ); ?>">
-                                                        <?php echo esc_html( $child->name ); ?>
-                                                    </a>
+                                                <li<?php echo $child_class_str; ?>>
+                                                    <div class="tree-item-wrapper">
+                                                        <a href="<?php echo esc_url( get_term_link( $child ) ); ?>" class="category-link">
+                                                            <?php echo esc_html( $child->name ); ?>
+                                                        </a>
+                                                        <?php if ( ! empty( $grandchild_categories ) && ! is_wp_error( $grandchild_categories ) ) : ?>
+                                                            <button class="submenu-toggle-btn" aria-label="<?php esc_attr_e( 'Toggle Submenu', 'zhongming' ); ?>">
+                                                                <svg width="8" height="5" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                    <path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                                                </svg>
+                                                            </button>
+                                                        <?php endif; ?>
+                                                    </div>
+                                                    
+                                                    <?php if ( ! empty( $grandchild_categories ) && ! is_wp_error( $grandchild_categories ) ) : ?>
+                                                        <ul class="subcategories">
+                                                            <?php foreach ( $grandchild_categories as $grandchild ) : 
+                                                                $is_grandchild_active = ( $active_taxonomy === 'product_category' && $active_term_id === $grandchild->term_id );
+                                                                $grandchild_class = $is_grandchild_active ? ' class="active"' : '';
+                                                                ?>
+                                                                <li<?php echo $grandchild_class; ?>>
+                                                                    <a href="<?php echo esc_url( get_term_link( $grandchild ) ); ?>">
+                                                                        <?php echo esc_html( $grandchild->name ); ?>
+                                                                    </a>
+                                                                </li>
+                                                            <?php endforeach; ?>
+                                                        </ul>
+                                                    <?php endif; ?>
                                                 </li>
                                             <?php endforeach; ?>
                                         </ul>
