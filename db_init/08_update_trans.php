@@ -52,11 +52,11 @@ echo "Image IDs: " . implode(', ', $image_ids) . "\n";
 
 // 2. Create Categories
 function create_cat($name, $slug, $parent_id) {
-    $term = term_exists($name, 'product_cat', $parent_id);
+    $term = term_exists($name, 'product_category', $parent_id);
     if ($term !== 0 && $term !== null) {
         return $term['term_id'];
     }
-    $result = wp_insert_term($name, 'product_cat', array(
+    $result = wp_insert_term($name, 'product_category', array(
         'slug' => $slug,
         'parent' => $parent_id
     ));
@@ -94,26 +94,28 @@ foreach ($products as $pid => $cat_id) {
     // Assign category
     // We add the new category, but keep the parent category to be safe
     $parent_cat = ($cat_id == $indoor_en_id || $cat_id == $outdoor_en_id) ? $parent_en : $parent_zh;
-    wp_set_object_terms($pid, [(int)$parent_cat, (int)$cat_id], 'product_cat', false);
+    wp_set_object_terms($pid, [(int)$parent_cat, (int)$cat_id], 'product_category', false);
     
     // Set thumbnail to Trans_1
     set_post_thumbnail($pid, $image_ids[0]);
     
     // Set gallery to Trans_2, Trans_3, Trans_4 (completely replacing any flowers or poster screens)
-    $gallery_str = $image_ids[1] . ',' . $image_ids[2] . ',' . $image_ids[3];
-    update_post_meta($pid, '_product_image_gallery', $gallery_str);
+    $gallery_arr = array($image_ids[1], $image_ids[2], $image_ids[3]);
+    update_post_meta($pid, '_product_image_gallery', implode(',', $gallery_arr));
     
-    // Remove ACF gallery to avoid conflicts
-    delete_post_meta($pid, 'product_gallery');
+    // Set ACF gallery (required by single-product.php)
+    update_post_meta($pid, 'product_gallery', $gallery_arr);
+    if (function_exists('update_field')) {
+        update_field('product_gallery', $gallery_arr, $pid);
+    }
 }
 
 // 4. Recount terms so the new categories show up in the frontend sidebar widget!
-_wc_term_recount(
-    get_terms( 'product_cat', array( 'hide_empty' => false, 'fields' => 'ids' ) ),
-    get_taxonomy( 'product_cat' ),
-    true,
-    false
-);
-delete_transient( 'wc_term_counts' );
+global $wpdb;
+$wpdb->query("UPDATE {$wpdb->term_taxonomy} tt SET count = (SELECT COUNT(DISTINCT tr.object_id) FROM {$wpdb->term_relationships} tr WHERE tr.term_taxonomy_id = tt.term_taxonomy_id) WHERE taxonomy='product_category'");
+
+delete_option("product_category_children");
+clean_term_cache(array(), 'product_category');
+wp_cache_flush();
 
 echo "Successfully categorized transparent screen products, replaced images, and recounted terms.\n";
