@@ -96,17 +96,51 @@ foreach ($products as $pid => $cat_id) {
     $parent_cat = ($cat_id == $indoor_en_id || $cat_id == $outdoor_en_id) ? $parent_en : $parent_zh;
     wp_set_object_terms($pid, [(int)$parent_cat, (int)$cat_id], 'product_category', false);
     
-    // Set thumbnail to Trans_1
-    set_post_thumbnail($pid, $image_ids[0]);
+    // Instead of overriding everything, append the new 4 images to their ORIGINAL gallery
     
-    // Set gallery to Trans_2, Trans_3, Trans_4 (completely replacing any flowers or poster screens)
-    $gallery_arr = array($image_ids[1], $image_ids[2], $image_ids[3]);
-    update_post_meta($pid, '_product_image_gallery', implode(',', $gallery_arr));
+    // First, find the original images (they have these specific names in the media library)
+    $orig_717 = $wpdb->get_var($wpdb->prepare("SELECT ID FROM $wpdb->posts WHERE post_title = %s AND post_type = 'attachment'", '06_transparent_screen_product_03-1'));
+    $orig_718 = $wpdb->get_var($wpdb->prepare("SELECT ID FROM $wpdb->posts WHERE post_title = %s AND post_type = 'attachment'", '06_transparent_screen_product_01-2'));
+    $orig_719 = $wpdb->get_var($wpdb->prepare("SELECT ID FROM $wpdb->posts WHERE post_title = %s AND post_type = 'attachment'", '06_transparent_screen_product_04-1'));
     
-    // Set ACF gallery (required by single-product.php)
-    update_post_meta($pid, 'product_gallery', $gallery_arr);
-    if (function_exists('update_field')) {
-        update_field('product_gallery', $gallery_arr, $pid);
+    // Map of product ID to its intended [thumbnail_id, [gallery_ids]]
+    $orig_mapping = [
+        430 => [$orig_719, [$orig_717, $orig_718]],
+        431 => [$orig_717, [$orig_719, $orig_718]],
+        432 => [$orig_719, [$orig_717, $orig_718]],
+        433 => [$orig_717, [$orig_719, $orig_718]],
+        434 => [$orig_719, [$orig_717, $orig_718]],
+        435 => [$orig_717, [$orig_719, $orig_718]],
+        436 => [$orig_719, [$orig_717, $orig_718]],
+        788 => [$orig_719, [$orig_717, $orig_718]],
+        789 => [$orig_717, [$orig_719, $orig_718]],
+        790 => [$orig_719, [$orig_717, $orig_718]],
+        791 => [$orig_717, [$orig_719, $orig_718]],
+        792 => [$orig_719, [$orig_717, $orig_718]],
+        793 => [$orig_717, [$orig_719, $orig_718]],
+        794 => [$orig_719, [$orig_717, $orig_718]],
+    ];
+    
+    if (isset($orig_mapping[$pid])) {
+        $thumb_id = $orig_mapping[$pid][0];
+        $orig_gallery = $orig_mapping[$pid][1];
+        
+        // Append the new images (Trans_1, Trans_2, Trans_3, Trans_4)
+        $final_gallery = array_merge($orig_gallery, $image_ids);
+        
+        // 1. Restore Thumbnail
+        if ($thumb_id) {
+            set_post_thumbnail($pid, $thumb_id);
+        }
+        
+        // 2. Set WooCommerce Gallery
+        update_post_meta($pid, '_product_image_gallery', implode(',', $final_gallery));
+        
+        // 3. Set ACF Gallery (required by single-product.php)
+        update_post_meta($pid, 'product_gallery', $final_gallery);
+        if (function_exists('update_field')) {
+            update_field('product_gallery', $final_gallery, $pid);
+        }
     }
 }
 
