@@ -62,13 +62,7 @@
                     <small><?php zm_te('P2.9 – P4.8 · IP65 Waterproof', 'P2.9 – P4.8 · IP65 防水'); ?></small>
                 </div>
             </a>
-            <a href="<?php echo zm_category_link('panel-series'); ?>" class="mega-item">
-                <div class="mega-icon"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/nav/panel.jpg" alt=""></div>
-                <div class="mega-content">
-                    <span><?php zm_te('Panel Series', '显示面板/模组'); ?></span>
-                    <small><?php zm_te('Single module units', '单模组单元'); ?></small>
-                </div>
-            </a>
+
         </div>
 
         <!-- Column 3: Special & Creative -->

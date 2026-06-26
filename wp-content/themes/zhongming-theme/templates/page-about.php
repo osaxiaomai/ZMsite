@@ -36,7 +36,6 @@ $contact_link = function_exists('zhongming_get_contact_url') ? zhongming_get_con
 <section class="about-overview" style="padding: 60px 0; background-color: #ffffff;">
     <div class="container">
         <div class="about-section-header" style="margin-bottom: 40px; display: flex; align-items: center; gap: 12px;">
-            <span class="section-num-badge" style="width: 28px; height: 28px; border-radius: 50%; background-color: var(--color-text); color: #ffffff; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 700;">1</span>
             <div>
                 <h2 style="font-size: 20px; font-weight: 700; color: var(--color-text); margin: 0;"><?php esc_html_e( 'Company Overview', 'zhongming' ); ?></h2>
                 <span style="font-size: 12px; color: var(--color-text-3);"><?php esc_html_e( 'Who we are and what we do', 'zhongming' ); ?></span>
@@ -104,7 +103,6 @@ $contact_link = function_exists('zhongming_get_contact_url') ? zhongming_get_con
 <section class="about-glance" style="padding: 60px 0; background-color: var(--color-bg-2); border-top: 1px solid var(--color-border); border-bottom: 1px solid var(--color-border);">
     <div class="container">
         <div class="about-section-header" style="margin-bottom: 40px; display: flex; align-items: center; gap: 12px;">
-            <span class="section-num-badge" style="width: 28px; height: 28px; border-radius: 50%; background-color: var(--color-text); color: #ffffff; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 700;">2</span>
             <div>
                 <h2 style="font-size: 20px; font-weight: 700; color: var(--color-text); margin: 0;"><?php esc_html_e( 'Company at a Glance', 'zhongming' ); ?></h2>
                 <span style="font-size: 12px; color: var(--color-text-3);"><?php esc_html_e( 'Key statistics of our manufacturing capability', 'zhongming' ); ?></span>
@@ -132,55 +130,11 @@ $contact_link = function_exists('zhongming_get_contact_url') ? zhongming_get_con
     </div>
 </section>
 
-<!-- Section 3: Certifications & Honors -->
-<section class="about-certs" style="padding: 60px 0; background-color: #ffffff;">
-    <div class="container">
-        <div class="about-section-header" style="margin-bottom: 40px; display: flex; align-items: center; gap: 12px;">
-            <span class="section-num-badge" style="width: 28px; height: 28px; border-radius: 50%; background-color: var(--color-text); color: #ffffff; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 700;">3</span>
-            <div>
-                <h2 style="font-size: 20px; font-weight: 700; color: var(--color-text); margin: 0;"><?php esc_html_e( 'Certifications & Honors', 'zhongming' ); ?></h2>
-                <span style="font-size: 12px; color: var(--color-text-3);"><?php esc_html_e( 'International conformity checks & production credentials', 'zhongming' ); ?></span>
-            </div>
-        </div>
-
-        <div class="about-certs-grid" style="display: grid; grid-template-columns: repeat(5, 1fr); gap: 16px;">
-            <div class="cert-badge" style="background-color: #ffffff; border: 1px solid var(--color-border); border-radius: 6px; padding: 20px 16px; text-align: center; transition: all 0.2s ease-in-out;">
-                <div class="cert-icon" style="width: 48px; height: 48px; border-radius: 50%; background-color: var(--color-bg-2); color: var(--color-text-2); display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 13px; margin: 0 auto 12px;">CE</div>
-                <h4 style="font-size: 13px; font-weight: 700; color: var(--color-text); margin-bottom: 4px;"><?php esc_html_e( 'CE Certification', 'zhongming' ); ?></h4>
-                <p style="font-size: 11px; color: var(--color-text-3); margin: 0;"><?php esc_html_e( 'European Conformity', 'zhongming' ); ?></p>
-            </div>
-            <div class="cert-badge" style="background-color: #ffffff; border: 1px solid var(--color-border); border-radius: 6px; padding: 20px 16px; text-align: center; transition: all 0.2s ease-in-out;">
-                <div class="cert-icon" style="width: 48px; height: 48px; border-radius: 50%; background-color: var(--color-bg-2); color: var(--color-text-2); display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 13px; margin: 0 auto 12px;">RoHS</div>
-                <h4 style="font-size: 13px; font-weight: 700; color: var(--color-text); margin-bottom: 4px;"><?php esc_html_e( 'RoHS Compliant', 'zhongming' ); ?></h4>
-                <p style="font-size: 11px; color: var(--color-text-3); margin: 0;"><?php esc_html_e( 'Hazardous substances restriction', 'zhongming' ); ?></p>
-            </div>
-            <div class="cert-badge" style="background-color: #ffffff; border: 1px solid var(--color-border); border-radius: 6px; padding: 20px 16px; text-align: center; transition: all 0.2s ease-in-out;">
-                <div class="cert-icon" style="width: 48px; height: 48px; border-radius: 50%; background-color: var(--color-bg-2); color: var(--color-text-2); display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 13px; margin: 0 auto 12px;">FCC</div>
-                <h4 style="font-size: 13px; font-weight: 700; color: var(--color-text); margin-bottom: 4px;"><?php esc_html_e( 'FCC Certification', 'zhongming' ); ?></h4>
-                <p style="font-size: 11px; color: var(--color-text-3); margin: 0;"><?php esc_html_e( 'US market standards', 'zhongming' ); ?></p>
-            </div>
-            <div class="cert-badge" style="background-color: #ffffff; border: 1px solid var(--color-border); border-radius: 6px; padding: 20px 16px; text-align: center; transition: all 0.2s ease-in-out;">
-                <div class="cert-icon" style="width: 48px; height: 48px; border-radius: 50%; background-color: var(--color-bg-2); color: var(--color-text-2); display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 13px; margin: 0 auto 12px;">EMC</div>
-                <h4 style="font-size: 13px; font-weight: 700; color: var(--color-text); margin-bottom: 4px;"><?php esc_html_e( 'EMC Tested', 'zhongming' ); ?></h4>
-                <p style="font-size: 11px; color: var(--color-text-3); margin: 0;"><?php esc_html_e( 'Electromagnetic compatibility', 'zhongming' ); ?></p>
-            </div>
-            <div class="cert-badge" style="background-color: #ffffff; border: 1px solid var(--color-border); border-radius: 6px; padding: 20px 16px; text-align: center; transition: all 0.2s ease-in-out;">
-                <div class="cert-icon" style="width: 48px; height: 48px; border-radius: 50%; background-color: var(--color-bg-2); color: var(--color-text-2); display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 13px; margin: 0 auto 12px;">ISO</div>
-                <h4 style="font-size: 13px; font-weight: 700; color: var(--color-text); margin-bottom: 4px;"><?php esc_html_e( 'ISO 9001', 'zhongming' ); ?></h4>
-                <p style="font-size: 11px; color: var(--color-text-3); margin: 0;"><?php esc_html_e( 'Quality Management System', 'zhongming' ); ?></p>
-            </div>
-        </div>
-        <p style="font-size: 11px; color: var(--color-text-3); margin-top: 20px; font-style: italic;">
-            <?php esc_html_e( '* Certificate images are available as high-resolution scans upon partner request.', 'zhongming' ); ?>
-        </p>
-    </div>
-</section>
 
 <!-- Section 4: Quality Assurance -->
 <section class="about-qa" style="padding: 60px 0; background-color: var(--color-bg-2); border-top: 1px solid var(--color-border); border-bottom: 1px solid var(--color-border);">
     <div class="container">
         <div class="about-section-header" style="margin-bottom: 40px; display: flex; align-items: center; gap: 12px;">
-            <span class="section-num-badge" style="width: 28px; height: 28px; border-radius: 50%; background-color: var(--color-text); color: #ffffff; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 700;">4</span>
             <div>
                 <h2 style="font-size: 20px; font-weight: 700; color: var(--color-text); margin: 0;"><?php esc_html_e( 'Quality Assurance', 'zhongming' ); ?></h2>
                 <span style="font-size: 12px; color: var(--color-text-3);"><?php esc_html_e( '100+ testing categories conducted before every single shipment', 'zhongming' ); ?></span>
@@ -223,7 +177,6 @@ $contact_link = function_exists('zhongming_get_contact_url') ? zhongming_get_con
 <section class="about-markets" style="padding: 60px 0; background-color: #ffffff;">
     <div class="container">
         <div class="about-section-header" style="margin-bottom: 40px; display: flex; align-items: center; gap: 12px;">
-            <span class="section-num-badge" style="width: 28px; height: 28px; border-radius: 50%; background-color: var(--color-text); color: #ffffff; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 700;">5</span>
             <div>
                 <h2 style="font-size: 20px; font-weight: 700; color: var(--color-text); margin: 0;"><?php esc_html_e( 'Global Markets', 'zhongming' ); ?></h2>
                 <span style="font-size: 12px; color: var(--color-text-3);"><?php esc_html_e( 'Export footprint and international client distribution', 'zhongming' ); ?></span>
