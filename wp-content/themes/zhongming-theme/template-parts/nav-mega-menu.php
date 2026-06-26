@@ -5,7 +5,7 @@
 ?>
 <div class="mega-menu" id="mega-menu-products">
     <div class="mega-inner">
-        <!-- Column 1: Indoor -->
+        <!-- Column 1: Indoor Part 1 -->
         <div class="mega-col">
             <h4><?php zm_te('Indoor LED', '室内 LED'); ?></h4>
             <a href="<?php echo zm_category_link('standard-indoor'); ?>" class="mega-item">
@@ -29,24 +29,26 @@
                     <small>P0.9 – P2 · 600×337.5mm</small>
                 </div>
             </a>
-            <a href="<?php echo zm_category_link('indoor-rental'); ?>" class="mega-item">
+        </div>
+
+        <!-- Column 2: Indoor Part 2 & Outdoor -->
+        <div class="mega-col">
+            <h4 style="visibility: hidden; margin-bottom: 24px; border-bottom: 1px solid transparent; padding-bottom: 12px;">&nbsp;</h4>
+            <a href="<?php echo zm_category_link('indoor-rental'); ?>" class="mega-item" style="margin-top: -55px;">
                 <div class="mega-icon"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/nav/rental.jpg" alt=""></div>
                 <div class="mega-content">
                     <span><?php zm_te('Indoor Rental', '室内租赁屏'); ?></span>
                     <small><?php zm_te('P2.6 – P4.8 · High refresh', 'P2.6 – P4.8 · 高刷新率'); ?></small>
                 </div>
             </a>
-            <a href="<?php echo zm_category_link('poster-screen'); ?>" class="mega-item">
+            <a href="<?php echo zm_category_link('poster-screen'); ?>" class="mega-item" style="margin-bottom: 20px;">
                 <div class="mega-icon"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/nav/poster_v2.jpg" alt=""></div>
                 <div class="mega-content">
                     <span><?php zm_te('Poster Screen', '智能数字广告屏'); ?></span>
                     <small><?php zm_te('Digital Signage · Plug & Play', '数字标牌 · 即插即用'); ?></small>
                 </div>
             </a>
-        </div>
 
-        <!-- Column 2: Outdoor -->
-        <div class="mega-col">
             <h4><?php zm_te('Outdoor LED', '户外 LED'); ?></h4>
             <a href="<?php echo zm_category_link('standard-outdoor'); ?>" class="mega-item">
                 <div class="mega-icon"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/nav/outdoor.jpg" alt=""></div>
@@ -62,10 +64,9 @@
                     <small><?php zm_te('P2.9 – P4.8 · IP65 Waterproof', 'P2.9 – P4.8 · IP65 防水'); ?></small>
                 </div>
             </a>
-
         </div>
 
-        <!-- Column 3: Special & Creative -->
+        <!-- Column 3: Special & Creative Part 1 -->
         <div class="mega-col">
             <h4><?php zm_te('Special & Creative', '创意与特种屏'); ?></h4>
             <a href="<?php echo zm_category_link('transparent-screen'); ?>" class="mega-item">
@@ -89,7 +90,12 @@
                     <small><?php zm_te('500KG load · Interactive', '500KG 承重 · 智能互动'); ?></small>
                 </div>
             </a>
-            <a href="<?php echo zm_category_link('flexible-led'); ?>" class="mega-item">
+        </div>
+
+        <!-- Column 4: Special & Creative Part 2 -->
+        <div class="mega-col">
+            <h4 style="visibility: hidden; margin-bottom: 24px; border-bottom: 1px solid transparent; padding-bottom: 12px;">&nbsp;</h4>
+            <a href="<?php echo zm_category_link('flexible-led'); ?>" class="mega-item" style="margin-top: -55px;">
                 <div class="mega-icon"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/nav/flexible_v2.jpg" alt=""></div>
                 <div class="mega-content">
                     <span><?php zm_te('Flexible LED', '柔性软模组'); ?></span>
