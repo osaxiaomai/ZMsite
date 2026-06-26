@@ -33,7 +33,7 @@ function zhongming_scripts() {
     wp_enqueue_style( 'zhongming-components', get_template_directory_uri() . '/assets/css/components.css', array(), '1.6.1' );
     wp_enqueue_style( 'zhongming-responsive', get_template_directory_uri() . '/assets/css/responsive.css', array(), '1.6.1' );
     wp_enqueue_script( 'zhongming-main', get_template_directory_uri() . '/assets/js/main.js', array(), '1.5.1', true );
-    wp_enqueue_script( 'zhongming-mega-menu', get_template_directory_uri() . '/assets/js/mega-menu.js', array(), '1.5.1', true );
+    wp_enqueue_script( 'zhongming-mega-menu', get_template_directory_uri() . '/assets/js/mega-menu.js', array(), '2.0.0', true );
 }
 add_action( 'wp_enqueue_scripts', 'zhongming_scripts' );
 
