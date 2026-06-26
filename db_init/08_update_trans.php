@@ -15,7 +15,7 @@ $upload_dir = wp_upload_dir();
 $month_dir = $upload_dir['basedir'] . '/2026/06';
 if (!file_exists($month_dir)) { wp_mkdir_p($month_dir); }
 
-$images = ['Trans_1.png', 'Trans_2.png', 'Trans_3.png', 'Trans_4.png'];
+$images = ['Trans_1.png', 'Trans_2.png', 'Trans_3.png'];
 $image_ids = [];
 
 foreach ($images as $img) {
@@ -92,9 +92,11 @@ foreach ($products as $pid => $cat_id) {
     if (!get_post($pid)) continue;
     
     // Assign category
-    // We add the new category, but keep the parent category to be safe
-    // We want to alternate the main image among the 4 new images, and put the remaining 3 in the gallery.
-    // The $image_ids array contains the 4 new images: [Trans_1, Trans_2, Trans_3, Trans_4]
+    $parent_cat = ($cat_id == $indoor_en_id || $cat_id == $outdoor_en_id) ? $parent_en : $parent_zh;
+    wp_set_object_terms($pid, [(int)$parent_cat, (int)$cat_id], 'product_category', false);
+    
+    // We want to alternate the main image among the 3 new images, and put the remaining 2 in the gallery.
+    // The $image_ids array contains the 3 new images: [Trans_1, Trans_2, Trans_3]
     
     // We can use the product's index or ID to pseudo-randomly pick one of the 4 images as the main image
     // Let's use $pid % 4 to decide the main image index.
