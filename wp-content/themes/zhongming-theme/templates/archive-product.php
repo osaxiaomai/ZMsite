@@ -316,7 +316,7 @@ $current_sort = ! empty( $_GET['orderby'] ) ? sanitize_text_field( $_GET['orderb
                             <label class="filter-checkbox-label">
                                 <input type="checkbox" class="app-checkbox" value="<?php echo esc_attr( $key ); ?>" <?php checked( $is_checked ); ?>>
                                 <span class="checkbox-custom"></span>
-                                <span class="checkbox-text"><?php echo esc_html( $label ); ?></span>
+                                <span class="checkbox-text"><?php echo esc_html( __( $label, 'zhongming' ) ); ?></span>
                             </label>
                             <?php
                         endforeach;
@@ -355,7 +355,7 @@ $current_sort = ! empty( $_GET['orderby'] ) ? sanitize_text_field( $_GET['orderb
                                     <?php foreach ( $active_apps as $a ) : 
                                         $app_label = isset( $app_choices[$a] ) ? $app_choices[$a] : $a; ?>
                                         <span class="filter-chip" data-type="app" data-val="<?php echo esc_attr( $a ); ?>">
-                                            <?php echo esc_html( $app_label ); ?>
+                                            <?php echo esc_html( __( $app_label, 'zhongming' ) ); ?>
                                             <span class="chip-remove">×</span>
                                         </span>
                                     <?php endforeach; ?>

@@ -33,7 +33,6 @@ get_header(); ?>
 <section class="solutions-scenarios" style="padding: 60px 0; background-color: #ffffff;">
     <div class="container">
         <div class="about-section-header" style="margin-bottom: 40px; display: flex; align-items: center; gap: 12px;">
-            <span class="section-num-badge" style="width: 28px; height: 28px; border-radius: 50%; background-color: var(--color-text); color: #ffffff; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 700;">1</span>
             <div>
                 <h2 style="font-size: 20px; font-weight: 700; color: var(--color-text); margin: 0;">Application Scenarios</h2>
                 <span style="font-size: 12px; color: var(--color-text-3);">Where our LED displays make an impact</span>
@@ -173,7 +172,6 @@ get_header(); ?>
 <section class="solutions-cases" style="padding: 60px 0; background-color: var(--color-bg-2); border-top: 1px solid var(--color-border);">
     <div class="container">
         <div class="about-section-header" style="margin-bottom: 40px; display: flex; align-items: center; gap: 12px;">
-            <span class="section-num-badge" style="width: 28px; height: 28px; border-radius: 50%; background-color: var(--color-text); color: #ffffff; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 700;">2</span>
             <div>
                 <h2 style="font-size: 20px; font-weight: 700; color: var(--color-text); margin: 0;">Recent Project Case Studies</h2>
                 <span style="font-size: 12px; color: var(--color-text-3);">Selected installations across diverse environments worldwide</span>
@@ -211,7 +209,6 @@ get_header(); ?>
 <section class="solutions-why" style="padding: 60px 0; background-color: #ffffff; border-top: 1px solid var(--color-border);">
     <div class="container">
         <div class="about-section-header" style="margin-bottom: 40px; display: flex; align-items: center; gap: 12px;">
-            <span class="section-num-badge" style="width: 28px; height: 28px; border-radius: 50%; background-color: var(--color-text); color: #ffffff; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 700;">3</span>
             <div>
                 <h2 style="font-size: 20px; font-weight: 700; color: var(--color-text); margin: 0;">Why Choose Zhongming LED?</h2>
                 <span style="font-size: 12px; color: var(--color-text-3);">Our technical and service advantages as your LED display partner</span>

@@ -27,7 +27,6 @@ get_header(); ?>
 <section class="solutions-scenarios" style="padding: 60px 0; background-color: #ffffff;">
     <div class="container">
         <div class="about-section-header" style="margin-bottom: 40px; display: flex; align-items: center; gap: 12px;">
-            <span class="section-num-badge" style="width: 28px; height: 28px; border-radius: 50%; background-color: var(--color-text); color: #ffffff; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 700;">1</span>
             <div>
                 <h2 style="font-size: 20px; font-weight: 700; color: var(--color-text); margin: 0;">应用场景</h2>
                 <span style="font-size: 12px; color: var(--color-text-3);">我们的 LED 显示屏大显身手的地方</span>
@@ -167,7 +166,6 @@ get_header(); ?>
 <section class="solutions-cases" style="padding: 60px 0; background-color: var(--color-bg-2); border-top: 1px solid var(--color-border);">
     <div class="container">
         <div class="about-section-header" style="margin-bottom: 40px; display: flex; align-items: center; gap: 12px;">
-            <span class="section-num-badge" style="width: 28px; height: 28px; border-radius: 50%; background-color: var(--color-text); color: #ffffff; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 700;">2</span>
             <div>
                 <h2 style="font-size: 20px; font-weight: 700; color: var(--color-text); margin: 0;">最新工程案例展示</h2>
                 <span style="font-size: 12px; color: var(--color-text-3);">精选全球各种环境下的成功安装部署实例</span>
@@ -205,7 +203,6 @@ get_header(); ?>
 <section class="solutions-why" style="padding: 60px 0; background-color: #ffffff; border-top: 1px solid var(--color-border);">
     <div class="container">
         <div class="about-section-header" style="margin-bottom: 40px; display: flex; align-items: center; gap: 12px;">
-            <span class="section-num-badge" style="width: 28px; height: 28px; border-radius: 50%; background-color: var(--color-text); color: #ffffff; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 700;">3</span>
             <div>
                 <h2 style="font-size: 20px; font-weight: 700; color: var(--color-text); margin: 0;">为什么选择中茗光电？</h2>
                 <span style="font-size: 12px; color: var(--color-text-3);">作为您的 LED 显示屏合作伙伴，我们的技术与服务优势</span>
