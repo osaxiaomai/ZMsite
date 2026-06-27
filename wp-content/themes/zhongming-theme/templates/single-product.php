@@ -9,8 +9,8 @@
 // SEO Title & Description Hook before get_header()
 add_filter( 'document_title_parts', function( $title_parts ) {
     $title_parts['title'] = get_the_title();
-    $title_parts['site'] = 'LED Display';
-    $title_parts['tagline'] = 'Zhongming Technology';
+    $title_parts['site'] = zm_is_zh() ? 'LED显示屏' : 'LED Display';
+    $title_parts['tagline'] = zm_is_zh() ? '中茗光电' : 'Zhongming Technology';
     return $title_parts;
 } );
 
@@ -24,16 +24,34 @@ add_action( 'wp_head', function() {
     }
     
     // Auto-generate professional B2B meta description
-    $seo_desc = sprintf(
-        __( 'Discover %1$s LED screen. Pixel pitch: %2$smm. Cabinet size: %3$s. Premium quality, highly stable B2B LED display solution by Zhongming Technology.', 'zhongming' ),
-        get_the_title(),
-        zm_is_valid_spec($pitch) ? $pitch : 'custom',
-        zm_is_valid_spec($cabinet) ? $cabinet : 'custom size'
-    );
+    if ( zm_is_zh() ) {
+        $seo_desc = sprintf(
+            '了解 %1$s LED显示屏。像素间距: %2$s。箱体尺寸: %3$s。中茗光电为您提供高品质、高稳定性的专业商显解决方案。',
+            get_the_title(),
+            zm_is_valid_spec($pitch) ? $pitch . 'mm' : '定制',
+            zm_is_valid_spec($cabinet) ? zm_translate_spec_val($cabinet) : '定制尺寸'
+        );
+    } else {
+        $seo_desc = sprintf(
+            'Discover %1$s LED screen. Pixel pitch: %2$s. Cabinet size: %3$s. Premium quality, highly stable B2B LED display solution by Zhongming Technology.',
+            get_the_title(),
+            zm_is_valid_spec($pitch) ? $pitch . 'mm' : 'custom',
+            zm_is_valid_spec($cabinet) ? $cabinet : 'custom size'
+        );
+    }
+    
     if ( ! empty( $desc ) ) {
         $seo_desc = wp_html_excerpt( $desc, 150, '...' );
     }
+    
+    $base_keywords = zm_is_zh() ? 'LED显示屏, LED大屏, 中茗光电' : 'LED display, LED screen, Zhongming LED';
+    $keywords = get_the_title() . ', ' . $base_keywords;
+    if ( zm_is_valid_spec($pitch) ) {
+        $keywords .= ', P' . $pitch . ' LED';
+    }
+    
     echo '<meta name="description" content="' . esc_attr( $seo_desc ) . '" />' . "\n";
+    echo '<meta name="keywords" content="' . esc_attr( $keywords ) . '" />' . "\n";
 }, 5 );
 
 get_header();

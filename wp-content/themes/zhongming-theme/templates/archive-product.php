@@ -5,6 +5,40 @@
  * Custom template for displaying product archives, category taxonomies, and pitch taxonomies.
  */
 
+// SEO Hook before get_header()
+add_filter( 'document_title_parts', function( $title_parts ) {
+    $queried_obj = get_queried_object();
+    if ( is_tax() && $queried_obj ) {
+        $title_parts['title'] = $queried_obj->name;
+    } else {
+        $title_parts['title'] = zm_is_zh() ? '产品中心' : 'Products';
+    }
+    $title_parts['site'] = zm_is_zh() ? 'LED显示屏' : 'LED Display';
+    $title_parts['tagline'] = zm_is_zh() ? '中茗光电' : 'Zhongming Technology';
+    return $title_parts;
+} );
+
+add_action( 'wp_head', function() {
+    $queried_obj = get_queried_object();
+    if ( is_tax() && $queried_obj ) {
+        $page_title = $queried_obj->name;
+        $desc = $queried_obj->description ? wp_strip_all_tags($queried_obj->description) : '';
+        if ( empty($desc) ) {
+            $desc = sprintf( zm_is_zh() ? '探索专为卓越性能与高稳定性设计的 %s 系列产品。' : 'Explore our advanced %s series designed for ultimate performance and stability.', $page_title );
+        }
+    } else {
+        $page_title = zm_is_zh() ? '产品中心' : 'All Products';
+        $desc = zm_is_zh() ? '探索我们的全系列专业 LED 显示屏解决方案，包括室内标准屏、超微间距 COB、户外标准屏以及定制创意异形显示系统。' : 'Discover our full range of professional LED display solutions, including standard indoor, fine pitch COB, standard outdoor, and creative custom displays.';
+    }
+    
+    // Auto-generate keywords
+    $base_keywords = zm_is_zh() ? 'LED显示屏, LED大屏, 中茗光电' : 'LED display, LED screen, Zhongming LED';
+    $keywords = $page_title . ', ' . $base_keywords;
+    
+    echo '<meta name="description" content="' . esc_attr( wp_html_excerpt($desc, 150, '...') ) . '" />' . "\n";
+    echo '<meta name="keywords" content="' . esc_attr( $keywords ) . '" />' . "\n";
+}, 5 );
+
 get_header();
 
 // Get queried object to determine current category/pitch context
