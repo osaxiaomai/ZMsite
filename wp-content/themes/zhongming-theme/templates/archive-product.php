@@ -455,9 +455,30 @@ $current_sort = ! empty( $_GET['orderby'] ) ? sanitize_text_field( $_GET['orderb
                                 <!-- Card Thumbnail (.product-card-img) -->
                                 <div class="product-card-img">
                                     <a href="<?php the_permalink(); ?>">
-                                        <?php if ( has_post_thumbnail() ) : ?>
-                                            <?php the_post_thumbnail( 'medium', array( 'class' => 'product-img' ) ); ?>
-                                        <?php else : ?>
+                                        <?php 
+                                        $has_second_img = false;
+                                        $second_img_url = '';
+                                        $gallery_raw = get_field('product_gallery');
+                                        if ( ! empty( $gallery_raw ) && is_array( $gallery_raw ) && count($gallery_raw) > 1 ) {
+                                            $second_item = $gallery_raw[1];
+                                            if ( is_array( $second_item ) && isset( $second_item['sizes']['medium'] ) ) {
+                                                $second_img_url = $second_item['sizes']['medium'];
+                                                $has_second_img = true;
+                                            } elseif ( is_numeric( $second_item ) ) {
+                                                $second_img_url = wp_get_attachment_image_url( $second_item, 'medium' );
+                                                if ( $second_img_url ) $has_second_img = true;
+                                            } elseif ( is_string( $second_item ) ) {
+                                                $second_img_url = $second_item;
+                                                $has_second_img = true;
+                                            }
+                                        }
+                                        
+                                        if ( has_post_thumbnail() ) : 
+                                            the_post_thumbnail( 'medium', array( 'class' => 'product-img' ) ); 
+                                            if ( $has_second_img ) : ?>
+                                                <img src="<?php echo esc_url($second_img_url); ?>" class="product-img secondary-img" alt="<?php the_title_attribute(); ?>">
+                                            <?php endif;
+                                        else : ?>
                                             <!-- SVG premium placeholder box with gray background -->
                                             <div class="product-image-fallback">
                                                 <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" style="opacity: 0.6;"><rect x="2" y="2" width="20" height="20" rx="2.18" ry="2.18"></rect><line x1="7" y1="2" x2="7" y2="22"></line><line x1="17" y1="2" x2="17" y2="22"></line><line x1="2" y1="12" x2="22" y2="12"></line><line x1="2" y1="7" x2="22" y2="7"></line><line x1="2" y1="17" x2="22" y2="17"></line></svg>
