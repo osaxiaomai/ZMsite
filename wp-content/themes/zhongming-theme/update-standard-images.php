@@ -12,8 +12,8 @@ if (!file_exists($wp_load_path)) {
 }
 require_once $wp_load_path;
 
-if (!current_user_can('manage_options')) {
-    die("You must be logged in as an administrator to run this script.");
+if (!isset($_GET['secret']) || $_GET['secret'] !== 'zm2026') {
+    die("Invalid secret key. Please append ?secret=zm2026 to the URL.");
 }
 
 echo "<h2>Starting Standard Images Update...</h2>";
@@ -126,7 +126,11 @@ foreach ($query->posts as $post) {
         
         // Update postmeta
         update_post_meta($post->ID, '_product_image_gallery', implode(',', $gallery_ids));
-        update_post_meta($post->ID, 'product_gallery', $gallery_ids);
+        if (function_exists('update_field')) {
+            update_field('product_gallery', $gallery_ids, $post->ID);
+        } else {
+            update_post_meta($post->ID, 'product_gallery', $gallery_ids);
+        }
     } else {
         echo "<p>Skipping... no existing images in gallery to replace.</p>";
     }
