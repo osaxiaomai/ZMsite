@@ -8,32 +8,54 @@
 // SEO Hook before get_header()
 add_filter( 'document_title_parts', function( $title_parts ) {
     $queried_obj = get_queried_object();
+    $is_zh = zm_is_zh();
     if ( is_tax() && $queried_obj ) {
-        $title_parts['title'] = $queried_obj->name;
+        // Optimize Title: Category Name - Main Keyword - Brand
+        $title_parts['title'] = $queried_obj->name . ' - ' . ($is_zh ? '专业LED显示屏解决方案' : 'Professional LED Display Solutions');
     } else {
-        $title_parts['title'] = zm_is_zh() ? '产品中心' : 'Products';
+        $title_parts['title'] = $is_zh ? '产品中心 - 全系列LED显示屏产品' : 'Products - Full Range of LED Displays';
     }
-    $title_parts['site'] = zm_is_zh() ? 'LED显示屏' : 'LED Display';
-    $title_parts['tagline'] = zm_is_zh() ? '中茗光电' : 'Zhongming Technology';
+    $title_parts['site'] = $is_zh ? '中茗光电' : 'Zhongming Technology';
+    unset($title_parts['tagline']); // Keep it clean
     return $title_parts;
 } );
 
 add_action( 'wp_head', function() {
     $queried_obj = get_queried_object();
+    $is_zh = zm_is_zh();
+    $keywords = '';
+    
     if ( is_tax() && $queried_obj ) {
         $page_title = $queried_obj->name;
         $desc = $queried_obj->description ? wp_strip_all_tags($queried_obj->description) : '';
         if ( empty($desc) ) {
-            $desc = sprintf( zm_is_zh() ? '探索专为卓越性能与高稳定性设计的 %s 系列产品。' : 'Explore our advanced %s series designed for ultimate performance and stability.', $page_title );
+            $desc = sprintf( $is_zh ? '探索专为卓越性能与高稳定性设计的 %s 系列产品。中茗光电提供高品质、定制化的LED显示方案，满足您的多样化应用需求。' : 'Explore our advanced %s series designed for ultimate performance and stability. Zhongming Technology provides high-quality, customized LED display solutions for various applications.', $page_title );
         }
+        
+        // Generate targeted keywords based on term name
+        $name_lower = strtolower($page_title);
+        $extra_keywords = '';
+        if ( strpos($name_lower, 'indoor') !== false || strpos($name_lower, '室内') !== false ) {
+            $extra_keywords = $is_zh ? '室内LED, 高清LED显示屏, 小间距LED, 无缝拼接屏' : 'indoor LED, HD LED display, fine pitch LED, seamless video wall';
+        } elseif ( strpos($name_lower, 'outdoor') !== false || strpos($name_lower, '户外') !== false ) {
+            $extra_keywords = $is_zh ? '户外LED, 防水大屏, 高亮LED屏, 户外广告屏' : 'outdoor LED, waterproof LED screen, high brightness LED, outdoor advertising display';
+        } elseif ( strpos($name_lower, 'rental') !== false || strpos($name_lower, '舞台') !== false || strpos($name_lower, '租赁') !== false ) {
+            $extra_keywords = $is_zh ? '租赁屏, 舞台LED屏, 活动大屏, 快速安装LED' : 'rental LED, stage LED screen, event display, fast install LED';
+        } elseif ( strpos($name_lower, 'flex') !== false || strpos($name_lower, '柔性') !== false || strpos($name_lower, 'creative') !== false || strpos($name_lower, '创意') !== false ) {
+            $extra_keywords = $is_zh ? '柔性LED, 软模组, 创意屏, 异形屏, 圆柱屏' : 'flexible LED, soft module, creative display, curved LED screen';
+        } elseif ( strpos($name_lower, 'transparent') !== false || strpos($name_lower, 'glass') !== false || strpos($name_lower, '透明') !== false || strpos($name_lower, '玻璃') !== false ) {
+            $extra_keywords = $is_zh ? '透明屏, 玻璃幕墙LED, 橱窗屏, 高通透LED' : 'transparent LED, glass LED display, window display, high transparency LED';
+        } elseif ( strpos($name_lower, 'cob') !== false ) {
+            $extra_keywords = $is_zh ? 'COB显示屏, 微间距LED, 超高清屏幕, 防撞LED' : 'COB LED, micro pitch LED, ultra HD screen, anti-collision LED';
+        }
+        
+        $base_keywords = $is_zh ? 'LED显示屏, LED大屏厂家, 中茗光电' : 'LED display manufacturer, LED screen, Zhongming LED';
+        $keywords = $page_title . ', ' . ($extra_keywords ? $extra_keywords . ', ' : '') . $base_keywords;
+        
     } else {
-        $page_title = zm_is_zh() ? '产品中心' : 'All Products';
-        $desc = zm_is_zh() ? '探索我们的全系列专业 LED 显示屏解决方案，包括室内标准屏、超微间距 COB、户外标准屏以及定制创意异形显示系统。' : 'Discover our full range of professional LED display solutions, including standard indoor, fine pitch COB, standard outdoor, and creative custom displays.';
+        $desc = $is_zh ? '探索我们的全系列专业 LED 显示屏解决方案，包括室内标准屏、超微间距 COB、户外标准屏以及定制创意异形显示系统。中茗光电为您提供一站式视听体验服务。' : 'Discover our full range of professional LED display solutions, including standard indoor, fine pitch COB, standard outdoor, and creative custom displays. Zhongming provides one-stop visual solutions.';
+        $keywords = $is_zh ? 'LED显示屏, LED大屏, 室内屏, 户外屏, 租赁屏, 透明屏, 柔性屏, COB显示屏, 中茗光电' : 'LED display, LED screen, indoor LED, outdoor LED, rental LED, transparent LED, flexible LED, COB display, Zhongming Technology';
     }
-    
-    // Auto-generate keywords
-    $base_keywords = zm_is_zh() ? 'LED显示屏, LED大屏, 中茗光电' : 'LED display, LED screen, Zhongming LED';
-    $keywords = $page_title . ', ' . $base_keywords;
     
     echo '<meta name="description" content="' . esc_attr( wp_html_excerpt($desc, 150, '...') ) . '" />' . "\n";
     echo '<meta name="keywords" content="' . esc_attr( $keywords ) . '" />' . "\n";
@@ -331,16 +353,16 @@ $current_sort = ! empty( $_GET['orderby'] ) ? sanitize_text_field( $_GET['orderb
                         // Fallback choices
                         if ( empty( $app_choices ) ) {
                             $app_choices = array(
-                                'conference'   => 'Conference Room',
-                                'broadcast'    => 'Broadcast Studio',
-                                'security'     => 'Security & Control',
-                                'advertising'  => 'Indoor/Outdoor Advertising',
-                                'exhibition'   => 'Exhibition',
-                                'retail'       => 'Retail Window',
-                                'stage-events' => 'Stage & Events',
-                                'tourism'      => 'Tourism & Culture',
-                                'hotel'        => 'Hotel & Restaurant',
-                                'mall'         => 'Shopping Mall',
+                                'conference'   => zm_is_zh() ? '会议室' : 'Conference Room',
+                                'broadcast'    => zm_is_zh() ? '演播室' : 'Broadcast Studio',
+                                'security'     => zm_is_zh() ? '安防监控' : 'Security & Control',
+                                'advertising'  => zm_is_zh() ? '室内/外广告' : 'Indoor/Outdoor Advertising',
+                                'exhibition'   => zm_is_zh() ? '展览展示' : 'Exhibition',
+                                'retail'       => zm_is_zh() ? '零售橱窗' : 'Retail Window',
+                                'stage-events' => zm_is_zh() ? '舞台租赁' : 'Stage & Events',
+                                'tourism'      => zm_is_zh() ? '文旅亮化' : 'Tourism & Culture',
+                                'hotel'        => zm_is_zh() ? '酒店餐厅' : 'Hotel & Restaurant',
+                                'mall'         => zm_is_zh() ? '购物中心' : 'Shopping Mall',
                             );
                         }
 
@@ -350,7 +372,7 @@ $current_sort = ! empty( $_GET['orderby'] ) ? sanitize_text_field( $_GET['orderb
                             <label class="filter-checkbox-label">
                                 <input type="checkbox" class="app-checkbox" value="<?php echo esc_attr( $key ); ?>" <?php checked( $is_checked ); ?>>
                                 <span class="checkbox-custom"></span>
-                                <span class="checkbox-text"><?php echo esc_html( __( $label, 'zhongming' ) ); ?></span>
+                                <span class="checkbox-text"><?php echo esc_html( $label ); ?></span>
                             </label>
                             <?php
                         endforeach;
