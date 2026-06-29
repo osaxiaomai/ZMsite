@@ -59,7 +59,7 @@ get_header(); ?>
                             <span class="highlight">Ultra-HD · Cloud Managed</span><br>
                             Attract Every Gaze
                         </h1>
-                        <p class="hero-sub">Featuring an ultra-thin integrated design, it supports wireless screen casting and remote cloud management. With high-brightness HD display and an anti-glare panel, colors are true to life. Supports split-screen playback of videos, images, and text. Perfect for shopping malls, retail stores, hotels, and banks—the ideal digital signboard to elevate brand image.</p>
+                        <p class="hero-sub">Indoor LED Poster is a sleek, modern digital display designed for high-impact advertising. Featuring high-resolution panels, it delivers vivid colors and dynamic video content to attract attention. With a slim, lightweight design, it seamlessly integrates into retail stores, malls, and exhibitions. Supporting plug-and-play operation and remote network management, it is the ideal energy-efficient choice for indoor digital signage.</p>
                         
                         <div class="hero-btns">
                             <a href="<?php echo zm_category_link('poster-screen'); ?>" class="btn btn-primary">Explore Digital Signage →</a>
