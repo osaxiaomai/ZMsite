@@ -6,7 +6,8 @@
 $wp_load_path = dirname(dirname(dirname(__DIR__))) . '/wp-load.php';
 require_once $wp_load_path;
 
-if (!isset($_GET['secret']) || $_GET['secret'] !== 'zm2026') {
+$is_cli = (php_sapi_name() === 'cli');
+if (!$is_cli && (!isset($_GET['secret']) || $_GET['secret'] !== 'zm2026')) {
     die("Invalid secret key.");
 }
 
