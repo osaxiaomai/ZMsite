@@ -1,8 +1,8 @@
 <?php
 /**
  * Script to fix Standard Indoor products on any environment.
- * It resolves the required images by filename instead of hardcoded IDs.
  * Auto-imports missing images from the theme folder.
+ * Now supports ALTERNATING main images across different products.
  */
 $wp_load_path = dirname(dirname(dirname(__DIR__))) . '/wp-load.php';
 require_once $wp_load_path;
@@ -16,7 +16,6 @@ if (!$is_cli && (!isset($_GET['secret']) || $_GET['secret'] !== 'zm2026')) {
     die("Invalid secret key.");
 }
 
-// Helper to find attachment ID by filename
 function zm_get_attachment_id_by_filename( $filename ) {
     global $wpdb;
     $query = $wpdb->prepare(
@@ -27,7 +26,6 @@ function zm_get_attachment_id_by_filename( $filename ) {
     return $id ? (int) $id : 0;
 }
 
-// Helper to auto-import an image from the theme folder
 function zm_auto_import_image( $theme_filepath, $title ) {
     $full_path = get_template_directory() . '/' . ltrim($theme_filepath, '/');
     if ( ! file_exists( $full_path ) ) {
@@ -42,7 +40,6 @@ function zm_auto_import_image( $theme_filepath, $title ) {
         $file = $upload_dir['basedir'] . '/' . $filename;
     }
     
-    // Copy file to uploads folder
     copy( $full_path, $file );
     
     $wp_filetype = wp_check_filetype( $filename, null );
@@ -62,90 +59,123 @@ function zm_auto_import_image( $theme_filepath, $title ) {
 
 echo "<h2>Resolving Images...</h2>";
 
-// 1. Grey Cabinet (already exists on server hopefully, if not we can't do much)
 $img_grey_cabinet = zm_get_attachment_id_by_filename('2-4.jpg');
-echo "Grey Cabinet (2-4.jpg): " . ($img_grey_cabinet ? "Found ID $img_grey_cabinet" : "<b style='color:red;'>Missing!</b>") . "\n";
-
-// 2. The 3 new screens - check by the new filenames first
-$img_gradient = zm_get_attachment_id_by_filename('gradient.jpg');
-if (!$img_gradient) {
-    // Try old name
-    $img_gradient = zm_get_attachment_id_by_filename('media__1782660549059.jpg');
-}
-if (!$img_gradient) {
-    echo "Gradient missing, importing...\n";
-    $img_gradient = zm_auto_import_image('assets/images/product-screens/gradient.jpg', 'Gradient Screen');
-}
-echo "Gradient: " . ($img_gradient ? "Found ID $img_gradient" : "<b style='color:red;'>Failed to import!</b>") . "\n";
-
-$img_lake = zm_get_attachment_id_by_filename('lake.jpg');
-if (!$img_lake) {
-    $img_lake = zm_get_attachment_id_by_filename('media__1782660565233.jpg');
-}
-if (!$img_lake) {
-    echo "Lake missing, importing...\n";
-    $img_lake = zm_auto_import_image('assets/images/product-screens/lake.jpg', 'Lake Screen');
-}
-echo "Lake: " . ($img_lake ? "Found ID $img_lake" : "<b style='color:red;'>Failed to import!</b>") . "\n";
-
-
-$img_iridescent = zm_get_attachment_id_by_filename('iridescent.jpg');
-if (!$img_iridescent) {
-    $img_iridescent = zm_get_attachment_id_by_filename('media__1782660576944.jpg');
-}
-if (!$img_iridescent) {
-    echo "Iridescent missing, importing...\n";
-    $img_iridescent = zm_auto_import_image('assets/images/product-screens/iridescent.jpg', 'Iridescent Screen');
-}
-echo "Iridescent: " . ($img_iridescent ? "Found ID $img_iridescent" : "<b style='color:red;'>Failed to import!</b>") . "\n";
+echo "Grey Cabinet: " . ($img_grey_cabinet ? "Found ID $img_grey_cabinet" : "Missing!") . "\n";
 
 $img_ui_screen = zm_get_attachment_id_by_filename('01_indoor_standard_product_05.jpeg');
+if (!$img_ui_screen) {
+    $img_ui_screen = zm_get_attachment_id_by_filename('1.jpg'); // Try old name
+}
+echo "UI Screen: " . ($img_ui_screen ? "Found ID $img_ui_screen" : "Missing!") . "\n";
+
+$img_gradient = zm_get_attachment_id_by_filename('gradient.jpg');
+if (!$img_gradient) $img_gradient = zm_get_attachment_id_by_filename('media__1782660549059.jpg');
+if (!$img_gradient) {
+    $img_gradient = zm_auto_import_image('assets/images/product-screens/gradient.jpg', 'Gradient Screen');
+}
+echo "Gradient: " . ($img_gradient ? "Found ID $img_gradient" : "Failed!") . "\n";
+
+$img_lake = zm_get_attachment_id_by_filename('lake.jpg');
+if (!$img_lake) $img_lake = zm_get_attachment_id_by_filename('media__1782660565233.jpg');
+if (!$img_lake) {
+    $img_lake = zm_auto_import_image('assets/images/product-screens/lake.jpg', 'Lake Screen');
+}
+echo "Lake: " . ($img_lake ? "Found ID $img_lake" : "Failed!") . "\n";
+
+$img_iridescent = zm_get_attachment_id_by_filename('iridescent.jpg');
+if (!$img_iridescent) $img_iridescent = zm_get_attachment_id_by_filename('media__1782660576944.jpg');
+if (!$img_iridescent) {
+    $img_iridescent = zm_auto_import_image('assets/images/product-screens/iridescent.jpg', 'Iridescent Screen');
+}
+echo "Iridescent: " . ($img_iridescent ? "Found ID $img_iridescent" : "Failed!") . "\n";
+
 
 if (!$img_grey_cabinet || !$img_gradient || !$img_lake || !$img_iridescent) {
-    die("<h3>Error: Some images are still missing.</h3>");
+    die("<h3>Error: Some essential images are still missing.</h3>");
 }
 
-$ideal_gallery = array($img_grey_cabinet, $img_gradient, $img_lake, $img_iridescent);
+// Full pool of images
+$image_pool = array();
+if ($img_ui_screen) $image_pool[] = $img_ui_screen;
+$image_pool[] = $img_grey_cabinet;
+$image_pool[] = $img_gradient;
+$image_pool[] = $img_lake;
+$image_pool[] = $img_iridescent;
 
-echo "<h2>Fixing Products...</h2>";
+echo "<h2>Fixing Products with Alternating Thumbnails...</h2>";
 
 $args = array(
     'post_type' => 'product',
     'post_status' => 'publish',
     'posts_per_page' => -1,
     'lang' => '', // Bypass Polylang filtering
+    'orderby' => 'ID',
+    'order' => 'ASC',
 );
 $query = new WP_Query($args);
 
+// Group products by language to ensure rotation looks good in both EN and ZH
+$zh_products = array();
+$en_products = array();
+
 foreach ($query->posts as $post) {
     $is_standard_indoor = false;
+    $is_zh = false;
     
-    if (stripos($post->post_title, 'Standard Indoor') !== false) {
-        $is_standard_indoor = true;
-    }
     if (strpos($post->post_title, '标准') !== false && strpos($post->post_title, '室内') !== false) {
         $is_standard_indoor = true;
+        $is_zh = true;
+    } elseif (stripos($post->post_title, 'Standard Indoor') !== false) {
+        $is_standard_indoor = true;
     }
     
-    if (!$is_standard_indoor) {
-        continue;
+    if ($is_standard_indoor) {
+        if ($is_zh) {
+            $zh_products[] = $post;
+        } else {
+            $en_products[] = $post;
+        }
     }
-    
-    echo "<h4>Processing: " . esc_html($post->post_title) . "</h4>\n";
-    
-    update_post_meta($post->ID, '_product_image_gallery', implode(',', $ideal_gallery));
-    if (function_exists('update_field')) {
-        update_field('product_gallery', $ideal_gallery, $post->ID);
-    } else {
-        update_post_meta($post->ID, 'product_gallery', $ideal_gallery);
-    }
-    
-    $new_thumb = $img_grey_cabinet;
-    if (stripos($post->post_title, 'P1.8') !== false && $img_ui_screen) {
-        $new_thumb = $img_ui_screen;
-    }
-    
-    set_post_thumbnail($post->ID, $new_thumb);
 }
 
-echo "<h3>Done! Server DB updated.</h3>";
+function update_product_images($products, $pool) {
+    $pool_size = count($pool);
+    $idx = 0;
+    
+    foreach ($products as $post) {
+        // Pick an image from the pool sequentially
+        $main_img = $pool[$idx % $pool_size];
+        
+        // Build gallery: Main image first, then the rest of the pool
+        $gallery = array($main_img);
+        foreach ($pool as $img) {
+            if ($img !== $main_img) {
+                $gallery[] = $img;
+            }
+        }
+        
+        echo "<h4>Processing: " . esc_html($post->post_title) . "</h4>\n";
+        
+        // 1. Update gallery
+        update_post_meta($post->ID, '_product_image_gallery', implode(',', $gallery));
+        if (function_exists('update_field')) {
+            update_field('product_gallery', $gallery, $post->ID);
+        } else {
+            update_post_meta($post->ID, 'product_gallery', $gallery);
+        }
+        
+        // 2. Set thumbnail
+        set_post_thumbnail($post->ID, $main_img);
+        
+        echo "Thumbnail set to ID $main_img. Gallery: [" . implode(', ', $gallery) . "]<br>\n";
+        $idx++;
+    }
+}
+
+echo "<h3>Updating Chinese Products...</h3>";
+update_product_images($zh_products, $image_pool);
+
+echo "<h3>Updating English Products...</h3>";
+update_product_images($en_products, $image_pool);
+
+echo "<h3>Done! Server DB updated with alternating images.</h3>";
